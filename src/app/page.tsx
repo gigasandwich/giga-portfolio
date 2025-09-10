@@ -4,6 +4,7 @@ import { Contacts } from "./sections/home/first-impression/Contacts";
 
 import ImageContainer from "./sections/home/image-container/ImageContainer";
 import WhatIDo from "./sections/home/what-i-do/WhatIDo";
+import Navbar from "./components/Navbar";
 
 /**
  * The html in the JSX is written to help the dekstop view development
@@ -13,46 +14,51 @@ import WhatIDo from "./sections/home/what-i-do/WhatIDo";
 
 export default function Home() {
   return (
-    <main className="">
-      {/* About me section */}
-      <div className="grid md:grid-cols-6 xl:grid-cols-12 xl:grid-rows-1 h-screen">
+    <>
+      
+      <main className="">
 
-        <div className="flex flex-col xl:justify-between md:col-span-3 xl:col-span-3 py-4 px-8 xl:px-16 md:h-screen">
-          <div className="order-1 xl:relative mt-10">
-            <Me name={"Yvan Noah"} job={"Software developer"}></Me>
+        {/* About me section */}
+        <div className="grid md:grid-cols-6 xl:grid-cols-12 xl:grid-rows-1 h-screen">
+
+          {/* TODO: Make this div centered on md */}
+          <div className="flex flex-col xl:justify-between md:col-span-3 xl:col-span-3 py-4 px-8 xl:px-16 md:h-screen">
+            <div className="order-1 xl:relative mt-10">
+              <Me name={"Yvan Noah"} job={"Software developer"} />
+            </div>
+            <div className="order-2 mt-8 md:hidden"> {/* Always placed on second position, on md the other <ImageContainer /> is shown instead of this one */}
+              <ImageContainer />
+            </div>
+            <div className="order-3 mt-8 xl:pb-4">
+              <div>
+                <AboutMe />
+              </div>
+              <div className="mt-4">
+                <Contacts />
+              </div>
+            </div>
           </div>
-          <div className="order-2 mt-8 md:hidden"> {/* Always placed on second position, on md the other <ImageContainer /> is shown instead of this one */}
+
+          <div className="hidden md:block md:col-span-3 xl:col-span-4">
             <ImageContainer />
           </div>
-          <div className="order-3 mt-8 xl:pb-4">
-            <div>
-              <AboutMe />
-            </div>
-            <div className="mt-4">
-              <Contacts />
-            </div>
+
+          <div className="md:col-span-6 xl:col-span-5 mt-10 xl:pt-4">
+            <WhatIDo />
           </div>
+
         </div>
 
-        <div className="hidden md:block md:col-span-3 xl:col-span-4">
-          <ImageContainer />
+        {/* Project section */}
+        <div>
+
         </div>
 
-        <div className="md:col-span-6 xl:col-span-5 mt-10 xl:pt-4">
-          <WhatIDo />
+        {/* ... */}
+        <div>
+
         </div>
-
-      </div>
-
-      {/* Project section */}
-      <div>
-
-      </div>
-
-      {/* ... */}
-      <div>
-
-      </div>
-    </main>
+      </main>
+    </>
   );
 }

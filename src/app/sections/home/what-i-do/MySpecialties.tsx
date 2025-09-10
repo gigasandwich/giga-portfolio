@@ -1,6 +1,8 @@
+"use client";
+
 import SpecialtyComponent, { Specialty } from "@/app/components/SpecialtyComponent";
 import WhatIDoComponent from "../../../components/WhatIDoComponent";
-import { ReactNode } from "react";
+import { ReactNode, useState } from "react";
 import CtaIconComponent from "@/app/components/images/CTAIconComponent";
 
 /**
@@ -13,14 +15,27 @@ export default function MySpecialties() {
         { specialty: "Frontend development", details: "As you can see from this portfolio, I can manage myself quit a bit with applying my frontend knowledge from designs.", iconLink: "/assets/next/globe.svg", },
     ];
 
-    const chosenSpecialty = specialties[0];
+    // ...
+    const [index, setIndex] = useState(0);
+    const chosenSpecialty = specialties[index];
+    function next() {
+        setIndex((prev) => (prev + 1) % specialties.length);
+    }
+    function previous() {
+        setIndex((prev) => (prev - 1 + specialties.length) % specialties.length);
+    }
+    function select(i: number) {
+        setIndex(i);
+    }
 
     const children: ReactNode = (
         <div>
             <div className="relative right-32 flex justify-between flex-wrap gap-3 py-6 px-3 w-96 h-48 rounded-2xl bg-cyan-950">
-                {specialties.map((specialty, index) => {
+                {specialties.map((specialty, i) => {
                     return (
-                        <SpecialtyComponent key={index} specialty={specialty.specialty} iconLink={specialty.iconLink} details={specialty.details}></SpecialtyComponent>
+                        <div key={i} onClick={() => select(i)}>
+                            <SpecialtyComponent key={i} specialty={specialty.specialty} iconLink={specialty.iconLink} details={specialty.details}></SpecialtyComponent>
+                        </div>
                     )
                 })}
             </div>
@@ -30,9 +45,16 @@ export default function MySpecialties() {
                 <div className="col-span-1">
                     <CtaIconComponent src={chosenSpecialty.iconLink} alt="" />
                 </div>
-                <div className="col-span-3">
-                    <h3 className="text-base font-bold">{chosenSpecialty.specialty}</h3>
-                    <p className="text-sm">{chosenSpecialty.details}</p>
+                <div className="col-span-3 grid grid-rows-6">
+                    <div className="row-span-4">
+                        <h3 className="text-base font-bold">{chosenSpecialty.specialty}</h3>
+                        <p className="text-sm">{chosenSpecialty.details}</p>
+                    </div>
+
+                    <div className="flex gap-[100px] row-span-2">
+                        <a href="#" onClick={previous}><CtaIconComponent src={"/assets/icons/left.svg"} alt={""}></CtaIconComponent></a>
+                        <a href="#" onClick={next}><CtaIconComponent src={"/assets/icons/right.svg"} alt={""}></CtaIconComponent></a>
+                    </div>
                 </div>
             </div>
         </div>

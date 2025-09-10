@@ -43,8 +43,8 @@ export default function MyLatestProjects() {
                 <IconComponent src={"/assets/icons/right.svg"} alt={""}></IconComponent> 
                 */}
 
-                <a href=""><CtaIconComponent src={"/assets/icons/left.svg"} alt={""}></CtaIconComponent></a>
-                <a href=""><CtaIconComponent src={"/assets/icons/right.svg"} alt={""}></CtaIconComponent></a>
+                <a href="#"><CtaIconComponent src={"/assets/icons/left.svg"} alt={""}></CtaIconComponent></a>
+                <a href="#"><CtaIconComponent src={"/assets/icons/right.svg"} alt={""}></CtaIconComponent></a>
             </div>
         </div>
     );
