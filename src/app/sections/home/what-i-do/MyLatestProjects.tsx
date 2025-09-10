@@ -29,7 +29,7 @@ export default function MyLatestProjects() {
 
     const children: ReactNode = (
         <div>
-            <div className="relative right-32"><RoundedImageComponent src="/assets/images/dummy-project.png" alt=""></RoundedImageComponent></div>
+            <div className="relative lg:right-32"><RoundedImageComponent src="/assets/images/dummy-project.png" alt=""></RoundedImageComponent></div>
 
             <div className="mt-6">
                 <h1 className="text-2xl uppercase font-semibold">{latestProject.title}</h1>

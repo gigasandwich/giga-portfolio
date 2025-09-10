@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0b0f17;
+  --foreground: #f4f6fb;
 }
 
 @theme inline {
@@ -12,15 +12,37 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 body {
   background: var(--background);
   color: var(--foreground);
+  font-family: Roboto, system-ui, Ubuntu, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Custom styles until I have connection to properly doc myself*/
+.bg-main-blue-50 {
+  background: #cdd8ea;
+}
+
+.bg-main-blue-800 {
+  background: #2a3f62;
+}
+
+.bg-main-blue-900 {
+  background: #273753;
+}
+
+.bg-main-red {
+  background: #ff2d74;
+}
+
+.bg-main-red-300 {
+  background: #ff9bb8;
 }

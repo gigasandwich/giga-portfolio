@@ -12,25 +12,30 @@ export default function MySpecialties() {
     const specialties: Specialty[] = [
         { specialty: "Mobile development", details: "I particulary enjoy this kind of development more than others, so feel free to contact me about it.", iconLink: "/assets/next/globe.svg", },
         { specialty: "Backend development", details: "With how AI is everywhere, I can help with cleaning the mess it has caused or you can ask me to carefully use it to develop your application.", iconLink: "/assets/next/globe.svg", },
-        { specialty: "Frontend development", details: "As you can see from this portfolio, I can manage myself quit a bit with applying my frontend knowledge from designs.", iconLink: "/assets/next/globe.svg", },
+        { specialty: "Frontend development", details: "As you can see from this portfolio, I can manage myself quite a bit with applying my frontend knowledge from designs.", iconLink: "/assets/next/globe.svg", },
+        { specialty: "Bug solver", details: "Solving bug might be troublesome for most person, but not for me I guess.", iconLink: "/assets/next/globe.svg", },
     ];
 
     // ...
     const [index, setIndex] = useState(0);
+    const [direction, setDirection] = useState(0); // -1, 1
     const chosenSpecialty = specialties[index];
     function next() {
+        setDirection(1);
         setIndex((prev) => (prev + 1) % specialties.length);
     }
     function previous() {
+        setDirection(-1);
         setIndex((prev) => (prev - 1 + specialties.length) % specialties.length);
     }
     function select(i: number) {
+        setDirection(i > index ? 1 : -1);
         setIndex(i);
     }
 
     const children: ReactNode = (
         <div>
-            <div className="relative right-32 flex justify-between flex-wrap gap-3 py-6 px-3 w-96 h-48 rounded-2xl bg-cyan-950">
+            <div className="relative md:left-16 lg:right-32 grid grid-rows-2 grid-cols-2 py-6 px-3 w-96 h-48 rounded-2xl bg-main-blue-900">
                 {specialties.map((specialty, i) => {
                     return (
                         <div key={i} onClick={() => select(i)}>
@@ -41,7 +46,7 @@ export default function MySpecialties() {
             </div>
 
             {/* This should transition unless the user hovers over */}
-            <div className="w-96 h-48 rounded-2xl mt-4 px-8 py-4 grid grid-cols-4 grid-rows-1 bg-cyan-950">
+            <div className="w-96 h-48 rounded-2xl mt-4 px-8 py-4 grid grid-cols-4 grid-rows-1 bg-main-blue-900">
                 <div className="col-span-1">
                     <CtaIconComponent src={chosenSpecialty.iconLink} alt="" />
                 </div>

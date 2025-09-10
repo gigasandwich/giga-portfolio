@@ -18,7 +18,7 @@ export default function WhatIDo() {
     // TODO: Add smooth transition, now a raw one
     return (
         // <MyLatestProjects />
-        <MySpecialties />
-        // showMyLatestProjects ? <MyLatestProjects /> : <MySpecialties />
+        // <MySpecialties />
+        showMyLatestProjects ? <MyLatestProjects /> : <MySpecialties />
     );
 }
