@@ -15,30 +15,33 @@ export default function Home() {
   return (
     <main className="">
       {/* About me section */}
-      <div className="md:grid md:grid-cols-12 md:grid-rows-1 h-screen">
-        {/* 3 spans */}
-        <div className="flex flex-col md:justify-between md:col-span-3 py-4 p-2 md:px-16"> {/* TODO: understand why using grid display here gives space */}
-          <div className="order-1 md:relative mt-10">
+      <div className="grid md:grid-cols-6 xl:grid-cols-12 xl:grid-rows-1 h-screen">
+
+        <div className="flex flex-col xl:justify-between md:col-span-3 xl:col-span-3 py-4 px-8 xl:px-16 md:h-screen">
+          <div className="order-1 xl:relative mt-10">
             <Me name={"Yvan Noah"} job={"Software developer"}></Me>
           </div>
-          <div className="order-2 md:hidden"> {/* Always placed on second position */}
+          <div className="order-2 mt-8 md:hidden"> {/* Always placed on second position, on md the other <ImageContainer /> is shown instead of this one */}
             <ImageContainer />
           </div>
-          <div className="order-3 md:pb-4">
-            <AboutMe />
-            <Contacts />
+          <div className="order-3 mt-8 xl:pb-4">
+            <div>
+              <AboutMe />
+            </div>
+            <div className="mt-4">
+              <Contacts />
+            </div>
           </div>
         </div>
 
-        {/* 5 spans */}
-        <div className="hidden md:block md:col-span-4">
+        <div className="hidden md:block md:col-span-3 xl:col-span-4">
           <ImageContainer />
         </div>
 
-        {/* 4 spans */}
-        <div className="md:col-span-5 mt-10 md:pt-4">
+        <div className="md:col-span-6 xl:col-span-5 mt-10 xl:pt-4">
           <WhatIDo />
         </div>
+
       </div>
 
       {/* Project section */}
