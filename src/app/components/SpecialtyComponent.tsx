@@ -8,11 +8,11 @@ export type Specialty = {
 
 export default function SpecialtyComponent({ specialty, iconLink, details }: Specialty) {
     return (
-        <div>
+        <div className="flex flex-col items-center text-center">
             <img src={iconLink} alt={specialty} className="w-12 h-12"/>
-            <div>
-                <h3>{specialty}</h3>
-                <div>{details}</div>
+            <div className="">
+                <h3 className="text-sm">{specialty}</h3>
+                <div className="hidden text-sm">{details}</div>
             </div>
         </div>
     );

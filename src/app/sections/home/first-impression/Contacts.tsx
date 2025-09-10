@@ -1,10 +1,10 @@
-import ContactComponent, { Contact, GithubContact } from "@/app/components/ContactComponent";
+import ContactComponent, { Contact, GithubContact } from "@/app/components/images/ContactComponent";
 
 export function Contacts() {
     const contacts: Contact[] = [
         new GithubContact("https://github.com/gigasandwich"),
-        { name: "Instagram", url: "https://github.com/gigasandwich", iconLink: "/assets/brands/github.svg" },
-        { name: "Facebook", url: "https://github.com/gigasandwich", iconLink: "/assets/brands/github.svg" },
+        { name: "Instagram", url: "https://github.com/gigasandwich", iconLink: "/assets/brands/github-icon.svg" },
+        { name: "Facebook", url: "https://github.com/gigasandwich", iconLink: "/assets/brands/github-icon.svg" },
     ];
 
     return (

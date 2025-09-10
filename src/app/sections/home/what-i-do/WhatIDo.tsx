@@ -1,25 +1,24 @@
-import ViewAllOfMyProjects from "@/app/components/ViewAllOfMyProjects";
-import { ReactNode } from "react";
+"use client";
 
-type WhatIDoProps = {
-    title: string,
-    children: ReactNode,
-};
+import { useEffect, useState } from "react";
+import MySpecialties from "./MySpecialties";
+import MyLatestProjects from "./MyLatestProjects";
 
 /**
- * This will serve as the default template of the "What I do" part of the "About me" section
+ * The main view of "what I do" shows MyLatestProjects first, then MySpecialties
  */
-export default function WhatIDo({ title, children }: WhatIDoProps) {
+export default function WhatIDo() {
+    const [showMyLatestProjects, setShowMyLastProjects] = useState(true);
 
+    useEffect(() => {
+        const timer = setTimeout(() => setShowMyLastProjects(false), 3000);
+        return () => clearTimeout(timer);
+    }, []);
+
+    // TODO: Add smooth transition, now a raw one
     return (
-        <div>
-            <h1>{title}</h1>
-
-            <div>
-                {children}
-            </div>
-
-            <ViewAllOfMyProjects />
-        </div>
+        // <MyLatestProjects />
+        <MySpecialties />
+        // showMyLatestProjects ? <MyLatestProjects /> : <MySpecialties />
     );
 }
