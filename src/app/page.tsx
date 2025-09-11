@@ -7,6 +7,7 @@ import WhatIDo from "./sections/home/what-i-do/WhatIDo";
 import Navbar from "./components/Navbar";
 import Center from "./components/Center";
 import Projects from "./sections/projects/Projects";
+import Participations from "./sections/participations/Participations";
 
 /**
  * The html in the JSX is written to help the dekstop view development
@@ -62,8 +63,8 @@ export default function Home() {
         </section>
 
         {/* ... */}
-        <section id="">
-
+        <section id="participations">
+          <Participations />
         </section>
       </main>
     </>
