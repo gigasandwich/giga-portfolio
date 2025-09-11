@@ -25,7 +25,7 @@ export default function Home() {
 
       <main className="">
         {/* About me section */}
-        <div className="grid md:grid-cols-6 xl:grid-cols-12 xl:grid-rows-1 h-screen">
+        <section id="about-me" className="grid md:grid-cols-6 xl:grid-cols-12 xl:grid-rows-1 h-screen">
 
           {/* TODO: Make this div centered on md */}
           <div className="flex flex-col xl:justify-between md:col-span-3 xl:col-span-3 py-4 px-8 xl:px-16 md:h-screen">
@@ -54,16 +54,16 @@ export default function Home() {
             <WhatIDo />
           </div>
 
-        </div>
+        </section>
 
         {/* Project section */}
-        <div>
-        </div>
+        <section id="projects">
+        </section>
 
         {/* ... */}
-        <div>
+        <section id="">
 
-        </div>
+        </section>
       </main>
     </>
   );
