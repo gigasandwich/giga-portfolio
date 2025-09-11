@@ -33,9 +33,10 @@ export default function MySpecialties() {
         setIndex(i);
     }
 
+    const backgroundColor = "bg-blue-500";
     const children: ReactNode = (
         <div>
-            <div className="relative md:left-16 lg:right-32 grid grid-rows-2 grid-cols-2 py-6 px-3 w-96 h-48 rounded-2xl bg-main-blue-900">
+            <div className={`relative md:left-16 lg:right-32 w-81 h-48 md:w-96 md:h-48 grid grid-rows-2 grid-cols-2 py-6 px-2 rounded-2xl ${backgroundColor}`}>
                 {specialties.map((specialty, i) => {
                     return (
                         <div key={i} onClick={() => select(i)}>
@@ -46,7 +47,7 @@ export default function MySpecialties() {
             </div>
 
             {/* This should transition unless the user hovers over */}
-            <div className="w-96 h-48 rounded-2xl mt-4 px-8 py-4 grid grid-cols-4 grid-rows-1 bg-main-blue-900">
+            <div className={`w-81 h-48 md:w-96 md:h-48 rounded-2xl mt-4 px-8 py-4 grid grid-cols-4 grid-rows-1 ${backgroundColor}`}>
                 <div className="col-span-1">
                     <CtaIconComponent src={chosenSpecialty.iconLink} alt="" />
                 </div>

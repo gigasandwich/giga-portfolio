@@ -6,6 +6,7 @@ import ImageContainer from "./sections/home/image-container/ImageContainer";
 import WhatIDo from "./sections/home/what-i-do/WhatIDo";
 import Navbar from "./components/Navbar";
 import Center from "./components/Center";
+import Projects from "./sections/projects/Projects";
 
 /**
  * The html in the JSX is written to help the dekstop view development
@@ -16,7 +17,7 @@ import Center from "./components/Center";
 export default function Home() {
   return (
     <>
-      {/*       
+      {/*             
       <header className="flex justify-center">
         <Navbar />
       </header> 
@@ -38,7 +39,8 @@ export default function Home() {
               <div>
                 <AboutMe />
               </div>
-              <div className="mt-4">
+              <hr className="mt-4" />
+              <div className="mt-2">
                 <Contacts />
               </div>
             </div>
@@ -56,7 +58,6 @@ export default function Home() {
 
         {/* Project section */}
         <div>
-          
         </div>
 
         {/* ... */}
