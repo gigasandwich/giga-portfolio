@@ -58,6 +58,7 @@ export default function Home() {
 
         {/* Project section */}
         <section id="projects">
+          <Projects />
         </section>
 
         {/* ... */}
