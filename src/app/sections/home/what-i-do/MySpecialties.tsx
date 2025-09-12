@@ -33,7 +33,8 @@ export default function MySpecialties() {
         setIndex(i);
     }
 
-    const backgroundColor = "bg-blue-500";
+    // const backgroundColor = "bg-blue-500";
+    const backgroundColor = "bg-main-blue-50";
     const children: ReactNode = (
         <div>
             <div className={`relative md:left-16 lg:right-32 w-81 h-48 md:w-96 md:h-48 grid grid-rows-2 grid-cols-2 py-6 px-2 rounded-2xl ${backgroundColor}`}>

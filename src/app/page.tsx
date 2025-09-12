@@ -47,7 +47,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="hidden md:block md:col-span-3 xl:col-span-4">
+          <div className="hidden md:block md:col-span-3 xl:col-span-4"> {/* The inside has md:rounded-br-[2rem] md:rounded-bl-[2rem] */}
             <ImageContainer />
           </div>
 
@@ -58,7 +58,7 @@ export default function Home() {
         </section>
 
         {/* Project section */}
-        <section id="projects">
+        <section id="projects" className="mt-20"> {/* The inside has md:rounded-tr-[2rem] */}
           <Projects />
         </section>
 

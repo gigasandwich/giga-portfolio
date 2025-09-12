@@ -1,6 +1,6 @@
 import Center from "@/app/components/Center";
 import { ParticipationCard } from "@/app/components/ParticipationCard";
-import hackathons from "@/data/resume";
+import { hackathons } from "@/data/resume";
 
 export default function Participations() {
     return (

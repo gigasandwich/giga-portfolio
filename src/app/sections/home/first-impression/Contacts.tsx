@@ -5,7 +5,7 @@ export function Contacts() {
         new GithubContact("https://github.com/gigasandwich"),
         { name: "LinkedIn", url: "https://github.com/gigasandwich", iconLink: "/assets/brands/github-icon.svg" },
         { name: "X", url: "https://github.com/gigasandwich", iconLink: "/assets/brands/github-icon.svg" },
-        { name: "Facebook", url: "https://github.com/gigasandwich", iconLink: "/assets/brands/github-icon.svg" },
+        // { name: "Facebook", url: "https://github.com/gigasandwich", iconLink: "/assets/brands/github-icon.svg" },
     ];
 
     return (
