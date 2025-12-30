@@ -19,8 +19,8 @@ export default function WhatIDoComponent({ title, children }: WhatIDoProps) {
     const color = "gray";
     return (
         <div className="sm:flex sm:items-center sm:justify-center">
-            <div className="relative px-16 grid grid-rows-12 grid-cols-1">
-                <h1 className="text-4xl font-bold mb-4 row-span-2">{title}</h1>
+            <div className="relative px-16 grid grid-rows-9 md:grid-rows-12 grid-cols-1">
+                <h1 className="text-4xl font-bold sm:row-span-1 mb:row-span-2">{title}</h1>
 
                 <div className="row-span-6">
                     {children}

@@ -26,7 +26,7 @@ export default function Home() {
 
       <main className="">
         {/* About me section */}
-        <section id="about-me" className="grid md:grid-cols-6 xl:grid-cols-12 xl:grid-rows-1 h-screen">
+        <section id="about-me" className="grid md:grid-cols-6 xl:grid-cols-12 xl:grid-rows-1 md:h-screen">
 
           {/* TODO: Make this div centered on md */}
           <div className="flex flex-col xl:justify-between md:col-span-3 xl:col-span-3 py-4 px-8 xl:px-16 md:h-screen">
@@ -58,12 +58,12 @@ export default function Home() {
         </section>
 
         {/* Project section */}
-        <section id="projects" className="mt-20"> {/* The inside has md:rounded-tr-[2rem] */}
+        <section id="projects" className="md:mt-20"> {/* The inside has md:rounded-tr-[2rem] */}
           <Projects />
         </section>
 
         {/* ... */}
-        <section id="participations">
+        <section id="participations" className="mt-20">
           <Participations />
         </section>
       </main>
