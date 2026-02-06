@@ -4,6 +4,7 @@ import { ReactNode } from "react";
 import CtaIconComponent from "./images/CTAIconComponent";
 import Center from "./Center";
 import ButtonOutline from "./buttons/ButtonOutline";
+import { cardBorderColor } from "@/data/constants";
 
 type WhatIDoProps = {
     title: string,
@@ -16,7 +17,11 @@ type WhatIDoProps = {
 export default function WhatIDoComponent({ title, children }: WhatIDoProps) {
 
     // Used grid display here to make the two components (MyLatestProjects and MySpecialties) have the same layout emplacement
-    const color = "gray";
+    const additionalButtonStyle = {
+        borderColor: cardBorderColor,
+        borderWidth: "medium",
+        color: "white",
+    };
     return (
         <div className="sm:flex sm:items-center sm:justify-center">
             <div className="relative px-16 grid grid-rows-9 md:grid-rows-12 grid-cols-1">
@@ -29,7 +34,7 @@ export default function WhatIDoComponent({ title, children }: WhatIDoProps) {
                 <div className="row-span-1">
                     <div className="mt-4">
                         <Center>
-                            <ButtonOutline color="blue">
+                            <ButtonOutline style={additionalButtonStyle}>
                                 <div className="flex gap-6 items-center">
                                     <h2 className="uppercase font-semibold">View all of my projects</h2>
                                     <a href=""><CtaIconComponent src={"/assets/icons/down.svg"} alt={""}></CtaIconComponent></a>
