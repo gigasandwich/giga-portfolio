@@ -1,10 +1,10 @@
 "use client";
 
 import { ReactNode } from "react";
-import CtaIconComponent from "./images/CTAIconComponent";
 import Center from "./Center";
 import ButtonOutline from "./buttons/ButtonOutline";
 import { cardBorderColor } from "@/data/constants";
+import { ChevronDown } from "lucide-react";
 
 type WhatIDoProps = {
     title: string,
@@ -21,6 +21,7 @@ export default function WhatIDoComponent({ title, children }: WhatIDoProps) {
         borderColor: cardBorderColor,
         borderWidth: "medium",
         color: "white",
+        
     };
     return (
         <div className="sm:flex sm:items-center sm:justify-center">
@@ -37,7 +38,7 @@ export default function WhatIDoComponent({ title, children }: WhatIDoProps) {
                             <ButtonOutline style={additionalButtonStyle}>
                                 <div className="flex gap-6 items-center">
                                     <h2 className="uppercase font-semibold">View all of my projects</h2>
-                                    <a href=""><CtaIconComponent src={"/assets/icons/down.svg"} alt={""}></CtaIconComponent></a>
+                                    <a href=""><ChevronDown size={40} /></a>
                                 </div>
                             </ButtonOutline>
                         </Center>

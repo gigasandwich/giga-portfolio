@@ -1,18 +1,20 @@
+import { Github, Linkedin, Twitter } from "lucide-react";
+
 export class Contact {
     name: string;
     url: string;
-    iconLink: string;
+    icon: React.ReactNode;
 
-    protected constructor(name: string, url: string, iconLink: string) {
+    protected constructor(name: string, url: string, icon: React.ReactNode) {
         this.name = name;
         this.url = url;
-        this.iconLink = iconLink;
+        this.icon = icon;
     }
 }
 
 export class GithubContact extends Contact {
     constructor(url: string) {
-        super("Github", url, "/assets/brands/github-icon.svg");
+        super("Github", url, <Github size={48} />);
     }
 }
 
@@ -21,10 +23,12 @@ export class GithubContact extends Contact {
  * on desktop: shows the name
  * on mobile: only the icon
  */
-export default function ContactComponent({ url, iconLink, name }: Contact) {
+export default function ContactComponent({ url, icon, name }: Contact) {
     return (
         <a href={url} className="md:py-2 md:px-4 md:rounded md:flex md:flex-col md:items-center md:gap-1">
-            <img src={iconLink} alt="" className="w-[48px] h-[48px]" />
+            <div className="w-[48px] h-[48px] flex items-center justify-center">
+                {icon}
+            </div>
             <span className="hidden md:block">{name}</span>
         </a>
     );
