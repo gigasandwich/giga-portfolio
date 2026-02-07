@@ -37,11 +37,11 @@ export default function Home() {
               <ImageContainer />
             </div>
             <div className="order-3 xl:pb-4 flex flex-col justify-between h-full">
-              <div>
+              <div className="mt-4">
                 <AboutMe />
               </div>
-              <div className="mt-auto">
-                <hr className="mb-2" />
+              <div className="mt-4 md:mt-auto">
+                <hr className="mb-4" />
                 <Contacts />
               </div>
             </div>

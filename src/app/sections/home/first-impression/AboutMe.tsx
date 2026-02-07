@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode, useState } from "react";
+import { ReactNode, useState, useEffect } from "react";
 import { MapPin, Calendar, ChevronDown, ChevronUp } from "lucide-react";
 import { cardBorderColor } from "@/data/constants";
 
@@ -13,7 +13,19 @@ export default function AboutMe() {
         "Visiting leetcode daily to improve my problem solving knowledge."
     ];
 
-    const [isExpanded, setIsExpanded] = useState(true);
+    // Expand by default on desktop (768px+), collapse on mobile
+    const [isExpanded, setIsExpanded] = useState(false);
+
+    useEffect(() => {
+        const checkScreenSize = () => {
+            setIsExpanded(window.innerWidth >= 768);
+        };
+        
+        checkScreenSize();
+        window.addEventListener('resize', checkScreenSize);
+        
+        return () => window.removeEventListener('resize', checkScreenSize);
+    }, []);
     
     return (
         // TODO: add prose here
@@ -25,10 +37,10 @@ export default function AboutMe() {
                 <KeyValue icon={<Calendar size={16} />} value={`${age}`} />
             </div>
 
-            <div className="text-sm mt-10">
+            <div className="text-sm mt-10 flex flex-col items-center">
                 <button
                     onClick={() => setIsExpanded(!isExpanded)}
-                    className="flex items-center gap-2 px-4 py-2 border-2 font-medium transition-all duration-200 rounded-md"
+                    className="flex items-center gap-2 px-4 py-2 border-2 font-medium transition-all duration-200 rounded-md mb-3"
                     style={{ borderColor: cardBorderColor, color: "white" }}
                 >
                     What I enjoy
@@ -40,7 +52,7 @@ export default function AboutMe() {
                 </button>
                 
                 {isExpanded && (
-                    <div className="mt-3 animate-in slide-in-from-top-2 duration-200">
+                    <div className="animate-in slide-in-from-top-2 duration-200">
                         <ul className="space-y-2 list-disc pl-5">
                             {whatIEnjoyDoing.map((activity, index) => (
                                 <li key={index} className="">
