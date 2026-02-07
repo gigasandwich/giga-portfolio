@@ -1,6 +1,6 @@
 import ContactComponent, { Contact, GithubContact } from "@/app/components/images/ContactComponent";
 import { ReactNode } from "react";
-import WhatIDoComponent from "../../../components/WhatIDoComponent";
+import WhatIDoSuperComponent from "../../../components/WhatIDoSuperComponent";
 import RoundedImageComponent from "@/app/components/images/RoundedImageComponent";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -49,5 +49,5 @@ export default function MyLatestProjects() {
         </div>
     );
 
-    return <WhatIDoComponent title={"My latest projects"} children={children}></WhatIDoComponent>
+    return <WhatIDoSuperComponent title={"My latest projects"} children={children}></WhatIDoSuperComponent>
 }

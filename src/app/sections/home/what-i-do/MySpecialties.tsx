@@ -1,7 +1,7 @@
 "use client";
 
 import SpecialtyComponent, { Specialty } from "@/app/components/SpecialtyComponent";
-import WhatIDoComponent from "../../../components/WhatIDoComponent";
+import WhatIDoSuperComponent from "../../../components/WhatIDoSuperComponent";
 import { ReactNode, useState } from "react";
 import { Smartphone, Server, Monitor, Bug, ChevronLeft, ChevronRight } from "lucide-react";
 import { cardBorderColor } from "@/data/constants";
@@ -78,5 +78,5 @@ export default function MySpecialties() {
         </div>
     );
 
-    return <WhatIDoComponent title={"What I do"} children={children} ></WhatIDoComponent>
+    return <WhatIDoSuperComponent title={"What I do"} children={children} ></WhatIDoSuperComponent>
 }
