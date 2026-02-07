@@ -29,19 +29,19 @@ export default function Home() {
         <section id="about-me" className="grid md:grid-cols-6 xl:grid-cols-12 xl:grid-rows-1 md:h-screen">
 
           {/* TODO: Make this div centered on md */}
-          <div className="flex flex-col xl:justify-between md:col-span-3 xl:col-span-3 py-4 px-8 xl:px-16 md:h-screen">
+          <div className="flex flex-col xl:justify-start xl:gap-12 md:col-span-3 xl:col-span-3 py-4 px-8 xl:px-16 md:h-screen">
             <div className="order-1 xl:relative mt-10">
               <Me name={"Yvan Noah"} job={"Software developer"} />
             </div>
             <div className="order-2 mt-8 md:hidden"> {/* Always placed on second position, on md the other <ImageContainer /> is shown instead of this one */}
               <ImageContainer />
             </div>
-            <div className="order-3 mt-8 xl:pb-4">
+            <div className="order-3 xl:pb-4 flex flex-col justify-between h-full">
               <div>
                 <AboutMe />
               </div>
-              <hr className="mt-4" />
-              <div className="mt-2">
+              <div className="mt-auto">
+                <hr className="mb-2" />
                 <Contacts />
               </div>
             </div>
