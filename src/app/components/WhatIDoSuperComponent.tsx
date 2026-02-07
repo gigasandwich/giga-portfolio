@@ -4,7 +4,7 @@ import { ReactNode } from "react";
 import Center from "./Center";
 import { cardBorderColor } from "@/data/constants";
 import { ChevronDown, Download } from "lucide-react";
-
+import { motion } from "framer-motion";
 type WhatIDoProps = {
     title: string;
     children: ReactNode;
@@ -40,7 +40,7 @@ export default function WhatIDoSuperComponent({
                     <div className="row-span-1">
                         <div className="mt-6">
                             <Center>
-                                <button
+                                <motion.button
                                     onClick={handleViewCV}
                                     className="flex items-center gap-4 px-8 py-4 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl text-lg"
                                     style={{ backgroundColor: cardBorderColor }}
@@ -50,10 +50,15 @@ export default function WhatIDoSuperComponent({
                                     onMouseLeave={(e) => {
                                         e.currentTarget.style.backgroundColor = cardBorderColor;
                                     }}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: 0.8, duration: 0.5 }}
+                                    whileHover={{ scale: 1.05 }}
+                                    whileTap={{ scale: 0.95 }}
                                 >
                                     <span className="uppercase text-sm">{buttonText}</span>
                                     <Download size={20} />
-                                </button>
+                                </motion.button>
                             </Center>
                         </div>
                     </div>
