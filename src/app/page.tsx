@@ -45,7 +45,7 @@ export default function Home() {
                   <AboutMe />
                 </div>
                 <div className="mt-4 md:mt-auto">
-                  <hr className="mb-4" />
+                  <hr className="mb-4 mt-4" />
                   <Contacts />
                 </div>
               </div>
