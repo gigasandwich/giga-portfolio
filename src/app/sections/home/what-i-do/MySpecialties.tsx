@@ -1,7 +1,7 @@
 "use client";
 
 import SpecialtyComponent, { Specialty } from "@/app/components/SpecialtyComponent";
-import WhatIDoSuperComponent from "../../../components/WhatIDoSuperComponent";
+import WhatIDoSuperComponent from "@/app/components/WhatIDoSuperComponent";
 import { ReactNode, useState } from "react";
 import { Smartphone, Server, Monitor, Bug, ChevronLeft, ChevronRight } from "lucide-react";
 import { cardBorderColor } from "@/data/constants";
@@ -48,7 +48,11 @@ export default function MySpecialties() {
 
     const children: ReactNode = (
         <div>
-            <div style={additionalStyleMain} className={`relative md:left-16 lg:right-32 w-81 h-48 md:w-96 md:h-48 grid grid-rows-2 grid-cols-2 py-6 px-2 rounded-2xl gap-5`}>
+            <div style={additionalStyleMain} className={`relative md:left-16 lg:right-32 
+                                                        w-full max-w-full h-full md:w-96 md:h-48
+                                                         grid grid-rows-2 grid-cols-2 
+                                                         py-6 px-2 
+                                                         rounded-2xl gap-5`}>
                 {specialties.map((specialty, i) => {
                     return (
                         <div key={i} onClick={() => select(i)}>
@@ -59,7 +63,9 @@ export default function MySpecialties() {
             </div>
 
             {/* This should transition unless the user hovers over */}
-            <div style={additionalStyleSelected} className={`w-81 h-48 md:w-96 md:h-48 mt-8 px-8 py-4 grid grid-cols-4 grid-rows-1`}>
+            <div style={additionalStyleSelected} className={`w-full max-w-81 h-48 md:w-96 md:h-48 
+                                                            mt-8 px-8 py-4 
+                                                            grid grid-cols-4 grid-rows-1`}>
                 <div className="col-span-1">
                     {chosenSpecialty.icon}
                 </div>
@@ -69,7 +75,7 @@ export default function MySpecialties() {
                         <p className="text-sm">{chosenSpecialty.details}</p>
                     </div>
 
-                    <div className="mt-6 flex gap-[100px] row-span-2">
+                    <div className="mt-6 flex justify-between row-span-2">
                         <a href="#" onClick={previous}><ChevronLeft size={32} /></a>
                         <a href="#" onClick={next}><ChevronRight size={32} /></a>
                     </div>
