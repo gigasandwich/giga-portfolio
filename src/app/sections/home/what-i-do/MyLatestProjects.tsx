@@ -2,7 +2,7 @@ import ContactComponent, { Contact, GithubContact } from "@/app/components/image
 import { ReactNode } from "react";
 import WhatIDoComponent from "../../../components/WhatIDoComponent";
 import RoundedImageComponent from "@/app/components/images/RoundedImageComponent";
-import CtaIconComponent from "@/app/components/images/CTAIconComponent";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export type Project = {
     title: string,
@@ -43,8 +43,8 @@ export default function MyLatestProjects() {
                 <IconComponent src={"/assets/icons/right.svg"} alt={""}></IconComponent> 
                 */}
 
-                <a href="#"><CtaIconComponent src={"/assets/icons/left.svg"} alt={""}></CtaIconComponent></a>
-                <a href="#"><CtaIconComponent src={"/assets/icons/right.svg"} alt={""}></CtaIconComponent></a>
+                <a href="#"><ChevronLeft size={32} /></a>
+                <a href="#"><ChevronRight size={32} /></a>
             </div>
         </div>
     );
