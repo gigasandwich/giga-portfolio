@@ -53,6 +53,7 @@ Content:
 
 # TODO
 - [ ] Design
+     - NOTE: TODO: NOT FORGETTING *parallax*, it's too cool, it has to be used
 
 - [ ] Project structure
     - [ ] Global components
