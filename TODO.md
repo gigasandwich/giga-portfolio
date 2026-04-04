@@ -52,11 +52,11 @@ Content:
 ---
 
 # TODO
-- [ ] Design
+- [x] Design
      - NOTE: TODO: NOT FORGETTING *parallax*, it's too cool, it has to be used
 
 - [ ] Project structure
-    - [ ] Folder structure (Real data variables emplacement, ...)
+    - [x] Folder structure (Real data variables emplacement, ...)
     - [ ] Global components
         - [ ] Variables/Interfaces
         - [ ] Dummy data for test
