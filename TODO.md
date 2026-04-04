@@ -56,8 +56,11 @@ Content:
      - NOTE: TODO: NOT FORGETTING *parallax*, it's too cool, it has to be used
 
 - [ ] Project structure
+    - [ ] Folder structure (Real data variables emplacement, ...)
     - [ ] Global components
-    - [ ] Real data variables
+        - [ ] Variables/Interfaces
+        - [ ] Dummy data for test
+        - [ ] Real data
 
 - [ ] Frontend Variables settings
     - [ ] Colors
