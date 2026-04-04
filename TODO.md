@@ -64,8 +64,9 @@ Content:
         - [ ] Real data
 
 - [ ] Frontend Variables settings
-    - [ ] Colors
-    - [ ] Font
+    - [x] Colors
+    - [x] Font
+    - [ ] Fix exisitng ones
 
 - [ ] First section
     - [ ] Variables/Interfaces
