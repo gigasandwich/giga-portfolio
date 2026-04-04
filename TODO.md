@@ -55,19 +55,23 @@ Content:
 - [x] Design
      - NOTE: TODO: NOT FORGETTING *parallax*, it's too cool, it has to be used
 
-- [ ] Project structure
+- [x] Project structure
     - [x] Folder structure (Real data variables emplacement, ...)
     - [ ] Global components
         - [x] Front
         - [x] Variables/Interfaces
         - [x] Dummy data for test
-        - [ ] Real data
-        - [ ] Responsiveness
+        - [x] Responsiveness
+
 
 - [x] Frontend Variables settings
     - [x] Colors
     - [x] Font
     - [x] Fix exisitng ones
+
+- [ ] Sidebar
+    - Already a global component
+    - [ ] Real data
 
 - [ ] First section
     - [ ] Variables/Interfaces
