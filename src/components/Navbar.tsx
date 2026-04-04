@@ -35,7 +35,12 @@ export default function Navbar() {
   }, []);
 
   return (
-    <div className="sticky top-6 z-50 flex justify-center w-full font-manrope px-4">
+    /* 
+      Navbar Wrapper:
+      - `fixed lg:sticky`: On mobile, `fixed` ensures it stays at the top.
+      - `pl-16 lg:pl-0`: Adds left padding on mobile to avoid overlapping with the sidebar sandwich button.
+    */
+    <div className="fixed lg:sticky top-6 z-50 flex justify-center w-full font-manrope px-4 pl-20 lg:pl-4 left-0">
       <nav className="w-full max-w-lg bg-neutral-bg/80 backdrop-blur-md border border-white/10 rounded-2xl p-1.5 shadow-2xl">
         {/* 
           Navbar Container:
