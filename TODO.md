@@ -49,3 +49,38 @@ Content:
 - the list of projects
 - A project: Might have pics, might haven't, but must have title and description
 
+---
+
+# TODO
+- [ ] Design
+
+- [ ] Project structure
+    - [ ] Global components
+    - [ ] Real data variables
+
+- [ ] Frontend Variables settings
+    - [ ] Colors
+    - [ ] Font
+
+- [ ] First section
+    - [ ] Variables/Interfaces
+    - [ ] Dummy data for test
+    - [ ] Real data
+
+- [ ] Second section
+    - [ ] Variables/Interface
+    - [ ] Dummy data for test
+    - [ ] Real data
+
+- [ ] Third section
+    - [ ] Variables/Interface
+    - [ ] Dummy data for test
+    - [ ] Real data
+
+- [ ] Check
+    - [ ] Issues
+    - [ ] Rethink Frontend choice
+        - [ ] Add/Fix
+    - [ ] Refactor
+
+- [ ] Setup next TODO
