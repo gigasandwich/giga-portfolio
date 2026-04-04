@@ -58,7 +58,7 @@ Content:
 - [ ] Project structure
     - [x] Folder structure (Real data variables emplacement, ...)
     - [ ] Global components
-        - [ ] Front
+        - [x] Front
         - [x] Variables/Interfaces
         - [x] Dummy data for test
         - [ ] Real data
