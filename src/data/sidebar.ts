@@ -10,27 +10,36 @@ export type SidebarData = {
   role: string;
   status: string;
   location: string;
+  about: string;
   contacts: {
+    email: string;
     phones?: string[];
     socials?: SocialLink[];
   };
+  cvLink: string;
 };
 
 const sidebarData: SidebarData = {
-  avatar: 'https://i.pravatar.cc/300',
-  fullName: 'Your Full Name',
-  role: 'Frontend Developer',
-  status: 'searching',
-  location: 'City, Country',
+  avatar: 'https://drive.google.com/uc?export=view&id=1g2JpxF-kclOrEvu4KLvlqV5pWKXt3TnJ',
+  fullName: 'RABETOKOTANY Yvan Noah',
+  role: 'Software Engineer',
+  status: 'Open for work',
+  location: 'Madagascar/Antananarivo',
+  about: 'A SWE student focused on gaining more experience with your proposed tech stack. Engaged in producing CLEAN and MAINTAINABLE code',
   contacts: {
-    phones: ['+33 6 12 34 56 78', '+33 6 87 65 43 21'],
+    email: 'mailto:yvannandy@gmail.com',
+    phones: [
+        '+261 38 66 734 39',
+        '+261 37 68 229 36'
+      ],
     socials: [
-      { name: 'GitHub', url: 'https://github.com/yourusername', icon: 'fa-brands fa-github' },
-      { name: 'Email', url: 'mailto:you@example.com', icon: 'fa-solid fa-envelope' },
+      { name: 'GitHub', url: 'https://github.com/gigasandwich', icon: 'fa-brands fa-github' },
       { name: 'LinkedIn', url: 'https://linkedin.com/in/yourusername', icon: 'fa-brands fa-linkedin' },
-      { name: 'Twitter', url: 'https://twitter.com/yourusername', icon: 'fa-brands fa-twitter' }
-    ]
-  }
+      { name: 'Email', url: 'mailto:yvannandy@gmail.com', icon: 'fa-solid fa-envelope' },
+      { name: 'Reddit', url: 'https://reddit.com/user/_giga_sss_', icon: 'fa-brands fa-reddit' },
+    ],
+  },
+  cvLink: 'https://drive.google.com/file/d/1xfCZjLOALTy2jEq5X9dAb8U3m2ElLQuc/preview',
 };
 
 export default sidebarData;

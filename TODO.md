@@ -69,9 +69,9 @@ Content:
     - [x] Font
     - [x] Fix exisitng ones
 
-- [ ] Sidebar
+- [x] Sidebar
     - Already a global component
-    - [ ] Real data
+    - [x] Real data
 
 - [ ] First section
     - [ ] Variables/Interfaces

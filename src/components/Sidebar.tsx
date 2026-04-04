@@ -45,12 +45,11 @@ export default function Sidebar() {
                 alt={d.fullName}
                 width={96}
                 height={96}
-                loading="eager"
               />
             </div>
 
             {/* Status badge */}
-            <div className="absolute -top-3 -right-6 bg-primary text-neutral-bg font-bold text-[10px] uppercase tracking-wider px-2 py-1 rounded-xl shadow-lg z-50">
+            <div className="absolute -top-3 -right-12 bg-primary text-neutral-bg font-bold text-[10px] uppercase tracking-wider px-2 py-1 rounded-xl shadow-lg z-50">
               {d.status}
             </div>
           </div>
@@ -67,6 +66,15 @@ export default function Sidebar() {
                 <div className="flex-1 text-white/90 leading-snug font-inter">{d.location}</div>
               </div>
 
+              <div className="flex items-center text-sm group">
+                <div className="w-4 flex-none text-center mr-2">
+                  <i className="fa-solid fa-envelope text-primary/70 group-hover:text-primary transition-colors" aria-hidden />
+                </div>
+                <div className="flex-1 text-white/90 leading-snug font-inter">
+                  <a href={d.contacts.email} className="hover:underline">{d.contacts.email.replace('mailto:', '')}</a>
+                </div>
+              </div>
+
               {d.contacts.phones?.map((p, i) => (
                 <div key={i} className="flex items-center text-sm group">
                   <div className="w-4 flex-none text-center mr-2">
@@ -78,13 +86,17 @@ export default function Sidebar() {
             </div>
 
             <p className="mt-8 text-sm text-white/70 text-left leading-relaxed font-normal italic border-l-2 border-primary/30 pl-4 py-1 font-inter">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia eveniet iste repudiandae iusto ad repellendus sint, ipsa atque facilis quae facere natus possimus iure consectetur quaerat non voluptate, architecto vitae!
+              {d.about}
             </p>
           </div>
         </div>
 
-        <div className="mb-6">
-          <div className="flex items-center justify-center gap-6">
+        <div className="mb-8">
+          <a href={d.cvLink} target="_blank" rel="noopener noreferrer" className="block w-full text-center bg-primary text-neutral-bg font-bold py-2 px-4 rounded-lg shadow-md hover:bg-primary/90 transition-all">
+            My CV
+          </a>
+
+          <div className="flex items-center justify-center gap-6 mt-8">
             {d.contacts.socials?.map((s) => (
               <a key={s.name} href={s.url} aria-label={s.name} className="text-white/60 hover:text-primary transition-all duration-300 transform hover:scale-110">
                 <i className={`${s.icon} fa-xl`} />
