@@ -62,11 +62,12 @@ Content:
         - [x] Variables/Interfaces
         - [x] Dummy data for test
         - [ ] Real data
+        - [ ] Responsiveness
 
-- [ ] Frontend Variables settings
+- [x] Frontend Variables settings
     - [x] Colors
     - [x] Font
-    - [ ] Fix exisitng ones
+    - [x] Fix exisitng ones
 
 - [ ] First section
     - [ ] Variables/Interfaces
