@@ -9,8 +9,11 @@ const whatIDoData: WhatIDoType = {
     icon: "fa-screwdriver-wrench",
     description: (
         <div>
-            <p>Nerf Devil Jin, break his wings,</p>
-            <p>do not let him get away with his lasers and other gimmicks</p>
+            <p>Again, applying the same patterns from the <code>Object-Oriented Development with Database design</code> section.</p>
+            
+            <p className="mt-2">Meaning I always try to implement those at first try and still <i>refactor/optimize</i> later.</p>
+
+            <p className="mt-2">In case it is not my project, I still apply these (if asked) to ameliorate the existing codebase.</p>
         </div>
     ),
 };
