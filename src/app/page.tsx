@@ -1,5 +1,6 @@
 import Sidebar from "@/components/Sidebar";
 import Navbar from "@/components/Navbar";
+import WhatIDo from "@/sections/WhatIDo";
 
 export default function Home() {
   return (
@@ -20,11 +21,9 @@ export default function Home() {
       <div className="flex-1 relative h-screen overflow-y-auto scroll-smooth">
         <Navbar />
         
-        <main className="p-4 lg:p-8">
+        <main className="p-4 lg:p-8 mt-4">
           {/* Section: What I do */}
-          <section id="what-i-do" className="min-h-screen flex items-center justify-center border-b border-white/5">
-            <h2 className="text-3xl lg:text-4xl font-manrope font-extrabold text-white">What I do</h2>
-          </section>
+          <WhatIDo />
 
           {/* Section: Experience */}
           <section id="experience" className="min-h-screen flex items-center justify-center border-b border-white/5">
