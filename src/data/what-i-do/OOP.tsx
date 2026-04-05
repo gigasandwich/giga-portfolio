@@ -1,5 +1,4 @@
-import BackgroundlessButton from "@/components/BackgroundlessButton";
-
+import CardlikeButton from "@/components/CardlikeButton";
 export type WhatIDoType = {
     title: string;
     icon: string;
@@ -8,9 +7,9 @@ export type WhatIDoType = {
 
 const goodPractices: string[]= [
     "SOLID principle",
-    "1st Design pattern",
-    "Another good design pattern",
-    "And another one"
+    "Design patterns",
+    "Refactor",
+    "Graphical E/R - MLD modeling"
 ];
 
 const whatIDoData: WhatIDoType = {
@@ -23,7 +22,7 @@ const whatIDoData: WhatIDoType = {
             <div className="flex justify-around mt-4">
                 {
                     goodPractices.map((gp, i) => {
-                        return <BackgroundlessButton key={i} content={gp} />
+                        return <CardlikeButton key={i} content={gp} />
                     })
                 }
             </div>

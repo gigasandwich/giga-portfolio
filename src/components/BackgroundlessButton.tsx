@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-type ButtonProps = {
+export type ButtonProps = {
     content: string;
     color?: string;
 };
