@@ -1,6 +1,6 @@
 "use client";
-import whatIDoData, { WhatIDoType } from "@/data/whatIDo";
-import { JSX, useState } from "react";
+import whatIDoData, { WhatIDoType } from "@/data/what-i-do/Main";
+import { useState } from "react";
 
 
 export default function WhatIDo() {
@@ -38,7 +38,11 @@ export default function WhatIDo() {
                     h-[750px]
                     border border-white/10 rounded-2xl p-1.5 shadow-2xl
                 ">
-                    {current.description}
+                    <h1 className="text-3xl font-bold">{current.title}</h1>
+
+                    <div className="mt-8">
+                        {current.description}
+                    </div>
                 </div>
             </div>
         </section>
