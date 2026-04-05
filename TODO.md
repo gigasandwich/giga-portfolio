@@ -74,8 +74,8 @@ Content:
     - [x] Real data
 
 - [ ] First section
-    - [ ] Variables/Interfaces
-    - [ ] Dummy data for test
+    - [x] Variables/Interfaces
+    - [x] Dummy data for test
     - [ ] Real data
 
 - [ ] Second section
