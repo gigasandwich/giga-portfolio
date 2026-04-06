@@ -74,28 +74,28 @@ Content:
     - [x] Real data
     - [x] Scrollable sidebar on mobile/full content should be seen
 
-- [ ] First section
+- [x] First section
     - [x] Variables/Interfaces
     - [x] Dummy data for test
     - [x] Expected Front
     - [x] Real data
     - [x] Definitive Front
     - [x] Responsiveness
-    - [ ] Add swiping here for the description (+ the buttons), and add max height
+    - [x] Add swiping here for the description (+ the buttons), and add max height
 
-- [ ] Second section
+- [x] Second section
     - [x] Variables/Interface
     - [x] Dummy data for test
     - [x] Expected Front
     - [x] Real data
     - [x] Definitive Front
     - [x] Responsiveness
-    - [ ] Add swiping for the description too, + max height
+    - [x] Add swiping for the description too, + max height
 
 - [ ] Third section
-    - [ ] Variables/Interface
-    - [ ] Dummy data for test
-    - [ ] Expected Front
+    - [x] Variables/Interface
+    - [x] Dummy data for test
+    - [x] Expected Front
     - [ ] Real data
     - [ ] Definitive Front
     - [ ] Responsiveness
