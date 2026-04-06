@@ -15,7 +15,7 @@ export default function VerticalTimeline({
       {/* Vertical line */}
       <div className="absolute left-[15px] top-6 bottom-6 w-px bg-white/10 pointer-events-none" />
 
-        {/* pr-12 for the scrollbar */}
+      {/* pr-12 for the scrollbar */}
       <div className="flex flex-col gap-10 lg:max-h-[720px] lg:overflow-y-auto lg:pr-12 thin-scrollbar">
         {items.map((item, i) => {
           const startLabel = item.start.toLocaleString(undefined, { month: "short", year: "numeric" });

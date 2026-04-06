@@ -110,8 +110,8 @@ const WhatIDoCard = ({
             <div className="flex items-center gap-4 relative z-10">
                 <div className={`
                     w-12 h-12 flex items-center justify-center rounded-xl transition-all duration-300
-                    ${active 
-                        ? "bg-primary text-white scale-110 shadow-lg shadow-primary/30" 
+                    ${active
+                        ? "bg-primary text-white scale-110 shadow-lg shadow-primary/30"
                         : "bg-white/5 text-white/40 group-hover:text-white/60 group-hover:bg-white/10"
                     }
                 `}>

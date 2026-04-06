@@ -29,9 +29,9 @@ const sidebarData: SidebarData = {
   contacts: {
     email: 'mailto:yvannandy@gmail.com',
     phones: [
-        '+261 38 66 734 39',
-        '+261 37 68 229 36'
-      ],
+      '+261 38 66 734 39',
+      '+261 37 68 229 36'
+    ],
     socials: [
       { name: 'GitHub', url: 'https://github.com/gigasandwich', icon: 'fa-brands fa-github' },
       { name: 'LinkedIn', url: 'https://linkedin.com/in/yvan-noah-rabetokotany-3450543aa', icon: 'fa-brands fa-linkedin' },

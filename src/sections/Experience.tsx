@@ -75,7 +75,7 @@ export default function Experience() {
                     {/* TODO: Maybe add max-w-lg later in case of a problem  */}
                     <div className="relative w-full max-h-[70vh] "
                         onClick={(e) => e.stopPropagation()}>
-                        
+
                         <CardContainer
                             id={index}
                             onPrev={prev}
