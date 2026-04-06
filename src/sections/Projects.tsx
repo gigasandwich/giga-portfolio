@@ -98,7 +98,7 @@ export default function Projects() {
         <aside className="col-span-1 flex flex-col gap-6">
           <div>
             <h4 className="text-sm text-white/60 mb-2">Languages</h4>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-2 max-w-full overflow-x-auto">
               {languages.map((lang, i) => (
                 <BackgroundlessButton
                   key={i}
@@ -118,7 +118,7 @@ export default function Projects() {
 
           <div>
             <h4 className="text-sm text-white/60 mb-2">Themes</h4>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-2 max-w-full overflow-x-auto">
               {themes.map((t, i) => (
                 <BackgroundlessButton
                   key={i}
@@ -162,46 +162,47 @@ export default function Projects() {
                       <div className="p-2 bg-primary/10 rounded-lg text-primary flex-none">
                         <i className="fa-solid fa-folder-open" />
                       </div>
-                      <div className="flex-1">
+                      <div className="flex-1 min-w-0">
                         <h4 className="text-lg font-semibold text-white truncate">{proj.title}</h4>
-                          <div className="flex items-center justify-between gap-3">
-                            <div className="flex gap-2">
-                                {
-                                    proj.languages.map(language =>
-                                        <BackgroundlessButton
-                                            key={language + "-tag"}
-                                            size="sm"
-                                            active={languageFilter.includes(language)}
-                                            onClick={() => {
-                                            setLanguageFilter((s) =>
-                                                s.includes(language) ? s.filter((x) => x !== language) : [...s, language]
-                                            );
-                                            setPageIndex(0);
-                                            }}
-                                        >
-                                        {language}
-                                    </BackgroundlessButton>
-                                    )
-                                }
+                          <div className="flex items-center justify-between gap-3
+                          max-w-full overflow-x-auto whitespace-nowrap thin-scrollbar
+                          pb-1
+                          ">
+                              {
+                                proj.languages.map(language => (
+                                  <BackgroundlessButton
+                                    key={language + "-tag"}
+                                    size="sm"
+                                    active={languageFilter.includes(language)}
+                                    onClick={() => {
+                                      setLanguageFilter((s) =>
+                                        s.includes(language) ? s.filter((x) => x !== language) : [...s, language]
+                                      );
+                                      setPageIndex(0);
+                                    }}
+                                  >
+                                    {language}
+                                  </BackgroundlessButton>
+                                ))
+                              }
 
-                                {
-                                    proj.themes.map(theme =>
-                                        <BackgroundlessButton
-                                            key={theme + "-tag"}
-                                            size="sm"
-                                            active={themeFilter.includes(theme)}
-                                            onClick={() => {
-                                            setThemeFilter((s) =>
-                                                s.includes(theme) ? s.filter((x) => x !== theme) : [...s, theme]
-                                            );
-                                                setPageIndex(0);
-                                            }}
-                                        >
-                                        {theme}
-                                    </BackgroundlessButton>
-                                    )
-                                }
-                            </div>
+                              {
+                                proj.themes.map(theme => (
+                                  <BackgroundlessButton
+                                    key={theme + "-tag"}
+                                    size="sm"
+                                    active={themeFilter.includes(theme)}
+                                    onClick={() => {
+                                      setThemeFilter((s) =>
+                                        s.includes(theme) ? s.filter((x) => x !== theme) : [...s, theme]
+                                      );
+                                      setPageIndex(0);
+                                    }}
+                                  >
+                                    {theme}
+                                  </BackgroundlessButton>
+                                ))
+                              }
                           </div>
                       </div>
                     </div>
