@@ -2,6 +2,7 @@
 import whatIDoData, { WhatIDoType } from "@/data/what-i-do/Main";
 import { useState } from "react";
 import Image from "next/image";
+import Title from "@/components/Title";
 
 
 export default function WhatIDo() {
@@ -13,7 +14,9 @@ export default function WhatIDo() {
     const next = () => setIndex((s) => (s + 1) % d.length);
 
     return (
-        
+        <>
+            <Title>What I Do</Title>
+
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
                 {/* Left side: Navigation Cards & SVG Overlay */}
                 <div className="col-span-1 flex flex-col gap-4 relative">
@@ -84,6 +87,7 @@ export default function WhatIDo() {
                     </div>
                 </div>
             </div>
+        </>
     );
 }
 
