@@ -3,7 +3,8 @@ import whatIDoData, { WhatIDoType } from "@/data/what-i-do/Main";
 import { useState } from "react";
 import Image from "next/image";
 import Title from "@/components/Title";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
+import CardContainer from "@/components/CardContainer";
 
 
 export default function WhatIDo() {
@@ -54,60 +55,29 @@ export default function WhatIDo() {
                 </div>
 
                 {/* Right side: Detailed Description */}
-                <div className="col-span-1 lg:col-span-2 relative group/container">
-                    <AnimatePresence mode="wait">
-                        <motion.aside
-                            key={index}
-                            initial={{ opacity: 0, x: 20 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            exit={{ opacity: 0, x: -20 }}
-                            transition={{ duration: 0.3 }}
-                            className={`
-                                p-6 lg:p-8
-                                h-[450px] lg:h-[750px] overflow-y-auto
-                                bg-white/[0.03] backdrop-blur-xl
-                                border border-white/10 rounded-3xl shadow-2xl
-                                flex flex-col
-                            `}
-                        >
-                            <div className="flex items-center gap-4 mb-8 px-2 md:px-8">
-                                <div className="p-4 bg-primary/20 rounded-2xl text-primary shadow-lg shadow-primary/20">
-                                    <i className={`fas ${current.icon} text-3xl`}></i>
-                                </div>
-                                <h2 className="text-4xl font-bold text-white tracking-tight">{current.title}</h2>
+                <div className="col-span-1 lg:col-span-2 relative">
+                    <CardContainer
+                        id={index}
+                        onPrev={prev}
+                        onNext={next}
+                        className="min-h-[450px] max-h-[450px] lg:max-h-[750px]"
+                    >
+                        <div className="flex items-center gap-4 mb-8 px-2 md:px-8">
+                            <div className="p-4 bg-primary/20 rounded-2xl text-primary shadow-lg shadow-primary/20">
+                                <i className={`fas ${current.icon} text-3xl`}></i>
                             </div>
+                            <h2 className="text-4xl font-bold text-white tracking-tight">{current.title}</h2>
+                        </div>
 
-                            <div className="text-white/80 leading-relaxed text-lg px-2 md:px-8">
-                                {current.description}
-                            </div>
-                        </motion.aside>
-                    </AnimatePresence>
-
-                    {/* Navigation Buttons - Positioned Outside/Overlapping */}
-                    <div className="absolute top-1/2 -translate-y-1/2 -left-4 lg:-left-6 z-40">
-                        <button
-                            onClick={prev}
-                            aria-label="Previous"
-                            className="p-3 lg:p-4 rounded-2xl bg-neutral-900/80 border border-white/10 text-white/90 hover:bg-primary hover:border-primary hover:scale-110 active:scale-95 backdrop-blur-md shadow-2xl transition-all duration-300 group/btn"
-                        >
-                            <i className="fa-solid fa-chevron-left text-xl group-hover:-translate-x-1 transition-transform" />
-                        </button>
-                    </div>
-                    <div className="absolute top-1/2 -translate-y-1/2 -right-4 lg:-right-6 z-40">
-                        <button
-                            onClick={next}
-                            aria-label="Next"
-                            className="p-3 lg:p-4 rounded-2xl bg-neutral-900/80 border border-white/10 text-white/90 hover:bg-primary hover:border-primary hover:scale-110 active:scale-95 backdrop-blur-md shadow-2xl transition-all duration-300 group/btn"
-                        >
-                            <i className="fa-solid fa-chevron-right text-xl group-hover:translate-x-1 transition-transform" />
-                        </button>
-                    </div>
+                        <div className="text-white/80 leading-relaxed text-lg px-2 md:px-8">
+                            {current.description}
+                        </div>
+                    </CardContainer>
                 </div>
             </div>
         </>
     );
 }
-
 const WhatIDoCard = ({
     whatIDo,
     active,

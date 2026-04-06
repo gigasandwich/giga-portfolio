@@ -2,7 +2,7 @@ import { useState } from "react";
 import Title from "@/components/Title";
 import experienceData, { ExperienceType } from "@/data/experience/Main";
 import VerticalTimeline from "@/components/VerticalTimeline";
-import { AnimatePresence, motion } from "framer-motion";
+import CardContainer from "@/components/CardContainer";
 
 export default function Experience() {
     const [index, setIndex] = useState(1);
@@ -37,79 +37,72 @@ export default function Experience() {
                         </div>
 
                         {/* Description - Desktop only */}
-                        <AnimatePresence>
-                            <motion.aside key="what-i-do-description"
-                                initial={{ x: "-20%" }}
-                                animate={{ x: 0 }}
-                                exit={{ x: "-100%" }}
-                                transition={{ type: "spring", damping: 25, stiffness: 200 }}
-                                drag="x"
-                                dragConstraints={{ left: 0, right: 0 }}
-                                dragElastic={{ left: 0.1, right: 0.1 }}
-                                onDragEnd={(_, info) => {
-                                    if (info.offset.x < 0) {
-                                        next();
-                                    }
-                                }}
-                                onDragStart={(_, info) => {
-                                    if (info.offset.x >= 0) {
-                                        prev();
-                                    }
-                                }}
-                                className={`
-                                    hidden min-h-[700px] lg:block col-span-1 lg:col-span-2 p-8 lg:p-10 bg-[#161616] border border-white/5 rounded-3xl shadow-2xl
-                                `}
+                        <div className="hidden lg:block col-span-1 lg:col-span-2 relative h-full">
+                            <CardContainer
+                                id={index}
+                                onPrev={prev}
+                                onNext={next}
+                                className="min-h-[700px] !bg-[#161616]/80"
                             >
                                 <div className="flex justify-between items-start mb-8">
-                                    <div>
+                                    <div className="px-2 md:px-8">
                                         <div className="inline-block px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-[10px] font-bold tracking-widest text-primary uppercase mb-4">
                                             {current.end != null ? 'Past Achievement' : 'Current Focus'}
                                         </div>
-                                        <h3 className="text-3xl font-bold text-white mb-2">{current.title}</h3>
-                                        {current.meta && <p className="text-xl text-primary font-medium">{current.meta}</p>}
+                                        <h3 className="text-4xl font-bold text-white mb-2 tracking-tight">{current.title}</h3>
+                                        {current.meta && <p className="text-2xl text-primary font-medium">{current.meta}</p>}
                                     </div>
                                     {current.icon && (
-                                        <div className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center text-white/20">
-                                            <i className={`fas ${current.icon} text-2xl`}></i>
+                                        <div className="w-16 h-16 rounded-2xl bg-primary/20 flex items-center justify-center text-primary shadow-lg shadow-primary/10">
+                                            <i className={`fas ${current.icon} text-3xl`}></i>
                                         </div>
                                     )}
                                 </div>
 
-                                <div className="text-white/80 text-lg leading-relaxed space-y-4 lg:max-h-[520px] lg:overflow-y-auto lg:pr-3 thin-scrollbar">
+                                <div className="text-white/80 text-lg leading-relaxed space-y-4 lg:max-h-[500px] lg:overflow-y-auto lg:pr-3 px-2 md:px-8 thin-scrollbar">
                                     {current.description}
                                 </div>
-                            </motion.aside>
-                        </AnimatePresence>
+                            </CardContainer>
+                        </div>
                     </div>
                 </div>
             </div>
 
             {/* Mobile Modal */}
             {isModalOpen && (
-                <div className="fixed inset-0 z-[100] flex items-center justify-center px-4 bg-black/80 backdrop-blur-sm lg:hidden uppercase"
+                <div className="fixed inset-0 z-[100] flex items-center justify-center px-4 bg-black/90 backdrop-blur-md lg:hidden"
                     onClick={() => setIsModalOpen(false)}>
-                    <div className="relative w-full max-w-lg bg-[#161616] border border-white/10 rounded-3xl p-6 shadow-2xl overflow-hidden max-h-[90vh] flex flex-col"
+                    {/* TODO: Maybe add max-w-lg later in case of a problem  */}
+                    <div className="relative w-full max-h-[70vh] "
                         onClick={(e) => e.stopPropagation()}>
-                        <button
-                            onClick={() => setIsModalOpen(false)}
-                            className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white/60 hover:text-white transition-colors z-20"
+                        
+                        <CardContainer
+                            id={index}
+                            onPrev={prev}
+                            onNext={next}
+                            className="h-full !bg-[#161616]"
                         >
-                            <i className="fas fa-times text-xl"></i>
-                        </button>
+                            <button
+                                onClick={() => setIsModalOpen(false)}
+                                className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white/60 hover:text-white transition-colors z-[50]"
+                            >
+                                <i className="fas fa-times text-xl"></i>
+                            </button>
 
-                        <div className="overflow-y-auto thin-scrollbar pr-2 mt-4">
-                            <div className="mb-6 pr-8">
-                                <div className="inline-block px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-[10px] font-bold tracking-widest text-primary uppercase mb-3">
-                                    {current.end != null ? 'Past Achievement' : 'Current Focus'}
+                            <div className="mt-4">
+                                <div className="mb-6 pr-8">
+                                    <div className="inline-block px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-[10px] font-bold tracking-widest text-primary uppercase mb-3">
+                                        {current.end != null ? 'Past Achievement' : 'Current Focus'}
+                                    </div>
+                                    <h3 className="text-2xl font-bold text-white mb-1 uppercase leading-tight">{current.title}</h3>
+                                    {current.meta && <p className="text-lg text-primary font-medium uppercase">{current.meta}</p>}
                                 </div>
-                                <h3 className="text-2xl font-bold text-white mb-1 uppercase leading-tight">{current.title}</h3>
-                                {current.meta && <p className="text-lg text-primary font-medium uppercase">{current.meta}</p>}
-                            </div>
 
-                            <div className="text-white/80 text-base leading-relaxed space-y-4 normal-case">
-                                {current.description}
+                                <div className="text-white/80 text-base leading-relaxed space-y-4 normal-case">
+                                    {current.description}
+                                </div>
                             </div>
-                        </div>
+                        </CardContainer>
                     </div>
                 </div>
             )}
