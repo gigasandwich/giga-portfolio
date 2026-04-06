@@ -81,13 +81,13 @@ Content:
     - [x] Definitive Front
     - [x] Responsiveness
 
-- [ ] Second section
+- [x] Second section
     - [x] Variables/Interface
     - [x] Dummy data for test
     - [x] Expected Front
     - [x] Real data
-    - [ ] Definitive Front
-    - [ ] Responsiveness
+    - [x] Definitive Front
+    - [x] Responsiveness
 
 - [ ] Third section
     - [ ] Variables/Interface
