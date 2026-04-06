@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import WhatIDo from "@/sections/WhatIDo";
 import { useState, useEffect } from "react";
 import Experience from "@/sections/Experience";
+import Projects from "@/sections/Projects";
 
 export default function Home() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -39,8 +40,8 @@ export default function Home() {
           </section>
 
           {/* Section: Projects */}
-          <section id="projects" className="min-h-screen flex items-center justify-center">
-            <h2 className="text-3xl lg:text-4xl font-manrope font-extrabold text-white">Projects</h2>
+          <section id="projects" className="min-h-screen border-b border-white/5 py-5">
+            <Projects />
           </section>
         </main>
       </div>

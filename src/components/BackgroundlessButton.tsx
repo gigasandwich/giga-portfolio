@@ -1,11 +1,14 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, ReactNode } from "react";
 
 export type ButtonProps = {
-    content: string;
+    children?: ReactNode;
+    content?: string;
     color?: string;
+    active?: boolean;
+    onClick?: () => void;
 };
 
-const BackgroundlessButton = ({content, color} : ButtonProps) => {
+const BackgroundlessButton = ({ children, content, color, active = false, onClick }: ButtonProps) => {
     const colors = [
         "border-red-500 text-red-500",
         "border-blue-500 text-blue-500",
@@ -13,9 +16,8 @@ const BackgroundlessButton = ({content, color} : ButtonProps) => {
         "border-yellow-500 text-yellow-500",
         "border-purple-500 text-purple-500",
     ];
-    
+
     const [randomColor, setRandomColor] = useState<string | null>(null);
-    
     /*
         Without the useEffect it would give this error:
         
@@ -37,16 +39,20 @@ const BackgroundlessButton = ({content, color} : ButtonProps) => {
     const finalColor = color ?? randomColor;
 
     return (
-        <button className={`
-            bg-transparent border
-            ${finalColor} hover:bg-white/5 transition
-            px-4 py-2
-            rounded-xl
-            cursor-pointer
-        `}>
-            {content}
+        <button
+            onClick={onClick}
+            className={`
+                bg-transparent border
+                ${finalColor} hover:bg-white/5 transition
+                px-3 py-1.5
+                rounded-full text-sm font-medium
+                cursor-pointer
+                ${active ? "bg-white/5" : ""}
+            `}
+        >
+            {children ?? content}
         </button>
-    )
+    );
 };
 
 export default BackgroundlessButton;
