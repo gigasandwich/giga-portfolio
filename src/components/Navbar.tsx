@@ -35,7 +35,7 @@ export default function Navbar({ onMenuClick }: { onMenuClick?: () => void }) {
   }, []);
 
   return (
-    <div className="fixed lg:sticky top-6 z-50 flex justify-center w-full font-manrope px-4 lg:px-4 left-0">
+    <div className="fixed lg:sticky top-3 lg:top-6 z-50 flex justify-center w-full font-manrope px-4 lg:px-4 left-0">
       <div className="w-full max-w-lg flex items-center gap-3">
         {/* Mobile Toggle Button inside Navbar */}
         <button
