@@ -60,13 +60,18 @@ body {
   width: 4px;
   height: 4px;
 }
-.thin-scrollbar::-webkit-scrollbar-track {
+.thin-scrollbar::-webkit-scrollbar-track, .mid-scrollbar::-webkit-scrollbar-track {
   background: transparent;
 }
-.thin-scrollbar::-webkit-scrollbar-thumb {
+.thin-scrollbar::-webkit-scrollbar-thumb, .mid-scrollbar::-webkit-scrollbar-thumb {
   background: rgba(255,255,255,0.12);
   border-radius: 999px;
 }
-.thin-scrollbar::-webkit-scrollbar-thumb:hover {
+.thin-scrollbar::-webkit-scrollbar-thumb:hover, .mid-scrollbar::-webkit-scrollbar-thumb:hover {
   background: rgba(255,255,255,0.16);
+}
+
+.mid-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
 }

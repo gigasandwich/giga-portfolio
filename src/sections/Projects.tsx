@@ -165,7 +165,7 @@ export default function Projects() {
                       <div className="flex-1 min-w-0">
                         <h4 className="text-lg font-semibold text-white truncate">{proj.title}</h4>
                           <div className="flex items-center justify-between gap-3
-                          max-w-full overflow-x-auto whitespace-nowrap thin-scrollbar
+                          max-w-full overflow-x-auto whitespace-nowrap mid-scrollbar
                           pb-1
                           ">
                               {
