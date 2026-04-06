@@ -2,11 +2,15 @@ import { useState } from "react";
 import Title from "@/components/Title";
 import experienceData, { ExperienceType } from "@/data/experience/Main";
 import VerticalTimeline from "@/components/VerticalTimeline";
+import { AnimatePresence, motion } from "framer-motion";
 
 export default function Experience() {
     const [index, setIndex] = useState(1);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const current: ExperienceType = experienceData[index];
+
+    const prev = () => setIndex((s) => (s - 1 + experienceData.length) % experienceData.length);
+    const next = () => setIndex((s) => (s + 1) % experienceData.length);
 
     const handleSelect = (i: number) => {
         setIndex(i);
@@ -18,7 +22,7 @@ export default function Experience() {
     return (
         <>
             <Title>
-                Experience & 
+                Experience &
                 <p className="text-primary">involvement</p>
             </Title>
             <div id="experience" className="relative overflow-visible py-3 lg:py-15 rounded-3xl border border-white/5"
@@ -33,26 +37,49 @@ export default function Experience() {
                         </div>
 
                         {/* Description - Desktop only */}
-                        <div className="hidden min-h-[700px] lg:block col-span-1 lg:col-span-2 p-8 lg:p-10 bg-[#161616] border border-white/5 rounded-3xl shadow-2xl">
-                            <div className="flex justify-between items-start mb-8">
-                                <div>
-                                    <div className="inline-block px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-[10px] font-bold tracking-widest text-primary uppercase mb-4">
-                                        {current.end != null ? 'Past Achievement' : 'Current Focus'}
+                        <AnimatePresence>
+                            <motion.aside key="what-i-do-description"
+                                initial={{ x: "-20%" }}
+                                animate={{ x: 0 }}
+                                exit={{ x: "-100%" }}
+                                transition={{ type: "spring", damping: 25, stiffness: 200 }}
+                                drag="x"
+                                dragConstraints={{ left: 0, right: 0 }}
+                                dragElastic={{ left: 0.1, right: 0.1 }}
+                                onDragEnd={(_, info) => {
+                                    if (info.offset.x < 0) {
+                                        next();
+                                    }
+                                }}
+                                onDragStart={(_, info) => {
+                                    if (info.offset.x >= 0) {
+                                        prev();
+                                    }
+                                }}
+                                className={`
+                                    hidden min-h-[700px] lg:block col-span-1 lg:col-span-2 p-8 lg:p-10 bg-[#161616] border border-white/5 rounded-3xl shadow-2xl
+                                `}
+                            >
+                                <div className="flex justify-between items-start mb-8">
+                                    <div>
+                                        <div className="inline-block px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-[10px] font-bold tracking-widest text-primary uppercase mb-4">
+                                            {current.end != null ? 'Past Achievement' : 'Current Focus'}
+                                        </div>
+                                        <h3 className="text-3xl font-bold text-white mb-2">{current.title}</h3>
+                                        {current.meta && <p className="text-xl text-primary font-medium">{current.meta}</p>}
                                     </div>
-                                    <h3 className="text-3xl font-bold text-white mb-2">{current.title}</h3>
-                                    {current.meta && <p className="text-xl text-primary font-medium">{current.meta}</p>}
+                                    {current.icon && (
+                                        <div className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center text-white/20">
+                                            <i className={`fas ${current.icon} text-2xl`}></i>
+                                        </div>
+                                    )}
                                 </div>
-                                {current.icon && (
-                                    <div className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center text-white/20">
-                                        <i className={`fas ${current.icon} text-2xl`}></i>
-                                    </div>
-                                )}
-                            </div>
 
-                            <div className="text-white/80 text-lg leading-relaxed space-y-4 lg:max-h-[520px] lg:overflow-y-auto lg:pr-3 thin-scrollbar">
-                                {current.description}
-                            </div>
-                        </div>
+                                <div className="text-white/80 text-lg leading-relaxed space-y-4 lg:max-h-[520px] lg:overflow-y-auto lg:pr-3 thin-scrollbar">
+                                    {current.description}
+                                </div>
+                            </motion.aside>
+                        </AnimatePresence>
                     </div>
                 </div>
             </div>
@@ -60,10 +87,10 @@ export default function Experience() {
             {/* Mobile Modal */}
             {isModalOpen && (
                 <div className="fixed inset-0 z-[100] flex items-center justify-center px-4 bg-black/80 backdrop-blur-sm lg:hidden uppercase"
-                     onClick={() => setIsModalOpen(false)}>
+                    onClick={() => setIsModalOpen(false)}>
                     <div className="relative w-full max-w-lg bg-[#161616] border border-white/10 rounded-3xl p-6 shadow-2xl overflow-hidden max-h-[90vh] flex flex-col"
-                         onClick={(e) => e.stopPropagation()}>
-                        <button 
+                        onClick={(e) => e.stopPropagation()}>
+                        <button
                             onClick={() => setIsModalOpen(false)}
                             className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white/60 hover:text-white transition-colors z-20"
                         >

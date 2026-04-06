@@ -5,7 +5,7 @@ export type ExperienceType = {
     title: string;
     start: Date;
     end?: Date | null;
-    meta?: string; // Like location
+    meta?: string | null; // Like location
     icon?: string;
     description: React.ReactNode;
 };
@@ -13,7 +13,7 @@ export type ExperienceType = {
 const experienceData: ExperienceType[] = [];
 experienceData.push({
     title: "Available Now",
-    meta: "Giga corp",
+    meta: null,
     start: new Date(),
     end: null,
     icon: "fa-briefcase",
