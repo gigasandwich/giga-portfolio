@@ -33,7 +33,7 @@ export default function Experience() {
                         </div>
 
                         {/* Description - Desktop only */}
-                        <div className="hidden lg:block col-span-1 lg:col-span-2 p-8 lg:p-10 bg-[#161616] border border-white/5 rounded-3xl shadow-2xl">
+                        <div className="hidden min-h-[700px] lg:block col-span-1 lg:col-span-2 p-8 lg:p-10 bg-[#161616] border border-white/5 rounded-3xl shadow-2xl">
                             <div className="flex justify-between items-start mb-8">
                                 <div>
                                     <div className="inline-block px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-[10px] font-bold tracking-widest text-primary uppercase mb-4">
