@@ -76,18 +76,26 @@ Content:
 - [x] First section
     - [x] Variables/Interfaces
     - [x] Dummy data for test
+    - [x] Expected Front
     - [x] Real data
-    - [x] Responsiveness
+    - [x] Definitive Front
+    - [ ] Responsiveness
 
 - [ ] Second section
-    - [ ] Variables/Interface
-    - [ ] Dummy data for test
+    - [x] Variables/Interface
+    - [x] Dummy data for test
+    - [ ] Expected Front
     - [ ] Real data
+    - [ ] Definitive Front
+    - [ ] Responsiveness
 
 - [ ] Third section
     - [ ] Variables/Interface
     - [ ] Dummy data for test
+    - [ ] Expected Front
     - [ ] Real data
+    - [ ] Definitive Front
+    - [ ] Responsiveness
 
 - [ ] Check
     - [ ] Issues
