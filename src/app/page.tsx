@@ -1,8 +1,13 @@
+"use client";
+
 import Sidebar from "@/components/Sidebar";
 import Navbar from "@/components/Navbar";
 import WhatIDo from "@/sections/WhatIDo";
+import { useState } from "react";
 
 export default function Home() {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
   return (
     <div className="flex flex-col lg:flex-row min-h-screen bg-neutral-bg">
       {/* 
@@ -10,7 +15,7 @@ export default function Home() {
         - Mobile: Toggleable overlay 
         - Desktop: `lg:flex-row` parent makes it stay on the left (72 width)
       */}
-      <Sidebar />
+      <Sidebar isOpen={isSidebarOpen} setIsOpen={setIsSidebarOpen} />
 
       {/* 
         Main Content Wrapper:
@@ -19,9 +24,9 @@ export default function Home() {
         - `scroll-smooth`: for section jumping
       */}
       <div className="flex-1 relative h-screen overflow-y-auto scroll-smooth">
-        <Navbar />
+        <Navbar onMenuClick={() => setIsSidebarOpen(true)} />
         
-        <main className="p-4 lg:p-8 mt-4">
+        <main className="p-4 lg:p-8 pt-20 lg:pt-0 mt-4">
           {/* Section: What I do */}
           <WhatIDo />
 

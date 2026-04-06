@@ -4,25 +4,20 @@ import sidebarData from "@/data/sidebar";
 import Image from "next/image";
 import { useState } from "react";
 
-export default function Sidebar() {
+export default function Sidebar({ isOpen, setIsOpen }: { isOpen: boolean; setIsOpen: (o: boolean) => void }) {
   const d = sidebarData;
-  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <>
       {/* 
-        Mobile Toggle: 
-        - `fixed top-6 left-6`: always accessible on mobile
-        - `z-[60]`: higher than navbar and sidebar to stay clickable
-        - `lg:hidden`: visible only on mobile/tablet
+        Close Overlay for mobile
       */}
-      <button 
-        onClick={() => setIsOpen(!isOpen)}
-        className="fixed top-6 left-6 z-[60] text-primary lg:hidden p-2 bg-neutral-bg/50 backdrop-blur-sm rounded-lg"
-        aria-label="Toggle menu"
-      >
-        <i className={`fa-solid ${isOpen ? "fa-xmark" : "fa-bars"} text-2xl`} />
-      </button>
+      {isOpen && (
+        <div 
+          className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[54] lg:hidden"
+          onClick={() => setIsOpen(false)}
+        />
+      )}
 
       {/* 
         Sidebar container: 
@@ -35,6 +30,14 @@ export default function Sidebar() {
         transition-transform duration-300 ease-in-out lg:translate-x-0 lg:static lg:w-72 lg:h-screen lg:border-r lg:border-white/5 lg:shadow-2xl
         ${isOpen ? "translate-x-0" : "-translate-x-full"}
       `}>
+        {/* Mobile close button */}
+        <button
+          onClick={() => setIsOpen(false)}
+          className="lg:hidden absolute top-4 left-4 z-[60] py-2 px-4 bg-neutral-bg/70 backdrop-blur-md rounded-md border border-white/10 text-white/80"
+          aria-label="Close menu"
+        >
+          <i className="fa-solid fa-xmark" />
+        </button>
         <div className="flex flex-col items-start gap-3 mt-12 lg:mt-0">
           {/* Avatar wrapper */}
           <div className="w-24 h-24 mb-4 relative self-center">
