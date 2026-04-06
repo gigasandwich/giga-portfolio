@@ -42,6 +42,7 @@ const BackgroundlessButton = ({content, color} : ButtonProps) => {
             ${finalColor} hover:bg-white/5 transition
             px-4 py-2
             rounded-xl
+            cursor-pointer
         `}>
             {content}
         </button>

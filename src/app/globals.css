@@ -29,6 +29,20 @@ body {
   width: 8px;
 }
 
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.svg-invert-white {
+  filter: invert(1) brightness(2);
+}
+
 ::-webkit-scrollbar-track {
   background: #f1f1f1;
 }
