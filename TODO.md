@@ -92,13 +92,13 @@ Content:
     - [x] Responsiveness
     - [x] Add swiping for the description too, + max height
 
-- [ ] Third section
+- [x] Third section
     - [x] Variables/Interface
     - [x] Dummy data for test
     - [x] Expected Front
-    - [ ] Real data
-    - [ ] Definitive Front
-    - [ ] Responsiveness
+    - [x] Real data
+    - [x] Definitive Front
+    - [x] Responsiveness
 
 - [ ] Check
     - [ ] Issues
