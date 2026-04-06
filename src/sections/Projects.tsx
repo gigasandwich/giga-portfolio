@@ -7,6 +7,20 @@ import CardContainer from "@/components/CardContainer";
 import CardlikeButton from "@/components/CardlikeButton";
 
 export default function Projects() {
+  const CountBadge = ({ count }: { count: number }) => (
+    <span className="absolute -top-2 -right-2 z-10 h-6 min-w-6 flex items-center justify-center text-[11px] px-0.5 py-0.5 rounded-full bg-gray-700 text-white/90 border border-white/10 shadow-sm">
+      {count}
+    </span>
+  );
+
+  const ResetFiltersButton = ({ onClick }: { onClick: () => void }) => (
+    <CardlikeButton
+      content="Reset filters"
+      color="bg-white/6 text-white"
+      onClick={onClick}
+    />
+  );
+
   const data: ProjectType[] = projectsData;
   const [languageFilter, setLanguageFilter] = useState<string[]>([]);
   const [themeFilter, setThemeFilter] = useState<string[]>([]);
@@ -68,15 +82,7 @@ export default function Projects() {
         <Title>Projects</Title>
         <p className="text-white/70">No projects match the selected filters.</p>
         <div className="mt-4">
-            <CardlikeButton
-              content="Reset filters"
-              color="bg-white/6 text-white"
-              onClick={() => {
-                setLanguageFilter([]);
-                setThemeFilter([]);
-                setPageIndex(0);
-              }}
-            />
+            <ResetFiltersButton onClick={() => { setLanguageFilter([]); setThemeFilter([]); setPageIndex(0); }} />
           </div>
       </section>
     );
@@ -112,9 +118,7 @@ export default function Projects() {
                   >
                     {lang}
                   </BackgroundlessButton>
-                  <span className="absolute -top-2 -right-2 z-10 h-6 min-w-6 flex items-center justify-center text-[11px] px-0.5 py-0.5 rounded-full bg-gray-700 text-white/90 border border-white/10 shadow-sm">
-                    {data.filter(p => p.languages.includes(lang)).length}
-                  </span>
+                  <CountBadge count={data.filter(p => p.languages.includes(lang)).length} />
                 </div>
               ))}
             </div>
@@ -136,24 +140,14 @@ export default function Projects() {
                   >
                     {t}
                   </BackgroundlessButton>
-                  <span className="absolute -top-2 -right-2 z-10 h-6 min-w-6 flex items-center justify-center text-[11px] px-0.5 py-0.5 rounded-full bg-gray-700 text-white/90 border border-white/10 shadow-sm">
-                    {data.filter(p => p.themes.includes(t)).length}
-                  </span>
+                  <CountBadge count={data.filter(p => p.themes.includes(t)).length} />
                 </div>
               ))}
             </div>
           </div>
 
           <div className="mt-4">
-            <CardlikeButton
-              content="Reset filters"
-              color="bg-white/6 text-white"
-              onClick={() => {
-                setLanguageFilter([]);
-                setThemeFilter([]);
-                setPageIndex(0);
-              }}
-            />
+            <ResetFiltersButton onClick={() => { setLanguageFilter([]); setThemeFilter([]); setPageIndex(0); }} />
           </div>
         </aside>
 
