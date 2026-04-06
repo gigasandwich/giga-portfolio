@@ -84,7 +84,7 @@ Content:
 - [ ] Second section
     - [x] Variables/Interface
     - [x] Dummy data for test
-    - [ ] Expected Front
+    - [x] Expected Front
     - [ ] Real data
     - [ ] Definitive Front
     - [ ] Responsiveness
