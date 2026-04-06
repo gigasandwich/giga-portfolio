@@ -13,7 +13,7 @@ export default function WhatIDo() {
     const next = () => setIndex((s) => (s + 1) % d.length);
 
     return (
-        <section id="what-i-do" className="min-h-screen border-b border-white/5 py-5">
+        
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
                 {/* Left side: Navigation Cards & SVG Overlay */}
                 <div className="col-span-1 flex flex-col gap-4 relative">
@@ -84,7 +84,6 @@ export default function WhatIDo() {
                     </div>
                 </div>
             </div>
-        </section>
     );
 }
 
