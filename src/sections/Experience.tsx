@@ -13,11 +13,11 @@ export default function Experience() {
                 Experience & 
                 <p className="text-primary">involvement</p>
             </Title>
-            <div id="experience" className="relative overflow-visible py-10 lg:py-20 min-h-screen"
+            <div id="experience" className="relative overflow-visible py-3 lg:py-15 min-h-screen rounded-3xl border border-white/5"
                 style={{ backgroundImage: `url('/assets/svgs/bg-experience.svg')`, backgroundAttachment: 'fixed', backgroundSize: 'cover', backgroundPosition: 'center' }}>
                 <div className="relative z-10 px-4 lg:px-0">
 
-                    <div className="grid grid-cols-1 lg:grid-cols-3 pt-6 gap-8 items-start">
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
                         <div className="col-span-1 flex justify-center">
                             <VerticalTimeline items={experienceData} selected={index} onSelect={setIndex} />
                         </div>
@@ -39,7 +39,7 @@ export default function Experience() {
                                 )}
                             </div>
 
-                            <div className="text-white/60 text-lg leading-relaxed space-y-4 lg:max-h-[520px] lg:overflow-y-auto lg:pr-3 thin-scrollbar">
+                            <div className="text-white/80 text-lg leading-relaxed space-y-4 lg:max-h-[520px] lg:overflow-y-auto lg:pr-3 thin-scrollbar">
                                 {current.description}
                             </div>
                         </div>

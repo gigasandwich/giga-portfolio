@@ -36,14 +36,14 @@ export default function VerticalTimeline({
               </div>
 
               <div className="flex flex-col gap-1">
-                <p className="text-[11px] font-bold tracking-widest text-white/40 uppercase">
+                <p className="text-[11px] font-bold tracking-widest text-white/60 uppercase">
                   {startLabel} — {endLabel}
                 </p>
-                <p className={`text-lg font-bold leading-tight ${i === selected ? 'text-white' : 'text-white/80 group-hover:text-white'}`}>
+                <p className={`text-lg font-bold leading-tight ${i === selected ? 'text-white' : 'text-white/90 group-hover:text-white'}`}>
                   {item.title}
                 </p>
                 {item.meta && (
-                  <p className="text-sm text-white/30 font-medium">
+                  <p className="text-sm text-white/50 font-medium">
                     {item.meta}
                   </p>
                 )}
