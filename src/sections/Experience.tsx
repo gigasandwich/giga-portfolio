@@ -73,14 +73,14 @@ export default function Experience() {
                 <div className="fixed inset-0 z-[100] flex items-center justify-center px-4 bg-black/90 backdrop-blur-md lg:hidden"
                     onClick={() => setIsModalOpen(false)}>
                     {/* TODO: Maybe add max-w-lg later in case of a problem  */}
-                    <div className="relative w-full max-h-[70vh] "
+                    <div className="relative w-full max-h-[60vh] h-[60vh] mx-auto overflow-hidden"
                         onClick={(e) => e.stopPropagation()}>
 
                         <CardContainer
                             id={index}
                             onPrev={prev}
                             onNext={next}
-                            className="h-full !bg-[#161616]"
+                            className="h-full !bg-[#161616] !overflow-hidden"
                         >
                             <button
                                 onClick={() => setIsModalOpen(false)}
@@ -89,7 +89,7 @@ export default function Experience() {
                                 <i className="fas fa-times text-xl"></i>
                             </button>
 
-                            <div className="mt-4">
+                            <div className="mt-4 h-full overflow-y-auto">
                                 <div className="mb-6 pr-8">
                                     <div className="inline-block px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-[10px] font-bold tracking-widest text-primary uppercase mb-3">
                                         {current.end != null ? 'Past Achievement' : 'Current Focus'}

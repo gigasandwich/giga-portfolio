@@ -28,13 +28,13 @@ export default function PersonCard({ person }: { person: Person }) {
         <div className="flex gap-3 items-center mt-2">
           {person.linkedin && (
             <a href={person.linkedin} target="_blank" rel="noreferrer" className="text-xs text-white/80 flex items-center gap-2 p-1 rounded-md hover:bg-white/5 transition-colors">
-              <i className="fab fa-linkedin text-sm" aria-hidden></i>
+              <i className="fab fa-linkedin text-base" aria-hidden></i>
               <span className="sr-only">LinkedIn</span>
             </a>
           )}
           {person.github && (
             <a href={person.github} target="_blank" rel="noreferrer" className="text-xs text-white/80 flex items-center gap-2 p-1 rounded-md hover:bg-white/5 transition-colors">
-              <i className="fab fa-github text-sm" aria-hidden></i>
+              <i className="fab fa-github text-base" aria-hidden></i>
               <span className="sr-only">GitHub</span>
             </a>
           )}

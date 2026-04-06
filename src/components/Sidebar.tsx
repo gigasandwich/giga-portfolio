@@ -33,10 +33,10 @@ export default function Sidebar({ isOpen, setIsOpen }: { isOpen: boolean; setIsO
           {/* Mobile close button */}
           <button
             onClick={() => setIsOpen(false)}
-            className="lg:hidden absolute top-4 left-4 z-[60] py-2 px-4 bg-neutral-bg/70 backdrop-blur-md rounded-md border border-white/10 text-white/80"
+            className="lg:hidden absolute top-2 left-4 z-[60] h-10 w-10 bg-neutral-bg/70 backdrop-blur-md rounded-2xl border border-white/10 text-white/80 flex items-center justify-center"
             aria-label="Close menu"
           >
-            <i className="fa-solid fa-xmark" />
+            <i className="fa-solid fa-xmark text-lg" />
           </button>
           <div className="flex flex-col items-start gap-3 mt-12 lg:mt-0">
             {/* Avatar wrapper */}
