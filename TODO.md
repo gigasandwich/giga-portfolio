@@ -57,7 +57,7 @@ Content:
 
 - [x] Project structure
     - [x] Folder structure (Real data variables emplacement, ...)
-    - [ ] Global components
+    - [x] Global components
         - [x] Front
         - [x] Variables/Interfaces
         - [x] Dummy data for test
@@ -79,13 +79,13 @@ Content:
     - [x] Expected Front
     - [x] Real data
     - [x] Definitive Front
-    - [ ] Responsiveness
+    - [x] Responsiveness
 
 - [ ] Second section
     - [x] Variables/Interface
     - [x] Dummy data for test
     - [x] Expected Front
-    - [ ] Real data
+    - [x] Real data
     - [ ] Definitive Front
     - [ ] Responsiveness
 
