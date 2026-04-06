@@ -69,25 +69,28 @@ Content:
     - [x] Font
     - [x] Fix exisitng ones
 
-- [x] Sidebar
+- [ ] Sidebar
     - Already a global component
     - [x] Real data
+    - [ ] Scrollable sidebar on mobile/full content should be seen
 
-- [x] First section
+- [ ] First section
     - [x] Variables/Interfaces
     - [x] Dummy data for test
     - [x] Expected Front
     - [x] Real data
     - [x] Definitive Front
     - [x] Responsiveness
+    - [ ] Add swiping here for the description (+ the buttons), and add max height
 
-- [x] Second section
+- [ ] Second section
     - [x] Variables/Interface
     - [x] Dummy data for test
     - [x] Expected Front
     - [x] Real data
     - [x] Definitive Front
     - [x] Responsiveness
+    - [ ] Add swiping for the description too, + max height
 
 - [ ] Third section
     - [ ] Variables/Interface
