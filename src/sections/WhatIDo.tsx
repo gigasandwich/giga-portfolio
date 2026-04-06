@@ -60,7 +60,7 @@ export default function WhatIDo() {
                         id={index}
                         onPrev={prev}
                         onNext={next}
-                        className="min-h-[450px] max-h-[450px] lg:max-h-[750px]"
+                        className="min-h-[450px] max-h-[450px] lg:min-h-[750px] lg:max-h-[750px]"
                     >
                         <div className="flex items-center gap-4 mb-8 px-2 md:px-8">
                             <div className="p-4 bg-primary/20 rounded-2xl text-primary shadow-lg shadow-primary/20">
