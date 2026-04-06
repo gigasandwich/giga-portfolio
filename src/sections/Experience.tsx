@@ -13,12 +13,12 @@ export default function Experience() {
                 <p className="text-primary">involvement</p>
             </Title>
 
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+            <div className="grid grid-cols-1 lg:grid-cols-3 pt-2 gap-8 items-start">
                 <div className="col-span-1 relative">
                     {/* Vertical line */}
-                    <div className="hidden lg:block absolute left-[15px] top-2 bottom-2 w-px bg-white/10" />
+                    <div className="hidden lg:block absolute left-[15px] top-6 bottom-6 w-px bg-white/10" />
 
-                    <div className="flex flex-col gap-10">
+                    <div className="flex flex-col gap-10 lg:max-h-[720px] lg:overflow-y-auto lg:pr-3 thin-scrollbar">
                         {experienceData.map((item, i) => {
                             const startLabel = item.start.toLocaleString(undefined, { month: "short", year: 'numeric' });
                             const endLabel = item.end ? item.end.toLocaleString(undefined, { month: "short", year: 'numeric' }) : 'PRESENT';
@@ -73,7 +73,7 @@ export default function Experience() {
                         )}
                     </div>
 
-                    <div className="text-white/60 text-lg leading-relaxed space-y-4">
+                    <div className="text-white/60 text-lg leading-relaxed space-y-4 lg:max-h-[520px] lg:overflow-y-auto lg:pr-3 thin-scrollbar">
                         {current.description}
                     </div>
                 </div>
