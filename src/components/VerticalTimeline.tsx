@@ -20,22 +20,46 @@ export default function VerticalTimeline({
         {items.map((item, i) => {
           const startLabel = item.start.toLocaleString(undefined, { month: "short", year: "numeric" });
           const endLabel = item.end ? item.end.toLocaleString(undefined, { month: "short", year: "numeric" }) : "PRESENT";
+          // First item: non-clickable
+          if (i === 0) {
+            return (
+              <div key={i} className="relative pl-12 text-left w-full opacity-100">
+                <div className="absolute left-0 top-[6px] w-[31px] flex justify-center">
+                  <div className="w-3.5 h-3.5 rounded-full ring-3 ring-primary/20" />
+                </div>
+
+                <div className="flex flex-col gap-1 max-w-[200px]">
+                  <p className="text-[11px] font-bold tracking-widest text-primary uppercase">
+                    {item.title}
+                  </p>
+                  <p className="text-lg font-bold leading-tight text-white">
+                    {item.description}
+                  </p>
+                </div>
+              </div>
+            );
+          }
+
           return (
             <button
               key={i}
               onClick={() => onSelect(i)}
-              className={`relative pl-12 text-left group w-full transition-all duration-200 ${i === selected ? 'opacity-100' : 'opacity-40 hover:opacity-100'}`}>
+              className={
+                `relative pl-12 text-left group w-full transition-all duration-200 ${i === selected ? 'opacity-100' : 'opacity-40 hover:opacity-100'}
+                cursor-pointer
+                `}
+            >
 
               {/* Dot */}
               <div className="absolute left-0 top-[6px] w-[31px] flex justify-center">
                 {i === selected ? (
-                  <div className="w-3.5 h-3.5 rounded-full bg-primary ring-4 ring-primary/20" />
+                  <div className="w-3.5 h-3.5 rounded-full bg-primary" />
                 ) : (
                   <div className="w-3 h-3 rounded-full border-2 border-white/20 group-hover:border-white/40 bg-neutral-bg" />
                 )}
               </div>
 
-              <div className="flex flex-col gap-1">
+              <div className="flex flex-col gap-1 max-w-[200px]">
                 <p className="text-[11px] font-bold tracking-widest text-white/60 uppercase">
                   {startLabel} — {endLabel}
                 </p>
@@ -43,7 +67,7 @@ export default function VerticalTimeline({
                   {item.title}
                 </p>
                 {item.meta && (
-                  <p className="text-sm text-white/50 font-medium">
+                  <p className="text-sm text-white/30 font-medium">
                     {item.meta}
                   </p>
                 )}

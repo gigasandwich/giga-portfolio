@@ -4,7 +4,7 @@ import experienceData, { ExperienceType } from "@/data/experience/Main";
 import VerticalTimeline from "@/components/VerticalTimeline";
 
 export default function Experience() {
-    const [index, setIndex] = useState(0);
+    const [index, setIndex] = useState(1);
     const current: ExperienceType = experienceData[index];
 
     return (
