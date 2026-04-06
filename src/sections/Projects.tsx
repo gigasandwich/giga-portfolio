@@ -13,13 +13,34 @@ export default function Projects() {
   const [pageIndex, setPageIndex] = useState(0);
   const [itemsPerPage, setItemsPerPage] = useState(2); // At least 2 on small screens
 
-  const languages = useMemo(() => Array.from(new Set(data.map((p) => p.language).filter(Boolean))), [data]);
-  const themes = useMemo(() => Array.from(new Set(data.map((p) => p.theme).filter(Boolean))), [data]);
+  const languages = useMemo(() => {
+    const allLanguages = data.map(p => p.languages).flat();
+    const allUniqueLanguages = [... new Set(allLanguages)]; 
+    return allUniqueLanguages;
+  }, [data]);
+  
+  const themes = useMemo(() => {
+    const allThemes = data.map(p => p.themes).flat();
+    const allUniqueThemes = [... new Set(allThemes)];
+    return allUniqueThemes;
+  }, [data]);
 
   const filtered = useMemo(() => {
+    // My brain wasn't braining here
+    // glad I did this without AI (because I had no connection 🗿)
     return data.filter((p) => {
-      if (languageFilter.length > 0 && !languageFilter.includes(p.language)) return false;
-      if (themeFilter.length > 0 && !themeFilter.includes(p.theme)) return false;
+        if (languageFilter.length > 0) {
+            if (languageFilter.filter(fl => p.languages.some(pl => fl === pl)).length === 0) {
+                return false;
+            }
+        }
+
+        if (themeFilter.length > 0) {
+            if (themeFilter.filter(ft => p.themes.some(pt => ft === pt)).length === 0) {
+                return false;
+            }
+        }
+
       return true;
     });
   }, [data, languageFilter, themeFilter]);
@@ -78,9 +99,9 @@ export default function Projects() {
           <div>
             <h4 className="text-sm text-white/60 mb-2">Languages</h4>
             <div className="flex flex-wrap gap-2">
-              {languages.map((lang) => (
+              {languages.map((lang, i) => (
                 <BackgroundlessButton
-                  key={lang}
+                  key={i}
                   active={languageFilter.includes(lang)}
                   onClick={() => {
                     setLanguageFilter((s) =>
@@ -98,9 +119,9 @@ export default function Projects() {
           <div>
             <h4 className="text-sm text-white/60 mb-2">Themes</h4>
             <div className="flex flex-wrap gap-2">
-              {themes.map((t) => (
+              {themes.map((t, i) => (
                 <BackgroundlessButton
-                  key={t}
+                  key={i}
                   active={themeFilter.includes(t)}
                   onClick={() => {
                     setThemeFilter((s) =>
@@ -145,32 +166,41 @@ export default function Projects() {
                         <h4 className="text-lg font-semibold text-white truncate">{proj.title}</h4>
                           <div className="flex items-center justify-between gap-3">
                             <div className="flex gap-2">
-                              <BackgroundlessButton
-                                key={proj.language + "-tag"}
-                                size="sm"
-                                active={languageFilter.includes(proj.language)}
-                                onClick={() => {
-                                  setLanguageFilter((s) =>
-                                    s.includes(proj.language) ? s.filter((x) => x !== proj.language) : [...s, proj.language]
-                                  );
-                                  setPageIndex(0);
-                                }}
-                              >
-                                {proj.language}
-                              </BackgroundlessButton>
-                              <BackgroundlessButton
-                                key={proj.theme + "-tag"}
-                                size="sm"
-                                active={themeFilter.includes(proj.theme)}
-                                onClick={() => {
-                                  setThemeFilter((s) =>
-                                    s.includes(proj.theme) ? s.filter((x) => x !== proj.theme) : [...s, proj.theme]
-                                  );
-                                  setPageIndex(0);
-                                }}
-                              >
-                                {proj.theme}
-                              </BackgroundlessButton>
+                                {
+                                    proj.languages.map(language =>
+                                        <BackgroundlessButton
+                                            key={language + "-tag"}
+                                            size="sm"
+                                            active={languageFilter.includes(language)}
+                                            onClick={() => {
+                                            setLanguageFilter((s) =>
+                                                s.includes(language) ? s.filter((x) => x !== language) : [...s, language]
+                                            );
+                                            setPageIndex(0);
+                                            }}
+                                        >
+                                        {language}
+                                    </BackgroundlessButton>
+                                    )
+                                }
+
+                                {
+                                    proj.themes.map(theme =>
+                                        <BackgroundlessButton
+                                            key={theme + "-tag"}
+                                            size="sm"
+                                            active={themeFilter.includes(theme)}
+                                            onClick={() => {
+                                            setThemeFilter((s) =>
+                                                s.includes(theme) ? s.filter((x) => x !== theme) : [...s, theme]
+                                            );
+                                                setPageIndex(0);
+                                            }}
+                                        >
+                                        {theme}
+                                    </BackgroundlessButton>
+                                    )
+                                }
                             </div>
                           </div>
                       </div>

@@ -1,6 +1,6 @@
 export type ProjectType = {
-  language: string;
-  theme: string; // business domain / short topic
+  languages: string[];
+  themes: string[]; // business domain / short topic
   title: string;
   description: string;
   demo?: string;
@@ -9,8 +9,8 @@ export type ProjectType = {
 
 const projects: ProjectType[] = [
   {
-    language: "TypeScript",
-    theme: "RAG",
+    languages: ["TypeScript", "Java", "Django", "Next js", "C++"],
+    themes: ["RAG", "AI"],
     title: "RAG Search Playground",
     description:
       "A small Retrieval-Augmented Generation demo combining OpenAI embeddings with a vector store to answer domain-specific questions. Includes upload, chunking, and a simple UI for prompts.",
@@ -18,16 +18,16 @@ const projects: ProjectType[] = [
     repo: "https://github.com/example/rag-playground",
   },
   {
-    language: "Rust",
-    theme: "OS",
+    languages: ["Rust", "Java", "Django", "Next js", "C++"],
+    themes: ["OS", "Some low level stuff",],
     title: "Tiny Kernel Experiment",
     description:
       "Experimental hobby kernel written in Rust demonstrating basic process switching, a minimal driver model, and a tiny userspace loader.",
     repo: "https://github.com/example/tiny-kernel",
   },
   {
-    language: "Python",
-    theme: "Gestion de stock",
+    languages: ["Python", "Java", "Django", "Next js", "C++"],
+    themes: ["AI"],
     title: "Inventory Manager",
     description:
       "A web-based inventory management prototype with product CRUD, simple reporting and CSV import/export. Built with FastAPI and SQLite for portability.",
@@ -35,16 +35,16 @@ const projects: ProjectType[] = [
     repo: "https://github.com/example/inventory-manager",
   },
   {
-    language: "TypeScript",
-    theme: "Business Logic",
+    languages: ["TypeScript", "Java", "Django", "Next js", "C++"],
+    themes: ["Business Logic", "Some low level stuff", "AI"],
     title: "Subscription Billing Engine",
     description:
       "A rules-driven billing engine supporting metered usage, proration and multi-currency invoices. Includes a test harness for defining billing scenarios.",
     repo: "https://github.com/example/billing-engine",
   },
   {
-    language: "Go",
-    theme: "CLI Tool",
+    languages: ["Go", "Java", "Django", "Next js", "C++"],
+    themes: ["CLI Tool"],
     title: "Log Aggregator",
     description:
       "High-performance CLI that aggregates, filters, and samples logs from multiple sources with pluggable exporters.",
