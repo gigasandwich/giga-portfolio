@@ -10,12 +10,6 @@ export default function Sidebar({ isOpen, setIsOpen }: { isOpen: boolean; setIsO
 
   return (
     <AnimatePresence>
-      {/* 
-        Sidebar container: 
-        - `fixed lg:static`: overlay on mobile, fixed element in layout on desktop
-        - `translate-x`: hides/shows sidebar on mobile based on state
-        - `w-full lg:w-72`: takes full width when toggled on mobile
-      */}
       {isOpen && (
         <motion.aside key="sidebar"
           initial={{ x: "-100%" }}
@@ -33,6 +27,7 @@ export default function Sidebar({ isOpen, setIsOpen }: { isOpen: boolean; setIsO
           className={`
             fixed inset-y-0 left-0 z-[55] w-[85%] sm:w-72 bg-neutral-bg p-6 flex flex-col justify-between 
             lg:translate-x-0 lg:static lg:w-72 lg:h-screen lg:border-r lg:border-white/5 lg:shadow-2xl shadow-2xl
+            max-h-screen overflow-y-auto
           `}
         >
           {/* Mobile close button */}
@@ -99,7 +94,7 @@ export default function Sidebar({ isOpen, setIsOpen }: { isOpen: boolean; setIsO
             </div>
           </div>
 
-          <div className="mb-8">
+          <div className="mt-8 mb-8">
             <a href={d.cvLink} target="_blank" rel="noopener noreferrer" className="block w-full text-center bg-primary text-neutral-bg font-bold py-2 px-4 rounded-lg shadow-md hover:bg-primary/90 transition-all">
               My CV
             </a>

@@ -69,10 +69,10 @@ Content:
     - [x] Font
     - [x] Fix exisitng ones
 
-- [ ] Sidebar
+- [x] Sidebar
     - Already a global component
     - [x] Real data
-    - [ ] Scrollable sidebar on mobile/full content should be seen
+    - [x] Scrollable sidebar on mobile/full content should be seen
 
 - [ ] First section
     - [x] Variables/Interfaces
