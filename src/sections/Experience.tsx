@@ -19,7 +19,9 @@ export default function Experience() {
 
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
                         <div className="col-span-1 flex justify-center">
-                            <VerticalTimeline items={experienceData} selected={index} onSelect={setIndex} />
+                            <div className="w-full max-w-xs sm:max-w-sm lg:max-w-[350px] max-h-[420px] sm:max-h-[520px] lg:max-h-[720px] overflow-y-auto lg:overflow-visible thin-scrollbar mx-auto">
+                                <VerticalTimeline items={experienceData} selected={index} onSelect={setIndex} />
+                            </div>
                         </div>
 
                         {/* Description */}

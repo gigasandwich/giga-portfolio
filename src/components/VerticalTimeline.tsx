@@ -13,7 +13,7 @@ export default function VerticalTimeline({
   return (
     <div className="relative">
       {/* Vertical line */}
-      <div className="hidden lg:block absolute left-[15px] top-6 bottom-6 w-px bg-white/10" />
+      <div className="absolute left-[15px] top-6 bottom-6 w-px bg-white/10 pointer-events-none" />
 
         {/* pr-12 for the scrollbar */}
       <div className="flex flex-col gap-10 lg:max-h-[720px] lg:overflow-y-auto lg:pr-12 thin-scrollbar">
@@ -28,7 +28,7 @@ export default function VerticalTimeline({
                   <div className="w-3.5 h-3.5 rounded-full ring-3 ring-primary/20" />
                 </div>
 
-                <div className="flex flex-col gap-1 max-w-[200px]">
+                <div className="flex flex-col gap-1 max-w-[250px] lg:max-w-[300px]">
                   <p className="text-[11px] font-bold tracking-widest text-primary uppercase">
                     {item.title}
                   </p>
@@ -59,7 +59,7 @@ export default function VerticalTimeline({
                 )}
               </div>
 
-              <div className="flex flex-col gap-1 max-w-[200px]">
+              <div className="flex flex-col gap-1 max-w-[250px] lg:max-w-[300px]">
                 <p className="text-[11px] font-bold tracking-widest text-white/60 uppercase">
                   {startLabel} — {endLabel}
                 </p>
