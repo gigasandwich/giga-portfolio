@@ -1,54 +1,82 @@
 export type ProjectType = {
+  title: string;
   languages: string[];
   themes: string[]; // business domain / short topic
-  title: string;
   description: string;
   demo?: string;
   repo?: string;
+  date?: Date; // Initial release date
 };
 
 const projects: ProjectType[] = [
   {
-    languages: ["TypeScript", "Java", "Django", "Next js", "C++"],
-    themes: ["RAG", "AI"],
-    title: "RAG Search Playground",
+    title: "Portfolio (this one)",
+    languages: ["TypeScript", "Next.js", "React", "Tailwind"],
+    themes: ["Frontend", "Portfolio"],
     description:
-      "A small Retrieval-Augmented Generation demo combining OpenAI embeddings with a vector store to answer domain-specific questions. Includes upload, chunking, and a simple UI for prompts.",
-    demo: "https://example.com/rag-demo",
-    repo: "https://github.com/example/rag-playground",
+      "Nothing to add much as you've already come this far here.",
+    repo: "https://github.com/gigasandwich/giga-portfolio",
+    demo: "https://gigalab.tech",
+    date: new Date("2026-04-01"),
   },
   {
-    languages: ["Rust", "Java", "Django", "Next js", "C++"],
-    themes: ["OS", "Some low level stuff",],
-    title: "Tiny Kernel Experiment",
+    title: "Env variables utility",
+    languages: ["C++"],
+    themes: ["OS"],
     description:
-      "Experimental hobby kernel written in Rust demonstrating basic process switching, a minimal driver model, and a tiny userspace loader.",
-    repo: "https://github.com/example/tiny-kernel",
+      "Program to easily modify Environment variables. GUI will be included in the future. Currently supports Windows only.",
+    repo: "https://github.com/gigasandwich/giga-env",
+    date: new Date("2026-03-01"),
   },
   {
-    languages: ["Python", "Java", "Django", "Next js", "C++"],
-    themes: ["AI"],
-    title: "Inventory Manager",
+    title: "Http Server",
+    languages: ["Java"],
+    themes: ["http", "Socket"],
     description:
-      "A web-based inventory management prototype with product CRUD, simple reporting and CSV import/export. Built with FastAPI and SQLite for portability.",
-    demo: "https://example.com/inventory",
-    repo: "https://github.com/example/inventory-manager",
+      "Own http server from scratch. Using server socket and client socket (with multithreading) to handle http requests and responses.",
+    repo: "https://github.com/gigasandwich/giga-http-server",
+    date: new Date("2024-12-01"),
   },
   {
-    languages: ["TypeScript", "Java", "Django", "Next js", "C++"],
-    themes: ["Business Logic", "Some low level stuff", "AI"],
-    title: "Subscription Billing Engine",
+    title: "Spring like framework",
+    languages: ["Java"],
+    themes: ["Spring"],
     description:
-      "A rules-driven billing engine supporting metered usage, proration and multi-currency invoices. Includes a test harness for defining billing scenarios.",
-    repo: "https://github.com/example/billing-engine",
+      "A framework that aims to copy the same functionalities of Spring MVC.",
+    repo: "https://github.com/gigasandwich/gigaspring",
+    demo: "https://github.com/gigasandwich/gigaspring-lab",
+    date: new Date("2026-01-01"),
   },
   {
-    languages: ["Go", "Java", "Django", "Next js", "C++"],
-    themes: ["CLI Tool"],
-    title: "Log Aggregator",
+    title: "GigaTekken",
+    languages: ["Ionic", "TypeScript", "Vue"],
+    themes: ["Mobile", "Community"],
     description:
-      "High-performance CLI that aggregates, filters, and samples logs from multiple sources with pluggable exporters.",
+      "A mobile app for the Tekken community providing character guides, move lists. Syncs with wavu wiki API + offline caching.",
+    // repo: "https://github.com/gigasandwich/giga-tekken",
+    // date: new Date("2025-07-01"),
+  },
+  {
+    title: "LeetCode PDF Export",
+    languages: ["Python", "fpdf"],
+    themes: ["Export", "GraphQL"],
+    description:
+      "A small service that queries LeetCode problems data via GraphQL and generates PDF from the fetched data.",
+    repo: "https://github.com/gigasandwich/giga-leetcode-questions",
+    demo: "https://github.com/gigasandwich/giga-leetcode-questions/blob/master/output/leetcode-questions.pdf",
+    date: new Date("2024-09-01"),
+  },
+  {
+    title: "Madagascar House Price Predictor",
+    languages: ["Python", "Pandas"],
+    themes: ["AI", "Prediction", "Research"],
+    description:
+      "A research project training a regression model on locally-sourced housing and terrain data (Madagascar).",
+    repo: "https://github.com/gigasandwich/giga-house-price-predictor",
+    date: new Date("2025-07-01"),
   },
 ];
+
+projects.sort((a, b) => (b.date?.getTime() ?? 0) - (a.date?.getTime() ?? 0));
 
 export default projects;
