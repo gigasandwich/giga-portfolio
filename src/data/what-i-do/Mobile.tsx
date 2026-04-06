@@ -5,18 +5,32 @@ export type WhatIDoType = {
 };
 
 const whatIDoData: WhatIDoType = {
-    title: "Hybrid Mobile Application Developement",
+    title: "Hybrid Mobile Application Development",
     icon: "fa-mobile-screen",
     description: (
-        <div>
-            <p>Using stacks like <code>Ionic</code>, <code>Flutter</code> and similar.</p>
+        <div className="space-y-6">
+            <div className="flex flex-col gap-4">
+                <p className="text-lg leading-relaxed text-white/90">
+                    I deliver cross-platform mobile solutions while trying to implement good UX <i>(as I am not a specialized designer)</i>, using stacks like 
+                    <span className="text-primary font-bold"> Ionic</span>, 
+                    <span className="text-primary font-bold"> Flutter</span> and similar.
+                </p>   
+            </div>
 
-            <p className="mt-2">Most of my most used app are from this category, and my best client (for now) is <b>my mom</b> who needs to automatize her <b>cook job</b>.</p>
-            
-            <p className="mt-2">This one application might be simple at first look but the implementation follows a <b>heavy BUSINESS LOGIC</b>:</p>
+            <div>
+                <p>My best client in this domain (for now) is my mom, who needs to automate some of her cooking work.</p>
+                <p>Here is a preview of the app I made for her:</p>
+                {/* TODO: implement later xD */}
+            </div>
 
-            <div className="w-[250px] h-[250px] bg-gray-500 rounded-2xl mt-4 p-4">
-                Future link and preview of the app
+            <div className="mt-4 relative group">
+                <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-2xl blur opacity-30"></div>
+                <div className="relative w-full h-[200px] bg-neutral-bg border border-white/10 rounded-2xl p-6 flex flex-col items-center justify-center gap-2 transition-all duration-300">
+                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-1">
+                        <i className="fas fa-hammer text-xl animate-pulse"></i>
+                    </div>
+                    <p className="text-white/60 font-bold tracking-wider text-sm">PROJECT PREVIEW</p>
+                </div>
             </div>
         </div>
     ),

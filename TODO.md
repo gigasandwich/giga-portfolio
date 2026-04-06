@@ -76,7 +76,8 @@ Content:
 - [ ] First section
     - [x] Variables/Interfaces
     - [x] Dummy data for test
-    - [ ] Real data
+    - [x] Real data
+    - [ ] Responsiveness
 
 - [ ] Second section
     - [ ] Variables/Interface

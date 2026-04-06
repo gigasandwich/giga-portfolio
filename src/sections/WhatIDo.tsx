@@ -63,7 +63,7 @@ export default function WhatIDo() {
                         <h2 className="text-3xl font-bold text-white">{current.title}</h2>
                     </div>
 
-                    <div className="text-white/80 leading-relaxed overflow-y-auto">
+                    <div className="text-white/80 leading-relaxed">
                         {current.description}
                     </div>
                 </div>
