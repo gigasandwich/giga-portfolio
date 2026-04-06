@@ -24,27 +24,31 @@ const Hackathon: ExperienceType = {
     description: (
         <div className="space-y-3">
             <div className="">
-                <h4 className="text-xl font-bold text-white/90 mb-1">Placement</h4>
+                <h4 className="text-lg sm:text-xl font-semibold text-white/90 mb-1">Placement</h4>
                 <div className="flex gap-3">
-                    <span className="font-light">finalist among 15+ teams</span>
+                    <span className="text-sm sm:text-base font-light">finalist among 15+ teams</span>
                 </div>
             </div>
 
             <div className="mt-3">
-                <h4 className="text-xl font-bold text-white/90 mt-4 mb-1">Team</h4>
-                <div className="flex gap-3">
+                <h4 className="text-lg sm:text-xl font-semibold text-white/90 mt-4 mb-2">Team</h4>
+                <div className="flex gap-3 overflow-x-auto pb-1 thin-scrollbar">
                     {teammates.map((t) => (
-                        <PersonCard key={t.name} person={t} />
+                        <div key={t.name} className="min-w-[200px] sm:min-w-[220px]">
+                            <PersonCard person={t} />
+                        </div>
                     ))}
                 </div>
             </div>
 
             <div className="mt-3">
-                <h4 className="text-xl font-bold text-white/90 mt-4 mb-1">Stack</h4>
-                <div className="flex gap-3">
+                <h4 className="text-lg sm:text-xl font-semibold text-white/90 mt-4 mb-2">Stack</h4>
+                <div className="flex gap-2 flex-wrap sm:flex-nowrap overflow-x-auto pb-1 thin-scrollbar">
                     {techStack.map((tech) => (
-                    <BackgroundlessButton key={tech} content={tech} />
-                ))}
+                        <div key={tech} className="shrink-0">
+                            <BackgroundlessButton content={tech} />
+                        </div>
+                    ))}
                 </div>
             </div>
             

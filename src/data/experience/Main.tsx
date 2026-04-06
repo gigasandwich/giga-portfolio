@@ -25,10 +25,9 @@ experienceData.push({
     )
 });
 
-for (let i = 0; i < 3; i++) {
 experienceData.push(hackathon);
 experienceData.push(teamLead);
-}
+
 // Newest first
 experienceData.sort((a, b) => b.start.getTime() - a.start.getTime());
 
