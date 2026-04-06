@@ -34,7 +34,7 @@ export default function Home() {
           </section>
 
           {/* Section: Experience */}
-          <section id="experience" className="min-h-[50vh] border-b border-white/5 py-5">
+          <section id="experience" className="border-b border-white/5 py-5">
             <Experience />
           </section>
 

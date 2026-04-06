@@ -13,7 +13,7 @@ export default function Experience() {
                 Experience & 
                 <p className="text-primary">involvement</p>
             </Title>
-            <div id="experience" className="relative overflow-visible py-3 lg:py-15 min-h-screen rounded-3xl border border-white/5"
+            <div id="experience" className="relative overflow-visible py-3 lg:py-15 rounded-3xl border border-white/5"
                 style={{ backgroundImage: `url('/assets/svgs/bg-experience.svg')`, backgroundAttachment: 'fixed', backgroundSize: 'cover', backgroundPosition: 'center' }}>
                 <div className="relative z-10 px-4 lg:px-0">
 
