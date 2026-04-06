@@ -8,8 +8,8 @@ import CardlikeButton from "@/components/CardlikeButton";
 
 export default function Projects() {
   const data: ProjectType[] = projectsData;
-  const [languageFilter, setLanguageFilter] = useState<string | null>(null);
-  const [themeFilter, setThemeFilter] = useState<string | null>(null);
+  const [languageFilter, setLanguageFilter] = useState<string[]>([]);
+  const [themeFilter, setThemeFilter] = useState<string[]>([]);
   const [pageIndex, setPageIndex] = useState(0);
   const [itemsPerPage, setItemsPerPage] = useState(2); // At least 2 on small screens
 
@@ -18,8 +18,8 @@ export default function Projects() {
 
   const filtered = useMemo(() => {
     return data.filter((p) => {
-      if (languageFilter && p.language !== languageFilter) return false;
-      if (themeFilter && p.theme !== themeFilter) return false;
+      if (languageFilter.length > 0 && !languageFilter.includes(p.language)) return false;
+      if (themeFilter.length > 0 && !themeFilter.includes(p.theme)) return false;
       return true;
     });
   }, [data, languageFilter, themeFilter]);
@@ -82,9 +82,11 @@ export default function Projects() {
               {languages.map((lang) => (
                 <BackgroundlessButton
                   key={lang}
-                  active={languageFilter === lang}
+                  active={languageFilter.includes(lang)}
                   onClick={() => {
-                    setLanguageFilter((s) => (s === lang ? null : lang));
+                    setLanguageFilter((s) =>
+                      s.includes(lang) ? s.filter((x) => x !== lang) : [...s, lang]
+                    );
                     setPageIndex(0);
                   }}
                 >
@@ -100,9 +102,11 @@ export default function Projects() {
               {themes.map((t) => (
                 <BackgroundlessButton
                   key={t}
-                  active={themeFilter === t}
+                  active={themeFilter.includes(t)}
                   onClick={() => {
-                    setThemeFilter((s) => (s === t ? null : t));
+                    setThemeFilter((s) =>
+                      s.includes(t) ? s.filter((x) => x !== t) : [...s, t]
+                    );
                     setPageIndex(0);
                   }}
                 >
@@ -117,8 +121,8 @@ export default function Projects() {
               content="Reset filters"
               color="bg-white/6 text-white"
               onClick={() => {
-                setLanguageFilter(null);
-                setThemeFilter(null);
+                setLanguageFilter([]);
+                setThemeFilter([]);
                 setPageIndex(0);
               }}
             />
