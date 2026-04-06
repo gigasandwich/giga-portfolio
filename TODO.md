@@ -73,11 +73,11 @@ Content:
     - Already a global component
     - [x] Real data
 
-- [ ] First section
+- [x] First section
     - [x] Variables/Interfaces
     - [x] Dummy data for test
     - [x] Real data
-    - [ ] Responsiveness
+    - [x] Responsiveness
 
 - [ ] Second section
     - [ ] Variables/Interface
