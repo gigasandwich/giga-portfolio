@@ -28,7 +28,7 @@ export default function WhatIDo() {
                                 whatIDo={wid}
                                 active={current.title === wid.title}
                                 onClick={() => {
-                                    changeCurrent(wid);
+                                    changeCurrent(id);
                                 }}
                             />
                         ))}
