@@ -4,6 +4,7 @@ import Title from "@/components/Title";
 import BackgroundlessButton from "@/components/BackgroundlessButton";
 import projectsData, { ProjectType } from "@/data/projects/Main";
 import CardContainer from "@/components/CardContainer";
+import CardlikeButton from "@/components/CardlikeButton";
 
 export default function Projects() {
   const data: ProjectType[] = projectsData;
@@ -112,16 +113,15 @@ export default function Projects() {
           </div>
 
           <div className="mt-4">
-            <button
+            <CardlikeButton
+              content="Reset filters"
+              color="bg-white/6 text-white"
               onClick={() => {
                 setLanguageFilter(null);
                 setThemeFilter(null);
                 setPageIndex(0);
               }}
-              className="text-sm text-white/60 hover:text-white transition-colors"
-            >
-              Reset filters
-            </button>
+            />
           </div>
         </aside>
 
