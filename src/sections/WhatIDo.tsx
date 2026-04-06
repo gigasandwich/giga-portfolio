@@ -54,61 +54,55 @@ export default function WhatIDo() {
                 </div>
 
                 {/* Right side: Detailed Description */}
-                <AnimatePresence>
-                    <motion.aside key="what-i-do-description"
-                        initial={{ x: "-20%" }}
-                        animate={{ x: 0 }}
-                        exit={{ x: "-100%" }}
-                        transition={{ type: "spring", damping: 25, stiffness: 200 }}
-                        drag="x"
-                        dragConstraints={{ left: 0, right: 0 }}
-                        dragElastic={{ left: 0.1, right: 0.1 }}
-                        onDragEnd={(_, info) => {
-                            if (info.offset.x < 0) {
-                                next();
-                            }
-                        }}
-                        onDragStart={(_, info) => {
-                            if (info.offset.x >= 0) {
-                                prev();
-                            }
-                        }}
-                        className={`
-                            col-span-1 lg:col-span-2
-                            p-6 lg:p-8
-                            min-h-[400px] lg:h-[750px]
-                            bg-neutral-bg/50 backdrop-blur-sm
-                            border border-white/10 rounded-2xl shadow-2xl
-                            flex flex-col relative
-                        `}
-                    >
-
-                        <div className="flex items-center gap-4 mb-8 px-2 md:px-8 relative">
-                            <div className="p-3 bg-primary/10 rounded-xl text-primary">
-                                <i className={`fas ${current.icon} text-2xl`}></i>
+                <div className="col-span-1 lg:col-span-2 relative group/container">
+                    <AnimatePresence mode="wait">
+                        <motion.aside
+                            key={index}
+                            initial={{ opacity: 0, x: 20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            exit={{ opacity: 0, x: -20 }}
+                            transition={{ duration: 0.3 }}
+                            className={`
+                                p-6 lg:p-8
+                                h-[450px] lg:h-[750px] overflow-y-auto
+                                bg-white/[0.03] backdrop-blur-xl
+                                border border-white/10 rounded-3xl shadow-2xl
+                                flex flex-col
+                            `}
+                        >
+                            <div className="flex items-center gap-4 mb-8 px-2 md:px-8">
+                                <div className="p-4 bg-primary/20 rounded-2xl text-primary shadow-lg shadow-primary/20">
+                                    <i className={`fas ${current.icon} text-3xl`}></i>
+                                </div>
+                                <h2 className="text-4xl font-bold text-white tracking-tight">{current.title}</h2>
                             </div>
-                            <h2 className="text-3xl font-bold text-white">{current.title}</h2>
-                        </div>
 
-                        {/* Prev/Next controls */}
-                        <div className="absolute left-4 top-4 z-30">
-                            <button onClick={prev} aria-label="Previous" className="p-2 lg:p-3 rounded-xl bg-gradient-to-br from-white/4 to-white/2 border border-white/6 text-white/90 hover:from-white/6 hover:to-white/4 backdrop-blur-sm shadow-[0_6px_18px_rgba(2,6,23,0.6)] transition-all">
-                                <span className="sr-only">Previous</span>
-                                <i className="fa-solid fa-chevron-left" />
-                            </button>
-                        </div>
-                        <div className="absolute right-4 top-4 z-30">
-                            <button onClick={next} aria-label="Next" className="p-2 lg:p-3 rounded-xl bg-gradient-to-br from-white/4 to-white/2 border border-white/6 text-white/90 hover:from-white/6 hover:to-white/4 backdrop-blur-sm shadow-[0_6px_18px_rgba(2,6,23,0.6)] transition-all">
-                                <span className="sr-only">Next</span>
-                                <i className="fa-solid fa-chevron-right" />
-                            </button>
-                        </div>
+                            <div className="text-white/80 leading-relaxed text-lg px-2 md:px-8">
+                                {current.description}
+                            </div>
+                        </motion.aside>
+                    </AnimatePresence>
 
-                        <div className="text-white/80 leading-relaxed">
-                            {current.description}
-                        </div>
-                    </motion.aside>
-                </AnimatePresence>
+                    {/* Navigation Buttons - Positioned Outside/Overlapping */}
+                    <div className="absolute top-1/2 -translate-y-1/2 -left-4 lg:-left-6 z-40">
+                        <button
+                            onClick={prev}
+                            aria-label="Previous"
+                            className="p-3 lg:p-4 rounded-2xl bg-neutral-900/80 border border-white/10 text-white/90 hover:bg-primary hover:border-primary hover:scale-110 active:scale-95 backdrop-blur-md shadow-2xl transition-all duration-300 group/btn"
+                        >
+                            <i className="fa-solid fa-chevron-left text-xl group-hover:-translate-x-1 transition-transform" />
+                        </button>
+                    </div>
+                    <div className="absolute top-1/2 -translate-y-1/2 -right-4 lg:-right-6 z-40">
+                        <button
+                            onClick={next}
+                            aria-label="Next"
+                            className="p-3 lg:p-4 rounded-2xl bg-neutral-900/80 border border-white/10 text-white/90 hover:bg-primary hover:border-primary hover:scale-110 active:scale-95 backdrop-blur-md shadow-2xl transition-all duration-300 group/btn"
+                        >
+                            <i className="fa-solid fa-chevron-right text-xl group-hover:translate-x-1 transition-transform" />
+                        </button>
+                    </div>
+                </div>
             </div>
         </>
     );
@@ -128,25 +122,35 @@ const WhatIDoCard = ({
             onClick={onClick}
             className={`
                 group w-full text-left transition-all duration-300
-                p-4 rounded-xl border-2
+                p-4 lg:p-5 rounded-2xl border
                 ${active
-                    ? "bg-primary/10 border-primary shadow-[0_0_20px_rgba(var(--primary-rgb),0.2)]"
-                    : "bg-neutral-bg border-white/5 hover:border-white/20 hover:bg-white/5"
+                    ? "bg-primary/10 border-primary ring-1 ring-primary/20 shadow-lg shadow-primary/10"
+                    : "bg-white/[0.02] border-white/5 hover:border-white/20 hover:bg-white/[0.05]"
                 }
-                cursor-pointer
+                cursor-pointer relative overflow-hidden
             `}
         >
-            <div className="flex items-center gap-4">
+            {active && (
+                <motion.div
+                    layoutId="active-pill"
+                    className="absolute inset-0 bg-primary/5 -z-10"
+                    transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                />
+            )}
+            <div className="flex items-center gap-4 relative z-10">
                 <div className={`
-                    w-12 h-12 flex items-center justify-center rounded-lg transition-colors
-                    ${active ? "bg-primary text-white" : "bg-white/5 text-white/40 group-hover:text-white/60"}
+                    w-12 h-12 flex items-center justify-center rounded-xl transition-all duration-300
+                    ${active 
+                        ? "bg-primary text-white scale-110 shadow-lg shadow-primary/30" 
+                        : "bg-white/5 text-white/40 group-hover:text-white/60 group-hover:bg-white/10"
+                    }
                 `}>
-                    <i className={`fas ${whatIDo.icon} text-lg`}></i>
+                    <i className={`fas ${whatIDo.icon} text-xl`}></i>
                 </div>
                 <div>
-                    <p className={`font-bold transition-colors ${active ? "text-white" : "text-white/60 group-hover:text-white"}`}>
+                    <h3 className={`font-bold text-lg transition-colors ${active ? "text-white" : "text-white/40 group-hover:text-white/70"}`}>
                         {whatIDo.title}
-                    </p>
+                    </h3>
                 </div>
             </div>
         </button>
