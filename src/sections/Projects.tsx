@@ -143,7 +143,36 @@ export default function Projects() {
                       </div>
                       <div className="flex-1">
                         <h4 className="text-lg font-semibold text-white truncate">{proj.title}</h4>
-                        <div className="text-sm text-white/60">{proj.language} • {proj.theme}</div>
+                          <div className="flex items-center justify-between gap-3">
+                            <div className="flex gap-2">
+                              <BackgroundlessButton
+                                key={proj.language + "-tag"}
+                                size="sm"
+                                active={languageFilter.includes(proj.language)}
+                                onClick={() => {
+                                  setLanguageFilter((s) =>
+                                    s.includes(proj.language) ? s.filter((x) => x !== proj.language) : [...s, proj.language]
+                                  );
+                                  setPageIndex(0);
+                                }}
+                              >
+                                {proj.language}
+                              </BackgroundlessButton>
+                              <BackgroundlessButton
+                                key={proj.theme + "-tag"}
+                                size="sm"
+                                active={themeFilter.includes(proj.theme)}
+                                onClick={() => {
+                                  setThemeFilter((s) =>
+                                    s.includes(proj.theme) ? s.filter((x) => x !== proj.theme) : [...s, proj.theme]
+                                  );
+                                  setPageIndex(0);
+                                }}
+                              >
+                                {proj.theme}
+                              </BackgroundlessButton>
+                            </div>
+                          </div>
                       </div>
                     </div>
                     <p className="mt-3 text-sm text-white/80 line-clamp-3">{proj.description}</p>

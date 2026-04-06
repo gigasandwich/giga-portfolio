@@ -5,19 +5,31 @@ export type ButtonProps = {
     content?: string;
     color?: string;
     active?: boolean;
+    size?: "sm" | "md";
+    className?: string;
     onClick?: () => void;
 };
 
-const BackgroundlessButton = ({ children, content, color, active = false, onClick }: ButtonProps) => {
+const BackgroundlessButton = ({ children, content, color, active = false, size = "md", className = "", onClick }: ButtonProps) => {
     const colors = [
         "border-red-500 text-red-500",
-        "border-blue-500 text-blue-500",
-        "border-green-500 text-green-500",
-        "border-yellow-500 text-yellow-500",
+        "border-rose-500 text-rose-500",
+        "border-pink-500 text-pink-500",
+        "border-fuchsia-500 text-fuchsia-500",
         "border-purple-500 text-purple-500",
+        "border-violet-500 text-violet-500",
+        "border-indigo-500 text-indigo-500",
+        "border-sky-500 text-sky-500",
+        "border-cyan-500 text-cyan-500",
+        "border-teal-500 text-teal-500",
+        "border-emerald-500 text-emerald-500",
+        "border-lime-500 text-lime-500",
+        "border-yellow-500 text-yellow-500",
+        "border-amber-500 text-amber-500",
+        "border-orange-500 text-orange-500",
+        "border-amber-400 text-amber-400",
     ];
 
-    const [randomColor, setRandomColor] = useState<string | null>(null);
     /*
         Without the useEffect it would give this error:
         
@@ -31,12 +43,15 @@ const BackgroundlessButton = ({ children, content, color, active = false, onClic
 
         It can also happen if the client has a browser extension installed which messes with the HTML before React loaded
     */
-    useEffect(() => {
-        const c = colors[Math.floor(Math.random() * colors.length)];
-        setRandomColor(c);
-    }, []);
 
-    const finalColor = color ?? randomColor;
+    // Deterministic color selection based on label (to keep same color across instances)
+    // TODO: find a better way
+    const label = String(children ?? content ?? "");
+    const hash = label.split("").reduce((acc, ch) => acc + ch.charCodeAt(0), 0);
+    const deterministic = colors[hash % colors.length];
+    const finalColor = color ?? deterministic;
+
+    const sizeClasses = size === "sm" ? "px-2 py-1 text-xs" : "px-3 py-1.5 text-sm";
 
     return (
         <button
@@ -44,10 +59,11 @@ const BackgroundlessButton = ({ children, content, color, active = false, onClic
             className={`
                 bg-transparent border
                 ${finalColor} hover:bg-white/5 transition
-                px-3 py-1.5
-                rounded-full text-sm font-medium
+                ${sizeClasses}
+                rounded-full font-medium
                 cursor-pointer
                 ${active ? "bg-white/5" : ""}
+                ${className}
             `}
         >
             {children ?? content}
