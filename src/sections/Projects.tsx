@@ -96,6 +96,70 @@ export default function Projects() {
 
   const currentPage = pages[pageIndex % Math.max(pages.length, 1)];
 
+  const [selected, setSelected] = useState<ProjectType | null>(null);
+
+  const selectAdjacent = (dir: 'prev' | 'next') => {
+    if (!selected) return;
+    const list = filtered;
+    const idx = list.findIndex(p => p.title === selected.title && p.date?.toISOString() === selected.date?.toISOString());
+    if (idx === -1) return;
+    const nextIdx = dir === 'next' ? (idx + 1) % list.length : (idx - 1 + list.length) % list.length;
+    setSelected(list[nextIdx]);
+  };
+
+  // Another way to not go with boolean && React.ReactNode
+  const ProjectModal = ({ project, onClose }: { project: ProjectType | null; onClose: () => void }) => {
+    if (!project) 
+        return null;
+    return (
+      <div className="fixed inset-0 z-50 flex items-center justify-center">
+        <div className="absolute inset-0 bg-black/60" onClick={onClose} />
+        <div className="relative z-10 w-[90%] max-w-3xl">
+          <CardContainer id={project.title + (project.date?.toISOString() ?? '')} onPrev={() => selectAdjacent('prev')} onNext={() => selectAdjacent('next')} className="!p-6">
+            <div className="w-full bg-neutral-900 border border-white/10 rounded-lg p-6 min-h-[320px] max-h-[320px] overflow-y-auto">
+              <div className="flex items-start justify-between gap-4">
+                <h3 className="text-xl font-semibold text-white">{project.title}</h3>
+                <div className="flex items-center gap-2">
+                  <button aria-label="Close" onClick={onClose} className="text-white/80 hover:text-white px-2 py-1">✕</button>
+                </div>
+              </div>
+              {project.date && (
+                <p className="text-sm text-white/60 mt-1">{project.date.toLocaleDateString(undefined, { year: 'numeric', month: 'short' })}</p>
+              )}
+              <p className="mt-4 text-sm text-white/80">{project.description}</p>
+
+              <div className="mt-4 flex flex-wrap gap-2">
+                {project.languages.map(l => (
+                  <span key={l} className="px-2 py-1 text-sm rounded-md bg-white/6 text-white">{l}</span>
+                ))}
+                {project.themes.map(t => (
+                  <span key={t} className="px-2 py-1 text-sm rounded-md bg-white/6 text-white">{t}</span>
+                ))}
+              </div>
+
+              <div className="mt-6 flex gap-3">
+                {project.demo && (
+                  <a href={project.demo} target="_blank" rel="noreferrer" className="px-4 py-2 rounded-md bg-primary text-black">Demo</a>
+                )}
+                {project.repo && (
+                  <a href={project.repo} target="_blank" rel="noreferrer" className="px-4 py-2 rounded-md border border-white/10 text-white">Repo</a>
+                )}
+              </div>
+            </div>
+          </CardContainer>
+        </div>
+      </div>
+    );
+  };
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setSelected(null);
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, []);
+
   return (
     <section>
       <Title>Projects</Title>
@@ -159,7 +223,7 @@ export default function Projects() {
             <div className="max-w-4xl mx-auto w-full">
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 px-4">
                 {currentPage.map((proj, idx) => (
-                  <article key={proj.title + idx} className="p-4 bg-white/3 rounded-lg border border-white/6 h-full flex flex-col justify-between">
+                  <article key={proj.title + idx} onClick={() => setSelected(proj)} className="cursor-pointer p-4 bg-white/3 rounded-lg border border-white/6 h-full flex flex-col justify-between">
                     <div className="flex items-start gap-3">
                       <div className="p-2 bg-primary/10 rounded-lg text-primary flex-none">
                         <i className="fa-solid fa-folder-open" />
@@ -242,6 +306,8 @@ export default function Projects() {
               </div>
             </div>
           </CardContainer>
+          {/** Render modal at root of section so it appears above everything xD */}
+          <ProjectModal project={selected} onClose={() => setSelected(null)} />
         </div>
       </div>
     </section>
