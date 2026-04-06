@@ -43,6 +43,7 @@ export default function WhatIDo() {
                                 width={300}
                                 height={300}
                                 className="w-full max-w-[220px] h-auto filter invert brightness-200 transition-all duration-300 group-hover/svg:brightness-100"
+                                loading="eager"
                             />
                         </div>
                     </div>
