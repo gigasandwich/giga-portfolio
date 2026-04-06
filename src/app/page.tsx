@@ -3,11 +3,11 @@
 import Sidebar from "@/components/Sidebar";
 import Navbar from "@/components/Navbar";
 import WhatIDo from "@/sections/WhatIDo";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Experience from "@/sections/Experience";
 
 export default function Home() {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
   return (
     <div className="flex flex-col lg:flex-row min-h-screen bg-neutral-bg">
