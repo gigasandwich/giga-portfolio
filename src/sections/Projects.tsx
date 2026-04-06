@@ -47,16 +47,15 @@ export default function Projects() {
         <Title>Projects</Title>
         <p className="text-white/70">No projects match the selected filters.</p>
         <div className="mt-4">
-            <button
+            <CardlikeButton
+              content="Reset filters"
+              color="bg-white/6 text-white"
               onClick={() => {
-                setLanguageFilter(null);
-                setThemeFilter(null);
+                setLanguageFilter([]);
+                setThemeFilter([]);
                 setPageIndex(0);
               }}
-              className="text-sm text-white/60 hover:text-white transition-colors"
-            >
-              Reset filters
-            </button>
+            />
           </div>
       </section>
     );
