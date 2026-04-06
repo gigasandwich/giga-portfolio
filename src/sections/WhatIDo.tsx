@@ -3,6 +3,7 @@ import whatIDoData, { WhatIDoType } from "@/data/what-i-do/Main";
 import { useState } from "react";
 import Image from "next/image";
 import Title from "@/components/Title";
+import { AnimatePresence, motion } from "framer-motion";
 
 
 export default function WhatIDo() {
@@ -53,39 +54,61 @@ export default function WhatIDo() {
                 </div>
 
                 {/* Right side: Detailed Description */}
-                <div className="
-                    col-span-1 lg:col-span-2
-                    p-6 lg:p-8
-                    min-h-[400px] lg:h-[750px]
-                    bg-neutral-bg/50 backdrop-blur-sm
-                    border border-white/10 rounded-2xl shadow-2xl
-                    flex flex-col relative
-                ">
-                    <div className="flex items-center gap-4 mb-8 px-2 md:px-8 relative">
-                        <div className="p-3 bg-primary/10 rounded-xl text-primary">
-                            <i className={`fas ${current.icon} text-2xl`}></i>
+                <AnimatePresence>
+                    <motion.aside key="what-i-do-description"
+                        initial={{ x: "-20%" }}
+                        animate={{ x: 0 }}
+                        exit={{ x: "-100%" }}
+                        transition={{ type: "spring", damping: 25, stiffness: 200 }}
+                        drag="x"
+                        dragConstraints={{ left: 0, right: 0 }}
+                        dragElastic={{ left: 0.1, right: 0.1 }}
+                        onDragEnd={(_, info) => {
+                            if (info.offset.x < 0) {
+                                next();
+                            }
+                        }}
+                        onDragStart={(_, info) => {
+                            if (info.offset.x >= 0) {
+                                prev();
+                            }
+                        }}
+                        className={`
+                            col-span-1 lg:col-span-2
+                            p-6 lg:p-8
+                            min-h-[400px] lg:h-[750px]
+                            bg-neutral-bg/50 backdrop-blur-sm
+                            border border-white/10 rounded-2xl shadow-2xl
+                            flex flex-col relative
+                        `}
+                    >
+
+                        <div className="flex items-center gap-4 mb-8 px-2 md:px-8 relative">
+                            <div className="p-3 bg-primary/10 rounded-xl text-primary">
+                                <i className={`fas ${current.icon} text-2xl`}></i>
+                            </div>
+                            <h2 className="text-3xl font-bold text-white">{current.title}</h2>
                         </div>
-                        <h2 className="text-3xl font-bold text-white">{current.title}</h2>
-                    </div>
 
-                    {/* Prev/Next controls */}
-                    <div className="absolute left-4 top-4 z-30">
-                        <button onClick={prev} aria-label="Previous" className="p-2 lg:p-3 rounded-xl bg-gradient-to-br from-white/4 to-white/2 border border-white/6 text-white/90 hover:from-white/6 hover:to-white/4 backdrop-blur-sm shadow-[0_6px_18px_rgba(2,6,23,0.6)] transition-all">
-                            <span className="sr-only">Previous</span>
-                            <i className="fa-solid fa-chevron-left" />
-                        </button>
-                    </div>
-                    <div className="absolute right-4 top-4 z-30">
-                        <button onClick={next} aria-label="Next" className="p-2 lg:p-3 rounded-xl bg-gradient-to-br from-white/4 to-white/2 border border-white/6 text-white/90 hover:from-white/6 hover:to-white/4 backdrop-blur-sm shadow-[0_6px_18px_rgba(2,6,23,0.6)] transition-all">
-                            <span className="sr-only">Next</span>
-                            <i className="fa-solid fa-chevron-right" />
-                        </button>
-                    </div>
+                        {/* Prev/Next controls */}
+                        <div className="absolute left-4 top-4 z-30">
+                            <button onClick={prev} aria-label="Previous" className="p-2 lg:p-3 rounded-xl bg-gradient-to-br from-white/4 to-white/2 border border-white/6 text-white/90 hover:from-white/6 hover:to-white/4 backdrop-blur-sm shadow-[0_6px_18px_rgba(2,6,23,0.6)] transition-all">
+                                <span className="sr-only">Previous</span>
+                                <i className="fa-solid fa-chevron-left" />
+                            </button>
+                        </div>
+                        <div className="absolute right-4 top-4 z-30">
+                            <button onClick={next} aria-label="Next" className="p-2 lg:p-3 rounded-xl bg-gradient-to-br from-white/4 to-white/2 border border-white/6 text-white/90 hover:from-white/6 hover:to-white/4 backdrop-blur-sm shadow-[0_6px_18px_rgba(2,6,23,0.6)] transition-all">
+                                <span className="sr-only">Next</span>
+                                <i className="fa-solid fa-chevron-right" />
+                            </button>
+                        </div>
 
-                    <div className="text-white/80 leading-relaxed">
-                        {current.description}
-                    </div>
-                </div>
+                        <div className="text-white/80 leading-relaxed">
+                            {current.description}
+                        </div>
+                    </motion.aside>
+                </AnimatePresence>
             </div>
         </>
     );
