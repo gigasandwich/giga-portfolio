@@ -18,13 +18,14 @@ export default function Navbar({ onMenuClick }: { onMenuClick?: () => void }) {
         {/* Mobile Toggle Button inside Navbar */}
         <button
           onClick={onMenuClick}
-          className="lg:hidden h-10 w-10 bg-neutral-bg/80 backdrop-blur-md border border-white/10 rounded-2xl text-primary shadow-2xl flex-none flex items-center justify-center"
+          className="lg:hidden h-10 w-10 bg-bg border border-white/10 rounded-2xl text-white shadow-2xl flex-none flex items-center justify-center"
           aria-label="Toggle menu"
         >
-          <i className="fa-solid fa-bars text-lg" />
+          <i className="fa-solid fa-id-card text-lg" />
         </button>
 
-        <nav className="flex-1 bg-neutral-bg/80 backdrop-blur-md border border-white/10 rounded-2xl p-1 shadow-2xl">
+        {/* TODO: add bg maybe ? */}
+        <nav className="flex-1 backdrop-blur-md border border-white/10 rounded-2xl p-1 shadow-2xl">
           <ul className="flex items-center justify-between gap-1">
             {NAV_LINKS.map((link) => {
               const isActive = activeSection === link.href;

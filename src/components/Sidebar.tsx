@@ -25,15 +25,16 @@ export default function Sidebar({ isOpen, setIsOpen }: { isOpen: boolean; setIsO
             }
           }}
           className={`
-            fixed inset-y-0 left-0 z-[55] w-[85%] sm:w-72 bg-neutral-bg p-6 flex flex-col justify-between 
+            fixed inset-y-0 left-0 z-[55] w-[85%] sm:w-72 p-6 flex flex-col justify-between 
             lg:translate-x-0 lg:static lg:w-72 lg:h-screen lg:border-r lg:border-white/5 lg:shadow-2xl shadow-2xl
             max-h-screen overflow-y-auto
           `}
+          style={{ background: "var(--background)" }}
         >
           {/* Mobile close button */}
           <button
             onClick={() => setIsOpen(false)}
-            className="lg:hidden absolute top-2 left-4 z-[60] h-10 w-10 bg-neutral-bg/70 backdrop-blur-md rounded-2xl border border-white/10 text-white/80 flex items-center justify-center"
+            className="lg:hidden absolute top-2 left-4 z-[60] h-10 w-10 bg-neutral-bg/70 text-white/80 flex items-center justify-center"
             aria-label="Close menu"
           >
             <i className="fa-solid fa-xmark text-lg" />
@@ -63,7 +64,7 @@ export default function Sidebar({ isOpen, setIsOpen }: { isOpen: boolean; setIsO
                 <p >{d.lastName}</p>
                 <p>{d.firstName}</p>
               </div>
-              <p className="text-xs font-bold uppercase tracking-widest mt-1 bg-primary px-3 py-1.5 rounded-md inline-block border border-primary/20">{d.role}</p>
+              <p className="text-xs font-bold uppercase tracking-widest mt-1 bg-none px-3 py-1.5 rounded-md inline-block border border-primary">{d.role}</p>
 
               <div className="mt-8 text-left w-full flex flex-col gap-4">
                 <InfoWithIcon icon={"fa-location-dot"}>
