@@ -6,6 +6,7 @@ import WhatIDo from "@/sections/WhatIDo";
 import { useState, useEffect } from "react";
 import Experience from "@/sections/Experience";
 import Projects from "@/sections/Projects";
+import Parallax from "@/components/Parallax";
 
 export default function Home() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -31,7 +32,7 @@ export default function Home() {
         <main className="p-4 lg:p-8 pt-20 lg:pt-0 mt-4">
           {/* Section: What I do */}
           <section id="what-i-do" className="min-h-screen border-b border-white/5 py-5">
-            <WhatIDo />
+              <WhatIDo />
           </section>
 
           {/* Section: Experience */}

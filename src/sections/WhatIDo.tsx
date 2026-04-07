@@ -6,6 +6,7 @@ import Title from "@/components/Title";
 import { motion } from "framer-motion";
 import CardContainer from "@/components/CardContainer";
 import BorderedIcon from "@/components/BorderedIcon";
+import Parallax from "@/components/Parallax";
 
 
 export default function WhatIDo() {
@@ -20,60 +21,63 @@ export default function WhatIDo() {
         <>
             <Title>What I Do</Title>
 
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
-                {/* Left side: Navigation Cards & SVG Overlay */}
-                <div className="col-span-1 flex flex-col gap-4 relative">
-                    <div className="
+            <Parallax image="/assets/svgs/bg-experience.svg">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start p-4">
+
+                    {/* Left side: Navigation Cards & SVG Overlay */}
+                    <div className="col-span-1 flex flex-col gap-4 relative">
+                        <div className="
                             flex flex-col gap-4
                             lg:max-h-[550px] lg:overflow-y-auto lg:px-2 lg:py-2
                             scrollbar-thin scrollbar-thumb-white/10
                         ">
-                        {d.map((wid, id) => (
-                            <WhatIDoCard
-                                key={id}
-                                whatIDo={wid}
-                                active={current.title === wid.title}
-                                onClick={() => {
-                                    changeCurrent(id);
-                                }}
-                            />
-                        ))}
-                    </div>
+                            {d.map((wid, id) => (
+                                <WhatIDoCard
+                                    key={id}
+                                    whatIDo={wid}
+                                    active={current.title === wid.title}
+                                    onClick={() => {
+                                        changeCurrent(id);
+                                    }}
+                                />
+                            ))}
+                        </div>
 
-                    {/* Coding SVG Decoration (large screens only) */}
-                    <div className="hidden lg:flex mt-8 justify-center items-center opacity-80 group/svg">
-                        <div className="animate-float pointer-events-none">
-                            <Image
-                                src="/assets/svgs/coding.svg"
-                                alt="Coding Illustration"
-                                width={300}
-                                height={300}
-                                className="w-full max-w-[220px] h-auto filter invert brightness-200 transition-all duration-300 group-hover/svg:brightness-100"
-                                loading="eager"
-                            />
+                        {/* Coding SVG Decoration (large screens only) */}
+                        <div className="hidden lg:flex mt-8 justify-center items-center opacity-80 group/svg">
+                            <div className="animate-float pointer-events-none">
+                                <Image
+                                    src="/assets/svgs/coding.svg"
+                                    alt="Coding Illustration"
+                                    width={300}
+                                    height={300}
+                                    className="w-full max-w-[220px] h-auto filter invert brightness-200 transition-all duration-300 group-hover/svg:brightness-100"
+                                    loading="eager"
+                                />
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                {/* Right side: Detailed Description */}
-                <div className="col-span-1 lg:col-span-2 relative">
-                    <CardContainer
-                        id={index}
-                        onPrev={prev}
-                        onNext={next}
-                        className="min-h-[450px] max-h-[450px] lg:min-h-[750px] lg:max-h-[750px]"
-                    >
-                        <div className="flex items-center gap-4 mb-8 px-2 md:px-8">
-                            <BorderedIcon icon={current.icon} />
-                            <h2 className="text-4xl font-bold text-white tracking-tight">{current.title}</h2>
-                        </div>
+                    {/* Right side: Detailed Description */}
+                    <div className="col-span-1 lg:col-span-2 relative">
+                        <CardContainer
+                            id={index}
+                            onPrev={prev}
+                            onNext={next}
+                            className="min-h-[450px] max-h-[450px] lg:min-h-[750px] lg:max-h-[750px]"
+                        >
+                            <div className="flex items-center gap-4 mb-8 px-2 md:px-8">
+                                <BorderedIcon icon={current.icon} />
+                                <h2 className="text-4xl font-bold text-white tracking-tight">{current.title}</h2>
+                            </div>
 
-                        <div className="text-white/80 leading-relaxed text-lg px-2 md:px-8">
-                            {current.description}
-                        </div>
-                    </CardContainer>
+                            <div className="text-white/80 leading-relaxed text-lg px-2 md:px-8">
+                                {current.description}
+                            </div>
+                        </CardContainer>
+                    </div>
                 </div>
-            </div>
+            </Parallax>
         </>
     );
 }
