@@ -8,7 +8,7 @@ import CardlikeButton from "@/components/CardlikeButton";
 
 export default function Projects() {
     const CountBadge = ({ count }: { count: number }) => (
-        <span className="absolute -top-2 -right-2 z-10 h-6 min-w-6 flex items-center justify-center text-[11px] px-0.5 py-0.5 rounded-full bg-gray-700 text-white/90 border border-white/10 shadow-sm">
+        <span className="absolute -top-2 -right-2 z-10 h-6 min-w-6 flex items-center justify-center text-[11px] px-0.5 py-0.5 rounded-full bg-white/90 text-black font-bold">
             {count}
         </span>
     );

@@ -5,6 +5,7 @@ import Image from "next/image";
 import Title from "@/components/Title";
 import { motion } from "framer-motion";
 import CardContainer from "@/components/CardContainer";
+import BorderedIcon from "@/components/BorderedIcon";
 
 
 export default function WhatIDo() {
@@ -63,9 +64,7 @@ export default function WhatIDo() {
                         className="min-h-[450px] max-h-[450px] lg:min-h-[750px] lg:max-h-[750px]"
                     >
                         <div className="flex items-center gap-4 mb-8 px-2 md:px-8">
-                            <div className="p-4 bg-primary/20 rounded-2xl text-primary shadow-lg shadow-primary/20">
-                                <i className={`fas ${current.icon} text-3xl`}></i>
-                            </div>
+                            <BorderedIcon icon={current.icon} />
                             <h2 className="text-4xl font-bold text-white tracking-tight">{current.title}</h2>
                         </div>
 

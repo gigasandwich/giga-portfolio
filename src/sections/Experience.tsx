@@ -3,6 +3,7 @@ import Title from "@/components/Title";
 import experienceData, { ExperienceType } from "@/data/experience/Main";
 import VerticalTimeline from "@/components/VerticalTimeline";
 import CardContainer from "@/components/CardContainer";
+import BorderedIcon from "@/components/BorderedIcon";
 
 export default function Experience() {
     const [index, setIndex] = useState(1);
@@ -45,17 +46,15 @@ export default function Experience() {
                                 className="min-h-[700px] !bg-[#161616]/80"
                             >
                                 <div className="flex justify-between items-start mb-8">
+                                    {/* <div className="inline-block px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-[10px] font-bold tracking-widest text-primary uppercase mb-4">
+                                        {current.end != null ? 'Past Achievement' : 'Current Focus'}
+                                    </div> */}
                                     <div className="px-2 md:px-8">
-                                        <div className="inline-block px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-[10px] font-bold tracking-widest text-primary uppercase mb-4">
-                                            {current.end != null ? 'Past Achievement' : 'Current Focus'}
-                                        </div>
                                         <h3 className="text-4xl font-bold text-white mb-2 tracking-tight">{current.title}</h3>
                                         {current.meta && <p className="text-2xl text-primary font-medium">{current.meta}</p>}
                                     </div>
                                     {current.icon && (
-                                        <div className="w-16 h-16 rounded-2xl bg-primary/20 flex items-center justify-center text-primary shadow-lg shadow-primary/10">
-                                            <i className={`fas ${current.icon} text-3xl`}></i>
-                                        </div>
+                                        <BorderedIcon icon={current.icon} />
                                     )}
                                 </div>
 
@@ -91,9 +90,9 @@ export default function Experience() {
 
                             <div className="mt-4 h-full overflow-y-auto">
                                 <div className="mb-6 pr-8">
-                                    <div className="inline-block px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-[10px] font-bold tracking-widest text-primary uppercase mb-3">
+                                    {/* <div className="inline-block px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-[10px] font-bold tracking-widest text-primary uppercase mb-3">
                                         {current.end != null ? 'Past Achievement' : 'Current Focus'}
-                                    </div>
+                                    </div> */}
                                     <h3 className="text-2xl font-bold text-white mb-1 uppercase leading-tight">{current.title}</h3>
                                     {current.meta && <p className="text-lg text-primary font-medium uppercase">{current.meta}</p>}
                                 </div>
