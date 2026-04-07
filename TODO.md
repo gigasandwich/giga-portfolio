@@ -103,7 +103,7 @@ Content:
 - [ ] Check
     - [ ] Issues
         - After asking for feedbar [here](https://www.reddit.com/r/webdev/s/KKk7Hccv90)
-            - [ ] Color choice: `60, 30, 10`
+            - [x] Color choice: `60, 30, 10`
             - Text
                 - [ ] 2 fonts max, also responsive
                 - [ ] Structure: `h1, h3, p` 
@@ -113,6 +113,7 @@ Content:
                 - [ ] Unresponsive items
             - [ ] Background of xp section should be the whole app's ?
             - [ ] Sidebar when not full window
+            - [ ] Add a section for recommendations (ie, devs who gave feedback)
     
     - [ ] Refactor
 
