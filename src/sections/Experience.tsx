@@ -4,6 +4,7 @@ import experienceData, { ExperienceType } from "@/data/experience/Main";
 import VerticalTimeline from "@/components/VerticalTimeline";
 import CardContainer from "@/components/CardContainer";
 import BorderedIcon from "@/components/BorderedIcon";
+import Parallax from "@/components/Parallax";
 
 export default function Experience() {
     const [index, setIndex] = useState(1);
@@ -26,9 +27,8 @@ export default function Experience() {
                 Experience &
                 <p className="text-primary">involvement</p>
             </Title>
-            <div id="experience" className="relative overflow-visible py-3 lg:py-15 rounded-3xl border border-white/5"
-                style={{ backgroundImage: `url('/assets/svgs/bg-experience.svg')`, backgroundAttachment: 'fixed', backgroundSize: 'cover', backgroundPosition: 'center' }}>
-                <div className="relative z-10 px-4 lg:px-0">
+            <Parallax image="/assets/svgs/bg-experience.svg">
+                <div className="relative z-10 px-4 py-3 lg:py-15 lg:px-0">
 
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
                         <div className="col-span-1 flex justify-center">
@@ -65,7 +65,7 @@ export default function Experience() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </Parallax>
 
             {/* Mobile Modal */}
             {isModalOpen && (
