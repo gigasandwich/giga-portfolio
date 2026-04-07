@@ -6,7 +6,8 @@ export type SocialLink = {
 
 export type SidebarData = {
   avatar: string;
-  fullName: string;
+  lastName: string;
+  firstName: string;
   role: string;
   status: string;
   location: string;
@@ -21,7 +22,8 @@ export type SidebarData = {
 
 const sidebarData: SidebarData = {
   avatar: 'https://drive.google.com/uc?export=view&id=1g2JpxF-kclOrEvu4KLvlqV5pWKXt3TnJ',
-  fullName: 'RABETOKOTANY Yvan Noah',
+  lastName: 'RABETOKOTANY',
+  firstName: 'Yvan Noah',
   role: 'Software Engineer',
   status: 'Open for work',
   location: 'Madagascar/Antananarivo',

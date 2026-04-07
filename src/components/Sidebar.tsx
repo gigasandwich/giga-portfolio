@@ -45,7 +45,8 @@ export default function Sidebar({ isOpen, setIsOpen }: { isOpen: boolean; setIsO
               <div className="w-full h-full rounded-full overflow-hidden border-2 border-primary/20 shadow-inner">
                 <Image
                   src={d.avatar}
-                  alt={d.fullName}
+                  // TODO: SEO
+                  alt={`${d.firstName}${d.lastName}`}
                   width={96}
                   height={96}
                 />
@@ -58,7 +59,10 @@ export default function Sidebar({ isOpen, setIsOpen }: { isOpen: boolean; setIsO
             </div>
 
             <div className="w-full text-center">
-              <h2 className="text-2xl font-manrope font-extrabold tracking-tight break-words leading-tight max-w-full mb-1 text-white">{d.fullName}</h2>
+              <div className="text-2xl font-manrope font-extrabold tracking-tight break-words leading-tight max-w-full mb-1 text-white">
+                <p >{d.lastName}</p>
+                <p>{d.firstName}</p>
+              </div>
               <p className="text-xs font-bold uppercase tracking-widest mt-1 bg-primary px-3 py-1.5 rounded-md inline-block border border-primary/20">{d.role}</p>
 
               <div className="mt-8 text-left w-full flex flex-col gap-4">
