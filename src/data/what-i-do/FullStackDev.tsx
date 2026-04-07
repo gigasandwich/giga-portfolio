@@ -18,7 +18,7 @@ const whatIDoData: WhatIDoType = {
             
             <div className="p-4 rounded-xl bg-white/5 border border-white/10 hover:border-secondary/50 transition-colors">
                 <p className="text-lg leading-relaxed">
-                    <span className="text-secondary font-bold">Frontend</span> is not my best point, but you can judge me based on the portfolio you're viewing now.
+                    <span className="text-primary font-bold">Frontend</span> is not my best point, but you can judge me based on the portfolio you're viewing now.
                 </p>
                 <div className="mt-4 flex items-center gap-2 text-sm text-white/40 relative group">
                     <i className="fas fa-info-circle text-primary/60"></i>

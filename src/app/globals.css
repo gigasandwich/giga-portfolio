@@ -4,14 +4,14 @@
   --font-manrope: "Manrope", sans-serif;
   --font-inter: "Inter", sans-serif;
 
-  --color-primary: #10B981;
-  --color-secondary: #508168;
-  --color-tertiary: #FC7C78;
-  --color-neutral-bg: #0A0A0A;
+  --color-bg: #0A0A0A;
+  --color-secondary: #121212; /* Cards  */
+  --color-tertiary: #191919; /* Cards Inside cards */
+  --color-primary: #10B981; /* Accent */
 }
 
 :root {
-  --background: #0A0A0A;
+  --background: var(--color-bg);
   --foreground: #EDEDED;
 }
 
@@ -74,4 +74,25 @@ body {
 .mid-scrollbar::-webkit-scrollbar {
   width: 8px;
   height: 8px;
+}
+
+/*
+  own
+*/
+
+.giga-card {
+  @apply bg-secondary;
+  @apply border;
+  @apply border-white/10;
+}
+
+.giga-sub-card {
+  @apply bg-tertiary;
+  @apply rounded-lg;
+  @apply border;
+  @apply border-white/6;
+}
+
+.text-white {
+  color: #E8E7E8;
 }

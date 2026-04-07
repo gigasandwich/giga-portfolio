@@ -24,7 +24,7 @@ export default function WhatIDo() {
                 <div className="col-span-1 flex flex-col gap-4 relative">
                     <div className="
                             flex flex-col gap-4
-                            lg:max-h-[550px] lg:overflow-y-auto lg:pr-2
+                            lg:max-h-[550px] lg:overflow-y-auto lg:px-2 lg:py-2
                             scrollbar-thin scrollbar-thumb-white/10
                         ">
                         {d.map((wid, id) => (
@@ -94,8 +94,8 @@ const WhatIDoCard = ({
                 group w-full text-left transition-all duration-300
                 p-4 lg:p-5 rounded-2xl border
                 ${active
-                    ? "bg-primary/10 border-primary ring-1 ring-primary/20 shadow-lg shadow-primary/10"
-                    : "bg-white/[0.02] border-white/5 hover:border-white/20 hover:bg-white/[0.05]"
+                    ? "bg-primary/10 border-primary ring-1 ring-primary/50"
+                    : "giga-card"
                 }
                 cursor-pointer relative overflow-hidden
             `}
@@ -103,13 +103,13 @@ const WhatIDoCard = ({
             {active && (
                 <motion.div
                     layoutId="active-pill"
-                    className="absolute inset-0 bg-primary/5 -z-10"
+                    className="absolute inset-0 -z-10"
                     transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                 />
             )}
             <div className="flex items-center gap-4 relative z-10">
                 <div className={`
-                    w-12 h-12 flex items-center justify-center rounded-xl transition-all duration-300
+                    min-w-12 min-h-12 flex items-center justify-center rounded-xl transition-all duration-300
                     ${active
                         ? "bg-primary text-white scale-110 shadow-lg shadow-primary/30"
                         : "bg-white/5 text-white/40 group-hover:text-white/60 group-hover:bg-white/10"

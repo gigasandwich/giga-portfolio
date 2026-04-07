@@ -223,7 +223,9 @@ export default function Projects() {
                         <div className="max-w-4xl mx-auto w-full">
                             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 px-4">
                                 {currentPage.map((proj, idx) => (
-                                    <article key={proj.title + idx} onClick={() => setSelected(proj)} className="cursor-pointer p-4 bg-white/3 rounded-lg border border-white/6 h-full flex flex-col justify-between">
+                                    <article key={proj.title + idx} onClick={() => setSelected(proj)} 
+                                        className="giga-sub-card cursor-pointer p-4 h-full flex flex-col justify-between"
+                                    >
                                         <div className="flex items-start gap-3">
                                             <div className="p-2 bg-primary/10 rounded-lg text-primary flex-none">
                                                 <i className="fa-solid fa-folder-open" />

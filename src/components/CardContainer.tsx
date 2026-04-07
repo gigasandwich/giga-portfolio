@@ -33,9 +33,10 @@ export default function CardContainer({ children, onPrev, onNext, id, className 
                     }}
                     className={`
                         p-6 lg:p-8
+                        giga-card
                         w-full h-full overflow-y-auto
-                        bg-white/[0.03] backdrop-blur-xl
-                        border border-white/10 rounded-3xl shadow-2xl
+                        backdrop-blur-xl
+                        rounded-3xl shadow-2xl
                         flex flex-col relative
                         ${className}
                     `}
@@ -49,7 +50,7 @@ export default function CardContainer({ children, onPrev, onNext, id, className 
                 <button
                     onClick={onPrev}
                     aria-label="Previous"
-                    className="p-3 lg:p-4 rounded-2xl bg-neutral-900/80 border border-white/10 text-white/90 hover:bg-primary hover:border-primary hover:scale-110 active:scale-95 backdrop-blur-md shadow-2xl transition-all duration-300 group/btn"
+                    className="p-3 lg:p-4 rounded-2xl bg-neutral-900/80 border border-white/10 text-white/90 hover:bg-primary hover:border-primary hover:scale-110 active:scale-95 backdrop-blur-md shadow-2xl transition-all duration-300 group/btn cursor-pointer"
                 >
                     <i className="fa-solid fa-chevron-left text-xl group-hover:-translate-x-1 transition-transform" />
                 </button>
@@ -58,7 +59,7 @@ export default function CardContainer({ children, onPrev, onNext, id, className 
                 <button
                     onClick={onNext}
                     aria-label="Next"
-                    className="p-3 lg:p-4 rounded-2xl bg-neutral-900/80 border border-white/10 text-white/90 hover:bg-primary hover:border-primary hover:scale-110 active:scale-95 backdrop-blur-md shadow-2xl transition-all duration-300 group/btn"
+                    className="p-3 lg:p-4 rounded-2xl bg-neutral-900/80 border border-white/10 text-white/90 hover:bg-primary hover:border-primary hover:scale-110 active:scale-95 backdrop-blur-md shadow-2xl transition-all duration-300 group/btn cursor-pointer"
                 >
                     <i className="fa-solid fa-chevron-right text-xl group-hover:translate-x-1 transition-transform" />
                 </button>

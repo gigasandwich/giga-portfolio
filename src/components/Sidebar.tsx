@@ -2,7 +2,7 @@
 
 import sidebarData from "@/data/sidebar";
 import Image from "next/image";
-import { useState } from "react";
+import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Sidebar({ isOpen, setIsOpen }: { isOpen: boolean; setIsOpen: (o: boolean) => void }) {
@@ -59,36 +59,27 @@ export default function Sidebar({ isOpen, setIsOpen }: { isOpen: boolean; setIsO
 
             <div className="w-full text-center">
               <h2 className="text-2xl font-manrope font-extrabold tracking-tight break-words leading-tight max-w-full mb-1 text-white">{d.fullName}</h2>
-              <p className="text-xs text-primary font-bold uppercase tracking-widest mt-1 bg-primary/10 px-3 py-1.5 rounded-md inline-block border border-primary/20">{d.role}</p>
+              <p className="text-xs font-bold uppercase tracking-widest mt-1 bg-primary px-3 py-1.5 rounded-md inline-block border border-primary/20">{d.role}</p>
 
               <div className="mt-8 text-left w-full flex flex-col gap-4">
-                <div className="flex items-center text-sm group">
-                  <div className="w-4 flex-none text-center mr-2">
-                    <i className="fa-solid fa-location-dot text-primary/70 group-hover:text-primary transition-colors" aria-hidden />
-                  </div>
-                  <div className="flex-1 text-white/90 leading-snug font-inter">{d.location}</div>
-                </div>
-
-                <div className="flex items-center text-sm group">
-                  <div className="w-4 flex-none text-center mr-2">
-                    <i className="fa-solid fa-envelope text-primary/70 group-hover:text-primary transition-colors" aria-hidden />
-                  </div>
-                  <div className="flex-1 text-white/90 leading-snug font-inter">
+                <InfoWithIcon icon={"fa-location-dot"}>
+                    {d.location}
+                </InfoWithIcon>
+                <InfoWithIcon icon={"fa-envelope"}>
                     <a href={d.contacts.email} className="hover:underline">{d.contacts.email.replace('mailto:', '')}</a>
-                  </div>
-                </div>
+                </InfoWithIcon>
+                <InfoWithIcon icon={"fa-location-dot"}>
+                    {d.location}
+                </InfoWithIcon>
 
                 {d.contacts.phones?.map((p, i) => (
-                  <div key={`${p}-${i}`} className="flex items-center text-sm group">
-                    <div className="w-4 flex-none text-center mr-2">
-                      <i className="fa-solid fa-phone text-primary/70 group-hover:text-primary transition-colors" aria-hidden />
-                    </div>
-                    <div className="flex-1 text-white/90 font-inter">{p}</div>
-                  </div>
+                  <InfoWithIcon key={i} icon={"fa-phone"}>
+                    {p}
+                  </InfoWithIcon>
                 ))}
               </div>
 
-              <p className="mt-8 text-sm text-white/70 text-left leading-relaxed font-normal italic border-l-2 border-primary/30 pl-4 py-1 font-inter">
+              <p className="mt-8 text-sm text-white text-left leading-relaxed font-normal italic border-l-2 border-primary pl-4 py-1 font-inter">
                 {d.about}
               </p>
             </div>
@@ -121,5 +112,16 @@ export default function Sidebar({ isOpen, setIsOpen }: { isOpen: boolean; setIsO
         />
       )}
     </AnimatePresence>
+  );
+}
+
+function InfoWithIcon({icon, children} : {icon: string, children: string | React.ReactNode}) {
+  return (
+    <div className="flex items-center text-sm group">
+      <div className="w-4 flex-none text-center mr-2">
+        <i className={`fa-solid ${icon} text-white/90 group-hover:text-primary transition-colors`} aria-hidden />
+      </div>
+      <div className="flex-1 text-white leading-snug font-inter">{children}</div>
+    </div>
   );
 }
