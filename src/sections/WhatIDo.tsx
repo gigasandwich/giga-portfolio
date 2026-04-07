@@ -19,9 +19,7 @@ export default function WhatIDo() {
 
     return (
         <>
-            <Title>What I Do</Title>
-
-            <Parallax image="/assets/svgs/bg-experience.svg">
+        
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start p-4">
 
                     {/* Left side: Navigation Cards & SVG Overlay */}
@@ -77,7 +75,6 @@ export default function WhatIDo() {
                         </CardContainer>
                     </div>
                 </div>
-            </Parallax>
         </>
     );
 }

@@ -23,11 +23,6 @@ export default function Experience() {
 
     return (
         <>
-            <Title>
-                Experience &
-                <p className="text-primary">involvement</p>
-            </Title>
-            <Parallax image="/assets/svgs/bg-experience.svg">
                 <div className="relative z-10 px-4 py-3 lg:py-15 lg:px-0">
 
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
@@ -65,7 +60,6 @@ export default function Experience() {
                         </div>
                     </div>
                 </div>
-            </Parallax>
 
             {/* Mobile Modal */}
             {isModalOpen && (

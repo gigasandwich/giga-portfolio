@@ -5,6 +5,7 @@ import BackgroundlessButton from "@/components/BackgroundlessButton";
 import projectsData, { ProjectType } from "@/data/projects/Main";
 import CardContainer from "@/components/CardContainer";
 import CardlikeButton from "@/components/CardlikeButton";
+import Parallax from "@/components/Parallax";
 
 export default function Projects() {
     const CountBadge = ({ count }: { count: number }) => (
@@ -161,10 +162,8 @@ export default function Projects() {
     }, []);
 
     return (
-        <section>
-            <Title>Projects</Title>
-
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+        <>
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start p-4">
                 <aside className="col-span-1 flex flex-col gap-6">
                     <div>
                         <h4 className="text-sm text-white/60 mb-2">Languages</h4>
@@ -308,10 +307,10 @@ export default function Projects() {
                             </div>
                         </div>
                     </CardContainer>
-                    {/** Render modal at root of section so it appears above everything xD */}
+                    {/** Render modal at root so it appears above everything xD */}
                     <ProjectModal project={selected} onClose={() => setSelected(null)} />
                 </div>
             </div>
-        </section>
+        </>
     );
 }

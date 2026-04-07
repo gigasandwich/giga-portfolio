@@ -6,10 +6,11 @@ import WhatIDo from "@/sections/WhatIDo";
 import { useState, useEffect } from "react";
 import Experience from "@/sections/Experience";
 import Projects from "@/sections/Projects";
-import Parallax from "@/components/Parallax";
+import ParallaxedSection from "@/components/ParallaxedSection";
 
 export default function Home() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const commonParallaxImage = "/assets/svgs/bg-experience.svg";
 
   return (
     <div className="flex flex-col lg:flex-row min-h-screen bg-neutral-bg">
@@ -31,19 +32,37 @@ export default function Home() {
         
         <main className="p-4 lg:p-8 pt-20 lg:pt-0 mt-4">
           {/* Section: What I do */}
-          <section id="what-i-do" className="min-h-screen border-b border-white/5 py-5">
+          <ParallaxedSection 
+            image={commonParallaxImage} 
+            title={"What I Do"} 
+            id="what-i-do" className="min-h-screen border-b border-white/5"
+            content={
               <WhatIDo />
-          </section>
-
+            }
+          />
+              
           {/* Section: Experience */}
-          <section id="experience" className="border-b border-white/5 py-5">
-            <Experience />
-          </section>
+          <ParallaxedSection 
+            image={commonParallaxImage} 
+            id="experience"
+            className="border-b border-white/5"
+            title={
+              <>
+                Experience &
+                <p className="text-primary">involvement</p>
+              </>
+            }
+            content={<Experience />}
+          />
 
           {/* Section: Projects */}
-          <section id="projects" className="min-h-screen border-b border-white/5 py-5">
-            <Projects />
-          </section>
+          <ParallaxedSection 
+          image={commonParallaxImage} 
+            title={"Projects"} 
+            id="projects"
+            className="min-h-screen border-b border-white/5"
+            content={<Projects />} 
+          />
         </main>
       </div>
     </div>
