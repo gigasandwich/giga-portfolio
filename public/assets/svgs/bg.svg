@@ -1,53 +1,56 @@
-<svg width="100%" height="100%" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
-
-  <!-- Dark sky base -->
-  <rect width="100%" height="100%" fill="#0A0A0A"/>
-
-  <!-- Nebula-like glows -->
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
   <defs>
-    <radialGradient id="nebula1" cx="40%" cy="30%" r="40%">
-      <stop offset="0%" stop-color="#10B981" stop-opacity="0.3"/>
-      <stop offset="100%" stop-color="#0A0A0A" stop-opacity="0"/>
+    <!-- Accent green gradient at bottom-left -->
+    <radialGradient id="g1" cx="15%" cy="85%" r="40%">
+      <stop offset="0%" stop-color="#10B981" stop-opacity="0.28" />
+      <stop offset="100%" stop-color="#10B981" stop-opacity="0" />
     </radialGradient>
 
-    <radialGradient id="nebula2" cx="70%" cy="60%" r="50%">
-      <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.25"/>
-      <stop offset="100%" stop-color="#0A0A0A" stop-opacity="0"/>
+    <!-- Purple gradient -->
+    <radialGradient id="g2" cx="85%" cy="80%" r="50%">
+      <stop offset="0%" stop-color="#7c3aed" stop-opacity="0.12" />
+      <stop offset="100%" stop-color="#7c3aed" stop-opacity="0" />
     </radialGradient>
 
-    <radialGradient id="starGlow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.7"/>
-      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    <!-- Subtle vertical linear gradient -->
+    <linearGradient id="g3" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.02" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+    </linearGradient>
+
+    <!-- Grain filter -->
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" stitchTiles="stitch"
+        result="noise" />
+      <feColorMatrix type="saturate" values="0" />
+      <feBlend in="SourceGraphic" in2="noise" mode="overlay" />
+    </filter>
+
+    <!-- Central subtle glow -->
+    <radialGradient id="centerGlow" cx="50%" cy="40%" r="40%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.03" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
     </radialGradient>
   </defs>
 
-  <!-- Nebula blobs -->
-  <circle cx="480" cy="220" r="300" fill="url(#nebula1)"/>
-  <circle cx="900" cy="600" r="400" fill="url(#nebula2)"/>
+  <!-- Dark base -->
+  <rect width="100%" height="100%" fill="#07080a" />
 
-  <!-- Stars -->
-  <g fill="#ffffff">
-    <circle cx="100" cy="100" r="1"/>
-    <circle cx="200" cy="300" r="1.2"/>
-    <circle cx="350" cy="150" r="0.8"/>
-    <circle cx="500" cy="50" r="1"/>
-    <circle cx="700" cy="200" r="1.5"/>
-    <circle cx="850" cy="100" r="1"/>
-    <circle cx="1000" cy="400" r="1.3"/>
-    <circle cx="1100" cy="700" r="1"/>
+  <!-- Gradient glows -->
+  <rect width="100%" height="100%" fill="url(#g1)" opacity="0.36" />
+  <rect width="100%" height="100%" fill="url(#g2)" opacity="0.28" />
+  <rect width="100%" height="100%" fill="url(#g3)" opacity="0.12" />
+
+  <!-- Subtle grid overlay -->
+  <g opacity="0.06" stroke="#ffffff">
+    <defs>
+      <pattern id="dots" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+        <circle cx="2" cy="2" r="1" fill="#ffffff" />
+      </pattern>
+    </defs>
+    <rect width="100%" height="100%" fill="url(#dots)" />
   </g>
 
-  <!-- Faint comet streaks -->
-  <g>
-    <line x1="150" y1="120" x2="400" y2="200" stroke="#ffffff" stroke-opacity="0.2" stroke-width="1" stroke-linecap="round"/>
-    <line x1="800" y1="50" x2="1100" y2="180" stroke="#ffffff" stroke-opacity="0.15" stroke-width="1" stroke-linecap="round"/>
-  </g>
-
-  <!-- Glowing small stars -->
-  <g>
-    <circle cx="300" cy="250" r="2" fill="url(#starGlow)"/>
-    <circle cx="750" cy="400" r="1.5" fill="url(#starGlow)"/>
-    <circle cx="1050" cy="600" r="2" fill="url(#starGlow)"/>
-  </g>
-
+  <!-- Central subtle glow -->
+  <rect width="100%" height="100%" fill="url(#centerGlow)" />
 </svg>

@@ -63,9 +63,9 @@ export default function Sidebar({ isOpen, setIsOpen }: { isOpen: boolean; setIsO
             </div>
 
             <div className="w-full text-center">
-              <div className="text-2xl font-manrope font-extrabold tracking-tight break-words leading-tight max-w-full mb-1 text-white">
-                <p >{d.lastName}</p>
-                <p>{d.firstName}</p>
+              <div className="font-manrope font-extrabold tracking-tight break-words leading-tight max-w-full mb-1 text-white">
+                <h2>{d.lastName}</h2>
+                <h2>{d.firstName}</h2>
               </div>
 
               <h4 className="mt-1 bg-none px-3 py-1.5 rounded-md inline-block border border-primary text-white">{d.role}</h4>
@@ -76,9 +76,6 @@ export default function Sidebar({ isOpen, setIsOpen }: { isOpen: boolean; setIsO
                 </InfoWithIcon>
                 <InfoWithIcon icon={"fa-envelope"}>
                     <a href={d.contacts.email} className="hover:underline">{d.contacts.email.replace('mailto:', '')}</a>
-                </InfoWithIcon>
-                <InfoWithIcon icon={"fa-location-dot"}>
-                    {d.location}
                 </InfoWithIcon>
 
                 {d.contacts.phones?.map((p, i) => (
