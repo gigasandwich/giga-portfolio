@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import useIsWide from "@/hooks/useIsWide";
 
 const NAV_LINKS = [
   { name: "What I do", href: "#what-i-do" },
@@ -12,17 +13,21 @@ const NAV_LINKS = [
 export default function Navbar({ onMenuClick }: { onMenuClick?: () => void }) {
   const [activeSection, setActiveSection] = useState("");
 
+  const isWide = useIsWide();
+
   return (
-    <div className="fixed lg:sticky top-1 lg:top-6 z-50 flex justify-center w-full font-manrope px-4 lg:px-4 left-0">
+    <div className={`${isWide ? "lg:sticky top-6" : "fixed top-1"} z-50 flex justify-center w-full font-manrope px-4 left-0`}>
       <div className="w-full max-w-lg flex items-center gap-3">
         {/* Mobile Toggle Button inside Navbar */}
-        <button
-          onClick={onMenuClick}
-          className="lg:hidden h-10 w-10 bg-bg border border-white/10 rounded-2xl text-white shadow-2xl flex-none flex items-center justify-center"
-          aria-label="Toggle menu"
-        >
-          <i className="fa-solid fa-id-card text-lg" />
-        </button>
+        {!isWide && (
+          <button
+            onClick={onMenuClick}
+            className="h-10 w-10 bg-bg border border-white/10 rounded-2xl text-white shadow-2xl flex-none flex items-center justify-center"
+            aria-label="Toggle menu"
+          >
+            <i className="fa-solid fa-id-card text-lg" />
+          </button>
+        )}
 
         {/* TODO: add bg maybe ? */}
         <nav className="flex-1 backdrop-blur-md border border-white/10 rounded-2xl p-1 shadow-2xl">

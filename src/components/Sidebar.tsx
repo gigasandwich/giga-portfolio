@@ -4,9 +4,12 @@ import sidebarData from "@/data/sidebar";
 import Image from "next/image";
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import useIsWide from "@/hooks/useIsWide";
 
 export default function Sidebar({ isOpen, setIsOpen }: { isOpen: boolean; setIsOpen: (o: boolean) => void }) {
   const d = sidebarData;
+
+  const isWide = useIsWide();
 
   return (
     <AnimatePresence>
@@ -24,17 +27,17 @@ export default function Sidebar({ isOpen, setIsOpen }: { isOpen: boolean; setIsO
               setIsOpen(false);
             }
           }}
-          className={`
-            fixed inset-y-0 left-0 z-[55] w-[85%] sm:w-72 p-6 flex flex-col justify-between 
-            lg:translate-x-0 lg:static lg:w-72 lg:h-screen lg:border-r lg:border-white/5 lg:shadow-2xl shadow-2xl
-            max-h-screen overflow-y-auto
-          `}
+          className={
+            isWide
+              ? `static z-[55] w-72 p-6 flex flex-col justify-between h-screen border-r border-white/5 shadow-2xl max-h-screen overflow-y-auto`
+              : `fixed inset-y-0 left-0 z-[55] w-[85%] sm:w-72 p-6 flex flex-col justify-between max-h-screen overflow-y-auto`
+          }
           style={{ background: "var(--background)" }}
         >
           {/* Mobile close button */}
           <button
             onClick={() => setIsOpen(false)}
-            className="lg:hidden absolute top-2 left-4 z-[60] h-10 w-10 bg-neutral-bg/70 text-white/80 flex items-center justify-center"
+            className={`${isWide ? "hidden" : "absolute top-2 left-4 z-[60] h-10 w-10 bg-neutral-bg/70 text-white/80 flex items-center justify-center"}`}
             aria-label="Close menu"
           >
             <i className="fa-solid fa-xmark text-lg" />
@@ -107,12 +110,12 @@ export default function Sidebar({ isOpen, setIsOpen }: { isOpen: boolean; setIsO
       )}
 
       {/* Backdrop for mobile to close the menu when clicking outside */}
-      {isOpen && (
+      {isOpen && !isWide && (
         <motion.div key="sidebar-backdrop"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[50] lg:hidden"
+          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[50]"
           onClick={() => setIsOpen(false)}
         />
       )}
