@@ -166,8 +166,9 @@ export default function Projects() {
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start p-4">
                 <aside className="col-span-1 flex flex-col gap-6">
                     <div>
-                        <h4 className="text-sm text-white/60 mb-2">Languages</h4>
-                        <div className="flex flex-wrap gap-2 max-w-full overflow-x-auto py-2">
+                        <h2 className="text-white mb-2">Languages</h2>
+                        {/* This layout will visually break later, God help me */}
+                        <div className="flex flex-wrap gap-2 max-w-full py-2">
                             {languages.map((lang, i) => (
                                 <div key={i} className="relative">
                                     <BackgroundlessButton
@@ -188,8 +189,8 @@ export default function Projects() {
                     </div>
 
                     <div>
-                        <h4 className="text-sm text-white/60 mb-2">Themes</h4>
-                        <div className="flex flex-wrap gap-2 max-w-full overflow-x-auto py-2">
+                        <h2 className="text-white mb-2">Themes</h2>
+                        <div className="flex flex-wrap gap-2 max-w-full py-2">
                             {themes.map((t, i) => (
                                 <div key={i} className="relative">
                                     <BackgroundlessButton
@@ -217,77 +218,77 @@ export default function Projects() {
                 <div className="col-span-1 lg:col-span-2">
                     <CardContainer
                         id={`${languageFilter || "all"}-${themeFilter || "all"}-${pageIndex}`} onPrev={prev} onNext={next}
-                        className="min-h-[600px] max-h-[600px] lg:min-h-[720px] lg:max-h-[920px]"
+                        className="min-h-[600px] max-h-[600px] lg:min-h-[850px] lg:max-h-[850px]"
                     >
                         <div className="max-w-4xl mx-auto w-full">
                             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 px-4">
                                 {currentPage.map((proj, idx) => (
-                                    <article key={proj.title + idx} onClick={() => setSelected(proj)} 
-                                        className="giga-sub-card cursor-pointer p-4 h-full flex flex-col justify-between"
+                                    <article
+                                        key={proj.title + idx}
+                                        onClick={() => setSelected(proj)}
+                                        className="giga-sub-card cursor-pointer p-4 h-full flex flex-col"
                                     >
-                                        <div className="flex items-start gap-3">
-                                            <div className="p-2 bg-primary/10 rounded-lg text-primary flex-none">
+                                        <header className="flex items-start gap-3">
+                                            <div className="p-3 bg-primary/10 rounded-lg text-primary flex-none shrink-0">
                                                 <i className="fa-solid fa-folder-open" />
                                             </div>
                                             <div className="flex-1 min-w-0">
-                                                <div className="flex items-center gap-3">
-                                                    <h4 className="text-lg font-semibold text-white truncate">{proj.title}</h4>
-                                                    {proj.date && (
-                                                        <time className="text-sm text-white/60" dateTime={proj.date.toISOString()}>
-                                                            {proj.date.toLocaleDateString(undefined, { year: 'numeric', month: 'short' })}
-                                                        </time>
-                                                    )}
-                                                </div>
-                                                <div className="flex items-center justify-start gap-3
-                          max-w-full overflow-x-auto whitespace-nowrap mid-scrollbar
-                          pb-1
-                          ">
-                                                    {
-                                                        proj.languages.map(language => (
-                                                            <BackgroundlessButton
-                                                                key={language + "-tag"}
-                                                                size="sm"
-                                                                active={languageFilter.includes(language)}
-                                                                onClick={() => {
-                                                                    setLanguageFilter((s) =>
-                                                                        s.includes(language) ? s.filter((x) => x !== language) : [...s, language]
-                                                                    );
-                                                                    setPageIndex(0);
-                                                                }}
-                                                            >
-                                                                {language}
-                                                            </BackgroundlessButton>
-                                                        ))
-                                                    }
-
-                                                    {
-                                                        proj.themes.map(theme => (
-                                                            <BackgroundlessButton
-                                                                key={theme + "-tag"}
-                                                                size="sm"
-                                                                active={themeFilter.includes(theme)}
-                                                                onClick={() => {
-                                                                    setThemeFilter((s) =>
-                                                                        s.includes(theme) ? s.filter((x) => x !== theme) : [...s, theme]
-                                                                    );
-                                                                    setPageIndex(0);
-                                                                }}
-                                                            >
-                                                                {theme}
-                                                            </BackgroundlessButton>
-                                                        ))
-                                                    }
-                                                </div>
+                                                <h3 className="font-semibold text-white truncate text-lg">{proj.title}</h3>
+                                                {proj.date && (
+                                                    <time className="block text-xs text-white/60 mt-1" dateTime={proj.date.toISOString()}>
+                                                        {proj.date.toLocaleDateString(undefined, { year: 'numeric', month: 'short' })}
+                                                    </time>
+                                                )}
                                             </div>
-                                        </div>
-                                        <p className="mt-3 text-sm text-white/80 line-clamp-3">{proj.description}</p>
-                                        <div className="flex gap-2 self-start mt-4">
-                                            {proj.demo && (
-                                                <a href={proj.demo} target="_blank" rel="noreferrer" className="px-3 py-1.5 rounded-md bg-primary text-black text-sm font-medium">Demo</a>
-                                            )}
-                                            {proj.repo && (
-                                                <a href={proj.repo} target="_blank" rel="noreferrer" className="px-3 py-1.5 rounded-md border border-white/10 text-white/90 text-sm">Repo</a>
-                                            )}
+                                        </header>
+
+                                        <div className="mt-3 text-sm text-white/80 line-clamp-3 flex-1">{proj.description}</div>
+
+                                        <div className="mt-4 flex items-center justify-between gap-3">
+                                            <div className="flex items-center gap-2 max-w-[65%] overflow-x-auto whitespace-nowrap mid-scrollbar">
+                                                {proj.languages.map(language => (
+                                                    <BackgroundlessButton
+                                                        key={language + "-tag"}
+                                                        size="sm"
+                                                        active={languageFilter.includes(language)}
+                                                        onClick={(e) => {
+                                                            e.stopPropagation();
+                                                            setLanguageFilter((s) =>
+                                                                s.includes(language) ? s.filter((x) => x !== language) : [...s, language]
+                                                            );
+                                                            setPageIndex(0);
+                                                        }}
+                                                    >
+                                                        {language}
+                                                    </BackgroundlessButton>
+                                                ))}
+
+                                                {proj.themes.map(theme => (
+                                                    <BackgroundlessButton
+                                                        key={theme + "-tag"}
+                                                        size="sm"
+                                                        active={themeFilter.includes(theme)}
+                                                        onClick={(e) => {
+                                                            e.stopPropagation();
+                                                            setThemeFilter((s) =>
+                                                                s.includes(theme) ? s.filter((x) => x !== theme) : [...s, theme]
+                                                            );
+                                                            setPageIndex(0);
+                                                        }}
+                                                    >
+                                                        {theme}
+                                                    </BackgroundlessButton>
+                                                ))}
+                                            </div>
+
+                                            <div className="flex items-center gap-2">
+                                                {proj.demo && (
+                                                    <a onClick={(e) => e.stopPropagation()} href={proj.demo} target="_blank" rel="noreferrer" className="px-3 py-1.5 rounded-md bg-primary text-black text-sm font-medium">Demo</a>
+                                                )}
+                                                {proj.repo && (
+                                                    <a onClick={(e) => e.stopPropagation()} href={proj.repo} target="_blank" rel="noreferrer" className="px-3 py-1.5 rounded-md border border-white/10 text-white/90 text-sm">Repo</a>
+                                                )}
+                                            </div>
                                         </div>
                                     </article>
                                 ))}

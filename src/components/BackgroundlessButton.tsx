@@ -7,7 +7,7 @@ export type ButtonProps = {
     active?: boolean;
     size?: "sm" | "md";
     className?: string;
-    onClick?: () => void;
+    onClick?: (() => void) | ((e: React.MouseEvent<HTMLButtonElement>) => void);
 };
 
 const BackgroundlessButton = ({ children, content, color, active = false, size = "md", className = "", onClick }: ButtonProps) => {
