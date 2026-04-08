@@ -15,6 +15,41 @@ export default function Navbar({ onMenuClick }: { onMenuClick?: () => void }) {
 
   const isWide = useIsWide();
 
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const sectionIds = NAV_LINKS.map((l) => l.href.replace(/^#/, ""));
+    const elements = sectionIds
+      .map((id) => document.getElementById(id))
+      .filter(Boolean) as HTMLElement[];
+
+    if (!elements.length) return;
+
+    // App's scrollable container as IntersectionObserver root
+    const scrollRoot = document.querySelector('.h-screen.overflow-y-auto') as Element | null;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries.filter((e) => e.isIntersecting);
+        if (visible.length === 0) return;
+        visible.sort((a, b) => (b.intersectionRatio || 0) - (a.intersectionRatio || 0));
+        const top = visible[0].target as HTMLElement;
+        setActiveSection(`#${top.id}`);
+      },
+      { root: scrollRoot, rootMargin: "-40% 0px -40% 0px", threshold: [0, 0.25, 0.5, 0.75, 1] }
+    );
+
+    elements.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const onHashChange = () => setActiveSection(window.location.hash || "");
+    window.addEventListener("hashchange", onHashChange);
+    return () => window.removeEventListener("hashchange", onHashChange);
+  }, []);
+
   return (
     <div className={`${isWide ? "lg:sticky top-6" : "fixed top-1"} z-50 flex justify-center w-full font-manrope px-4 left-0`}>
       <div className="w-full max-w-lg flex items-center gap-3">
@@ -47,7 +82,7 @@ export default function Navbar({ onMenuClick }: { onMenuClick?: () => void }) {
                   `}
                   >
                     {link.name}
-                    {/* Subtle active indicator dot */}
+
                     {isActive && (
                       <span className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 bg-primary rounded-full shadow-[0_0_8px_rgba(16,185,129,0.8)]" />
                     )}
