@@ -5,6 +5,7 @@ export type Person = {
   role?: string;
   linkedin?: string;
   github?: string;
+  image?: string;
 };
 
 export default function PersonCard({ person }: { person: Person }) {
@@ -16,9 +17,14 @@ export default function PersonCard({ person }: { person: Person }) {
     .toUpperCase();
 
   return (
-    <div className="flex items-center gap-3 bg-white/3 px-3 py-2 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200 transform hover:-translate-y-0.5">
-      <div className="w-11 h-11 rounded-full bg-gradient-to-tr from-primary to-purple-600 flex items-center justify-center text-black font-bold text-sm">
-        {initials}
+    <div className="flex items-center gap-3 bg-white/3 px-3 py-2 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200">
+      <div className="w-11 h-11 rounded-full overflow-hidden bg-gradient-to-tr from-primary to-purple-600 flex items-center justify-center text-black font-bold text-sm">
+        {person.image ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img src={person.image} alt={person.name} className="w-full h-full object-cover" />
+        ) : (
+          <span className="text-sm">{initials}</span>
+        )}
       </div>
 
       <div className="flex flex-col truncate">

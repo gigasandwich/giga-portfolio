@@ -10,9 +10,9 @@ const techStack = ["Spring Boot", "Next.js", "PostGIS", "OpenStreetMap"];
     This shows how much I love you guys :P
 */
 const teammates = [
-    { name: "Ny Aina Mickael", linkedin: "https://www.linkedin.com/in/ny-aina-mickael-andrianarivelo-152514355", github: "https://github.com/NyAinaMickael" },
-    { name: "Nathan Lovaniaina", linkedin: "https://www.linkedin.com/in/lovaniaina-nathan-andriamarozaka-092653365", github: "https://github.com/Nathanlovaniaina" },
-    { name: "Mamisoa Laurent", linkedin: "https://www.linkedin.com/in/laurent-mamisoa-341584290", github: "https://github.com/Laurent-create" },
+    { name: "Ny Aina Mickael", linkedin: "https://www.linkedin.com/in/ny-aina-mickael-andrianarivelo-152514355", github: "https://github.com/NyAinaMickael", image: "https://avatars.githubusercontent.com/u/192534594?v=4" },
+    { name: "Nathan Lovaniaina", linkedin: "https://www.linkedin.com/in/lovaniaina-nathan-andriamarozaka-092653365", github: "https://github.com/Nathanlovaniaina", image: "https://avatars.githubusercontent.com/u/142962456?v=4" },
+    { name: "Mamisoa Laurent", linkedin: "https://www.linkedin.com/in/laurent-mamisoa-341584290", github: "https://github.com/Laurent-create", image: "https://avatars.githubusercontent.com/u/188788184?v=4" },
 ];
 
 const Hackathon: ExperienceType = {
