@@ -6,6 +6,7 @@ import projectsData, { ProjectType } from "@/data/projects/Main";
 import CardContainer from "@/components/CardContainer";
 import CardlikeButton from "@/components/CardlikeButton";
 import Parallax from "@/components/Parallax";
+import CloseButton from "@/components/CloseButton";
 
 export default function Projects() {
     const CountBadge = ({ count }: { count: number }) => (
@@ -117,12 +118,9 @@ export default function Projects() {
                 <div className="absolute inset-0 bg-black/60" onClick={onClose} />
                 <div className="relative z-10 w-[90%] max-w-3xl">
                     <CardContainer id={project.title + (project.date?.toISOString() ?? '')} onPrev={() => selectAdjacent('prev')} onNext={() => selectAdjacent('next')} className="!p-6">
-                        <div className="w-full bg-neutral-900 border border-white/10 rounded-lg p-6 min-h-[320px] max-h-[320px] overflow-y-auto">
+                        <div className="w-full bg-neutral-900 rounded-lg p-6 min-h-[320px] max-h-[320px] overflow-y-auto">
                             <div className="flex items-start justify-between gap-4">
-                                <h3 className="text-xl font-semibold text-white">{project.title}</h3>
-                                <div className="flex items-center gap-2">
-                                    <button aria-label="Close" onClick={onClose} className="text-white/80 hover:text-white px-2 py-1">✕</button>
-                                </div>
+                                <h1 className="font-semibold text-white">{project.title}</h1>
                             </div>
                             {project.date && (
                                 <p className="text-sm text-white/60 mt-1">{project.date.toLocaleDateString(undefined, { year: 'numeric', month: 'short' })}</p>
@@ -131,10 +129,14 @@ export default function Projects() {
 
                             <div className="mt-4 flex flex-wrap gap-2">
                                 {project.languages.map(l => (
-                                    <span key={l} className="px-2 py-1 text-sm rounded-md bg-white/6 text-white">{l}</span>
+                                    <BackgroundlessButton key={l} size="sm" onClick={(e) => e.stopPropagation()}>
+                                        {l}
+                                    </BackgroundlessButton>
                                 ))}
                                 {project.themes.map(t => (
-                                    <span key={t} className="px-2 py-1 text-sm rounded-md bg-white/6 text-white">{t}</span>
+                                    <BackgroundlessButton key={t} size="sm" onClick={(e) => e.stopPropagation()}>
+                                        {t}
+                                    </BackgroundlessButton>
                                 ))}
                             </div>
 
@@ -148,6 +150,7 @@ export default function Projects() {
                             </div>
                         </div>
                     </CardContainer>
+                    <CloseButton onClick={onClose} />
                 </div>
             </div>
         );

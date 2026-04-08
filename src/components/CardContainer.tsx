@@ -2,15 +2,17 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { div } from "framer-motion/client";
 import { ReactNode, useEffect, useRef, useState } from "react";
+import CloseButton from "./CloseButton";
 
 type CardContainerProps = {
     children: ReactNode;
     onPrev: () => void;
     onNext: () => void;
     id: any; // Unique key for AnimatePresence transition
+    allowOverflow?: boolean;
 }  & React.HTMLAttributes<HTMLEmbedElement>;
 
-export default function CardContainer({ children, onPrev, onNext, id, ...props }: CardContainerProps) {
+export default function CardContainer({ children, onPrev, onNext, id, allowOverflow = false, ...props }: CardContainerProps) {
     const thisRef = useRef<HTMLDivElement | null>(null);
     const [contentElement, setContentElement] = useState<HTMLDivElement | null>(null);
     const [isOverflowing, setIsOverflowing] = useState(false);
@@ -80,12 +82,12 @@ export default function CardContainer({ children, onPrev, onNext, id, ...props }
                 >
                     <div
                         ref={setContentElement}
-                        className="w-full h-full overflow-hidden"
+                        className={`w-full h-full ${allowOverflow ? 'overflow-auto' : 'overflow-hidden'}`}
                     >
                         {children}
                     </div>
 
-                    {isOverflowing && !isModalOpen && (
+                    {isOverflowing && !isModalOpen && !allowOverflow && (
                         // small placeholder to keep layout; actual full-width overlay is rendered outside
                         <div className="h-[28px]" aria-hidden />
                     )}
@@ -94,7 +96,7 @@ export default function CardContainer({ children, onPrev, onNext, id, ...props }
             </div>
 
             {/* Full-width Read more overlay (spans card edges) */}
-            {isOverflowing && !isModalOpen && (
+            {isOverflowing && !isModalOpen && !allowOverflow && (
                 <div
                     onClick={() => setIsModalOpen(true)}
                     className="absolute left-0 right-0 bottom-0 h-[120px] flex items-end cursor-pointer z-20 pointer-events-auto"
@@ -152,7 +154,7 @@ export default function CardContainer({ children, onPrev, onNext, id, ...props }
                                         {children}
                                     </div>
 
-                                    <button onClick={() => setIsModalOpen(false)} aria-label="Close modal" className="absolute top-4 right-4 z-50 p-2 rounded-md bg-white/6 text-white hover:bg-white/10">✕</button>
+                                    <CloseButton onClick={() => setIsModalOpen(false)} />
                                 </div>
                             </motion.div>
                     </motion.div>

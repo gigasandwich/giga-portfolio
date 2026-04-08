@@ -3,6 +3,7 @@ import Title from "@/components/Title";
 import experienceData, { ExperienceType } from "@/data/experience/Main";
 import VerticalTimeline from "@/components/VerticalTimeline";
 import CardContainer from "@/components/CardContainer";
+import CloseButton from "@/components/CloseButton";
 import BorderedIcon from "@/components/BorderedIcon";
 import Parallax from "@/components/Parallax";
 
@@ -38,7 +39,7 @@ export default function Experience() {
                                 id={index}
                                 onPrev={prev}
                                 onNext={next}
-                                className="min-h-[700px] !bg-[#161616]/80"
+                                className="min-h-[500px] max-h-[500px] lg:min-h-[700px] lg:max-h-[700px] !bg-[#161616]/80"
                             >
                                 <div className="flex justify-between items-start mb-8">
                                     {/* <div className="inline-block px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-[10px] font-bold tracking-widest text-primary uppercase mb-4">
@@ -66,23 +67,18 @@ export default function Experience() {
                 <div className="fixed inset-0 z-[100] flex items-center justify-center px-4 bg-black/90 backdrop-blur-md lg:hidden"
                     onClick={() => setIsModalOpen(false)}>
                     {/* TODO: Maybe add max-w-lg later in case of a problem  */}
-                    <div className="relative w-full max-h-[60vh] h-[60vh] mx-auto overflow-hidden"
+                    <div className="relative w-full max-h-[60vh] h-[60vh] mx-auto overflow-visible"
                         onClick={(e) => e.stopPropagation()}>
 
                         <CardContainer
                             id={index}
                             onPrev={prev}
                             onNext={next}
-                            className="h-full !bg-[#161616] !overflow-hidden"
+                            className="h-full min-h-[60vh] max-h-[60vh] !bg-[#161616]"
+                            allowOverflow
                         >
-                            <button
-                                onClick={() => setIsModalOpen(false)}
-                                className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white/60 hover:text-white transition-colors z-[50]"
-                            >
-                                <i className="fas fa-times text-xl"></i>
-                            </button>
 
-                            <div className="mt-4 h-full overflow-y-auto">
+                            <div className="mt-4 h-full overflow-y-auto pr-6">
                                 <div className="mb-6 pr-8">
                                     {/* <div className="inline-block px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-[10px] font-bold tracking-widest text-primary uppercase mb-3">
                                         {current.end != null ? 'Past Achievement' : 'Current Focus'}
@@ -91,11 +87,12 @@ export default function Experience() {
                                     {current.meta && <h2 className="text-primary font-medium uppercase">{current.meta}</h2>}
                                 </div>
 
-                                <div className="text-white/80 text-base leading-relaxed space-y-4 normal-case">
+                                <div className="text-white/80 text-base leading-relaxed space-y-4 normal-case pr-2">
                                     {current.description}
                                 </div>
                             </div>
                         </CardContainer>
+                        <CloseButton onClick={() => setIsModalOpen(false)} />
                     </div>
                 </div>
             )}
