@@ -12,7 +12,7 @@ import ParallaxedSection from "@/components/ParallaxedSection";
 
 export default function Home() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
-  const commonParallaxImage = "/assets/svgs/bg-experience.svg";
+  const commonParallaxImage = "/assets/svgs/bg.svg";
 
   // Force open on wide screens
   useEffect(() => {
