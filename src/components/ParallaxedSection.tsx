@@ -6,7 +6,7 @@ type ParallaxedSectionProps = {
     image: string;
     title: React.ReactNode;
     content: React.ReactNode;
-} & React.HTMLAttributes<HTMLEmbedElement>;
+} & Omit<React.HTMLAttributes<HTMLElement>, "content" | "title">;
 
 export default function ParallaxedSection({image, title, content, ...props} : ParallaxedSectionProps) {
     return (
