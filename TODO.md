@@ -106,13 +106,13 @@ Content:
             - [x] Color choice: `60, 30, 10`
             - Text
                 - [ ] 2 fonts max, also responsive
-                - [ ] Structure: `h1, h3, p` 
+                - [x] Structure: `h1, h3, p` 
             - Responsivity
                 - [ ] Modals on mobile have full screen height on click,
-                - [ ] Modals' initial container on max-h: *"Read more"*
+                - [x] Modals' initial container on max-h: *"Read more"*
                 - [ ] Unresponsive items
-            - [ ] Background of xp section should be the whole app's ?
-            - [ ] Sidebar when not full window
+            - [x] Background of xp section should be the whole app's ?
+            - [x] Sidebar when not full window
             - [ ] Add a section for recommendations (ie, devs who gave feedback)
     
     - [ ] Refactor
