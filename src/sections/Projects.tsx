@@ -166,7 +166,7 @@ export default function Projects() {
 
     return (
         <>
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start p-4">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
                 <aside className="col-span-1 flex flex-col gap-6">
                     <div>
                         <h2 className="text-white mb-2">Languages</h2>
@@ -224,7 +224,7 @@ export default function Projects() {
                         className="min-h-[600px] max-h-[600px] lg:min-h-[850px] lg:max-h-[850px]"
                     >
                         <div className="max-w-4xl mx-auto w-full">
-                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 px-4">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4">
                                 {currentPage.map((proj, idx) => (
                                     <article
                                         key={proj.title + idx}
