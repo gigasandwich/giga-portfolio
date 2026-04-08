@@ -9,12 +9,9 @@ const whatIDoData: WhatIDoType = {
     icon: "fa-mobile-screen",
     description: (
         <div className="space-y-6">
-            <div className="flex flex-col gap-4">
-                <p className="text-lg leading-relaxed text-white/90">
-                    I deliver cross-platform mobile solutions while trying to implement good UX <i>(as I am not a specialized designer)</i>, using stacks like 
-                    <span className="text-primary font-bold"> Ionic</span>, 
-                    <span className="text-primary font-bold"> Flutter</span> and similar.
-                </p>   
+            <div className="flex flex-col gap-2">
+                <h2 className="text-white">Cross-platform mobile</h2>
+                <p>I deliver cross-platform mobile solutions while trying to implement good UX <i>(as I am not a specialized designer)</i>, using stacks like <span className="text-primary font-bold">Ionic</span>, <span className="text-primary font-bold">Flutter</span> and similar.</p>
             </div>
 
             <div>

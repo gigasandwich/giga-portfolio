@@ -18,9 +18,10 @@ const whatIDoData: WhatIDoType = {
     description: (
         <div className="space-y-8">
             <div className="flex flex-col gap-2">
-                <p className="text-xl text-white">I build systems on top of solid foundations by following proven <span className="text-primary font-bold italic">patterns</span> and <span className="text-primary font-bold italic">good practices</span>.</p>
+                <h2 className="text-white">Overview</h2>
+                <p>I build systems on top of solid foundations by following proven <span className="text-primary font-bold italic">patterns</span> and <span className="text-primary font-bold italic">good practices</span>.</p>
             </div>
-            
+
             <div className="grid grid-cols-2 gap-4">
                 {
                     goodPractices.map((gp, i) => {
@@ -37,8 +38,8 @@ const whatIDoData: WhatIDoType = {
                 }
             </div>
 
-            <div className="mt-6 p-4 border-l-2 border-primary bg-primary/5 italic text-white text-sm">
-                Focusing on maintainable and easily upgradable architectures for your system.
+            <div className="mt-6 p-4 border-l-2 border-primary bg-primary/5 italic text-white">
+                Focusing on maintainable and easily upgradable architectures for your system
             </div>
         </div>
     ),

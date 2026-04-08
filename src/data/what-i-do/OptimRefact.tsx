@@ -10,14 +10,11 @@ const whatIDoData: WhatIDoType = {
     description: (
         <div className="space-y-8">
             <div className="flex flex-col gap-2">
-                <p className="text-xl text-white">
-                    Again, applying the same patterns from the <span className="text-primary font-bold underline italic">Object-Oriented Development with Database design</span> section.
-                </p>
-                <p className="">
-                    Implementing patterns at the first try, but always leaving room for measurable improvements.
-                </p>
+                <h2 className="text-white">Optimization & Refactor</h2>
+                <p>Again, applying the same patterns from the <span className="text-primary font-bold underline italic">Object-Oriented Development with Database design</span> section.</p>
+                <p>Implementing patterns at the first try, but always leaving room for measurable improvements.</p>
             </div>
-            
+
             <div className="flex items-center gap-4 py-3 border-t border-b border-white/5 text-sm text-white italic">
                 <i className="fas fa-quote-left text-primary"></i>
                 <span>"A module should be open for extension but closed for modification"</span> - <span className="font-bold">Bertrand Meyer</span>
