@@ -45,15 +45,15 @@ export default function Experience() {
                                         {current.end != null ? 'Past Achievement' : 'Current Focus'}
                                     </div> */}
                                     <div className="px-2 md:px-8">
-                                        <h3 className="text-4xl font-bold text-white mb-2 tracking-tight">{current.title}</h3>
-                                        {current.meta && <p className="text-2xl text-primary font-medium">{current.meta}</p>}
+                                        <h1 className="text-4xl font-bold text-white mb-2 tracking-tight">{current.title}</h1>
+                                        {current.meta && <h2 className="text-primary font-medium">{current.meta}</h2>}
                                     </div>
                                     {current.icon && (
                                         <BorderedIcon icon={current.icon} />
                                     )}
                                 </div>
 
-                                <div className="text-white/80 text-lg leading-relaxed space-y-4 lg:max-h-[500px] lg:overflow-y-auto lg:pr-3 px-2 md:px-8 thin-scrollbar">
+                                <div className="text-white/80 leading-relaxed space-y-4 lg:max-h-[500px] lg:overflow-y-auto lg:pr-3 px-2 md:px-8 thin-scrollbar">
                                     {current.description}
                                 </div>
                             </CardContainer>
@@ -87,8 +87,8 @@ export default function Experience() {
                                     {/* <div className="inline-block px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-[10px] font-bold tracking-widest text-primary uppercase mb-3">
                                         {current.end != null ? 'Past Achievement' : 'Current Focus'}
                                     </div> */}
-                                    <h3 className="text-2xl font-bold text-white mb-1 uppercase leading-tight">{current.title}</h3>
-                                    {current.meta && <p className="text-lg text-primary font-medium uppercase">{current.meta}</p>}
+                                    <h1 className="font-bold text-white mb-1 uppercase leading-tight">{current.title}</h1>
+                                    {current.meta && <h2 className="text-primary font-medium uppercase">{current.meta}</h2>}
                                 </div>
 
                                 <div className="text-white/80 text-base leading-relaxed space-y-4 normal-case">

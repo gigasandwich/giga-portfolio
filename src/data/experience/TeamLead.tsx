@@ -8,8 +8,8 @@ const TeamLead: ExperienceType = {
     icon: "fa-users",
     description: (
         <div>
-            <p className="font-bold">Led a team of 10 developers</p>
-            <ul className="list-disc pl-5">
+            <h2 className="text-white">Led a team of 10 developers</h2>
+            <ul className="list-disc pl-5 text-white/80">
                 <li>Established best practices for <strong>domain documentation</strong></li>
                 <li>Built skills in <strong>collaboration and communication</strong></li>
             </ul>
