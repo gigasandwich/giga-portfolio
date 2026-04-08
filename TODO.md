@@ -113,7 +113,7 @@ Content:
             - [x] Background of xp section should be the whole app's ?
             - [x] Sidebar when not full window
             - [ ] Add a section for recommendations (ie, devs who gave feedback)
-        - [ ] Navbar navigation
+        - [x] Navbar navigation
     - [ ] Refactor
 
 - [ ] Setup next TODO
