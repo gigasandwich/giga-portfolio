@@ -105,16 +105,15 @@ Content:
         - After asking for feedbar [here](https://www.reddit.com/r/webdev/s/KKk7Hccv90)
             - [x] Color choice: `60, 30, 10`
             - Text
-                - [ ] 2 fonts max, also responsive
+                - [x] 2 fonts max, also responsive
                 - [x] Structure: `h1, h3, p` 
             - Responsivity
-                - [ ] Modals on mobile have full screen height on click,
                 - [x] Modals' initial container on max-h: *"Read more"*
-                - [ ] Unresponsive items
+                - [x] Unresponsive items
             - [x] Background of xp section should be the whole app's ?
             - [x] Sidebar when not full window
             - [ ] Add a section for recommendations (ie, devs who gave feedback)
-    
+        - [ ] Navbar navigation
     - [ ] Refactor
 
 - [ ] Setup next TODO
