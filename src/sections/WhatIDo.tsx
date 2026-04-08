@@ -59,7 +59,7 @@ export default function WhatIDo() {
                     {/* Right side: Detailed Description */}
                     <div className="col-span-1 lg:col-span-2 relative">
                         <CardContainer
-                            id={index}
+                            id={index + ""}
                             onPrev={prev}
                             onNext={next}
                             className="min-h-[500px] max-h-[500px] lg:min-h-[750px] lg:max-h-[750px]"

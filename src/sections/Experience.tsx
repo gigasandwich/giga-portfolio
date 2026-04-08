@@ -36,7 +36,7 @@ export default function Experience() {
                         {/* Description - Desktop only */}
                         <div className="hidden lg:block col-span-1 lg:col-span-2 relative h-full">
                             <CardContainer
-                                id={index}
+                                id={index + ""} // It asked for string, not number so don't blame me
                                 onPrev={prev}
                                 onNext={next}
                                 className="min-h-[500px] max-h-[500px] lg:min-h-[700px] lg:max-h-[700px] !bg-[#161616]/80"
@@ -71,7 +71,7 @@ export default function Experience() {
                         onClick={(e) => e.stopPropagation()}>
 
                         <CardContainer
-                            id={index}
+                            id={index + ""}
                             onPrev={prev}
                             onNext={next}
                             className="h-full min-h-[60vh] max-h-[60vh] !bg-[#161616]"
