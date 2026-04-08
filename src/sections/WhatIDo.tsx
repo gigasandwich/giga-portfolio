@@ -62,7 +62,7 @@ export default function WhatIDo() {
                             id={index}
                             onPrev={prev}
                             onNext={next}
-                            className="min-h-[350px] lg:min-h-[750px] max-h-none"
+                            className="min-h-[500px] max-h-[500px] lg:min-h-[750px] lg:max-h-[750px]"
                         >
                             <div className="flex items-center gap-4 mb-8 px-2 md:px-8">
                                 <BorderedIcon icon={current.icon} />
