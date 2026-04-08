@@ -62,7 +62,7 @@ const BackgroundlessButton = ({ children, content, color, active = false, size =
                 ${sizeClasses}
                 rounded-full font-medium
                 cursor-pointer
-                ${active ? "bg-white/5" : ""}
+                ${active ? "bg-white/10" : ""}
                 ${className}
             `}
         >

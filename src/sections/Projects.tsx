@@ -166,7 +166,7 @@ export default function Projects() {
 
     return (
         <>
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start p-4">
                 <aside className="col-span-1 flex flex-col gap-6">
                     <div>
                         <h2 className="text-white mb-2">Languages</h2>
