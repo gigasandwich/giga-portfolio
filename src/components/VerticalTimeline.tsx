@@ -29,10 +29,10 @@ export default function VerticalTimeline({
                 </div>
 
                 <div className="flex flex-col gap-1 max-w-[250px] lg:max-w-[300px]">
-                  <p className="text-[11px] font-bold tracking-widest text-primary uppercase">
+                  <h3 className={`leading-snug tracking-widest text-primary uppercase`}>
                     {item.title}
-                  </p>
-                  <p className="text-lg font-bold leading-tight text-white">
+                  </h3>
+                  <p className="font-bold leading-tight text-white">
                     {item.description}
                   </p>
                 </div>
@@ -59,15 +59,15 @@ export default function VerticalTimeline({
                 )}
               </div>
 
-              <div className="flex flex-col gap-1 max-w-[250px] lg:max-w-[300px]">
-                <p className="text-[11px] font-bold tracking-widest text-white/60 uppercase">
+              <div className="flex flex-col gap-2 max-w-[260px] lg:max-w-[320px]">
+                <time className="font-semibold tracking-wide text-white/70 uppercase">
                   {startLabel} — {endLabel}
-                </p>
-                <p className={`text-lg font-bold leading-tight ${i === selected ? 'text-white' : 'text-white/90 group-hover:text-white'}`}>
+                </time>
+                <h3 className={`font-bold leading-snug ${i === selected ? 'text-white' : 'text-white/80 group-hover:text-white'}`}>
                   {item.title}
-                </p>
+                </h3>
                 {item.meta && (
-                  <p className="text-sm text-white/30 font-medium">
+                  <p className="text-white/50 font-medium">
                     {item.meta}
                   </p>
                 )}

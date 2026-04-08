@@ -12,8 +12,19 @@ export default function Experience() {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const current: ExperienceType = experienceData[index];
 
-    const prev = () => setIndex((s) => (s - 1 + experienceData.length) % experienceData.length);
-    const next = () => setIndex((s) => (s + 1) % experienceData.length);
+    const prev = () => {
+        setIndex((s) => {
+            let newIndex = (s - 1 + experienceData.length) % experienceData.length;
+            return newIndex === 0 ? experienceData.length - 1 : newIndex;
+        });
+    };
+
+    const next = () => {
+        setIndex((s) => {
+            let newIndex = (s + 1) % experienceData.length;
+            return newIndex === 0 ? 1 : newIndex;
+        });
+    };
 
     const handleSelect = (i: number) => {
         setIndex(i);
@@ -46,7 +57,7 @@ export default function Experience() {
                                         {current.end != null ? 'Past Achievement' : 'Current Focus'}
                                     </div> */}
                                     <div className="px-2 md:px-8">
-                                        <h1 className="text-4xl font-bold text-white mb-2 tracking-tight">{current.title}</h1>
+                                        <h1 className="text-white mb-2 tracking-tight">{current.title}</h1>
                                         {current.meta && <h2 className="text-primary font-medium">{current.meta}</h2>}
                                     </div>
                                     {current.icon && (
