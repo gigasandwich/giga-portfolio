@@ -66,10 +66,10 @@ export default function WhatIDo() {
                         >
                             <div className="flex items-center gap-4 mb-8 px-2 md:px-8">
                                 <BorderedIcon icon={current.icon} />
-                                <h2 className="text-4xl font-bold text-white tracking-tight">{current.title}</h2>
+                                <h1 className="tracking-tight text-white">{current.title}</h1>
                             </div>
 
-                            <div className="text-white/80 leading-relaxed text-lg px-2 md:px-8">
+                            <div className="text-white/80 leading-relaxed px-2 md:px-8">
                                 {current.description}
                             </div>
                         </CardContainer>
@@ -118,7 +118,7 @@ const WhatIDoCard = ({
                     <i className={`fas ${whatIDo.icon} text-xl`}></i>
                 </div>
                 <div>
-                    <h3 className={`font-bold text-lg transition-colors ${active ? "text-white" : "text-white/40 group-hover:text-white/70"}`}>
+                    <h3 className={`font-bold transition-colors ${active ? "text-white" : "text-white/40 group-hover:text-white/70"}`}>
                         {whatIDo.title}
                     </h3>
                 </div>

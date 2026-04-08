@@ -65,8 +65,7 @@ export default function Home() {
             image={commonParallaxImage}
             title={
               <>
-                Experience &
-                <p className="text-primary">involvement</p>
+                Experience & <span className="text-primary">involvement</span>
               </>
             }
             content={<Experience />}

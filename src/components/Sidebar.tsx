@@ -67,7 +67,8 @@ export default function Sidebar({ isOpen, setIsOpen }: { isOpen: boolean; setIsO
                 <p >{d.lastName}</p>
                 <p>{d.firstName}</p>
               </div>
-              <p className="text-xs font-bold uppercase tracking-widest mt-1 bg-none px-3 py-1.5 rounded-md inline-block border border-primary">{d.role}</p>
+
+              <h4 className="mt-1 bg-none px-3 py-1.5 rounded-md inline-block border border-primary text-white">{d.role}</h4>
 
               <div className="mt-8 text-left w-full flex flex-col gap-4">
                 <InfoWithIcon icon={"fa-location-dot"}>
@@ -86,10 +87,13 @@ export default function Sidebar({ isOpen, setIsOpen }: { isOpen: boolean; setIsO
                   </InfoWithIcon>
                 ))}
               </div>
+            </div>
 
-              <p className="mt-8 text-sm text-white text-left leading-relaxed font-normal italic border-l-2 border-primary pl-4 py-1 font-inter">
-                {d.about}
-              </p>
+            
+            <div className="mt-2">
+                <h5 className="font-normal text-left leading-relaxed border-l-2 border-primary pl-4 py-1">
+                  {d.about}
+                </h5>
             </div>
           </div>
 
