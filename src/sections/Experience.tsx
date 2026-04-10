@@ -95,7 +95,7 @@ export default function Experience() {
                                         {current.end != null ? 'Past Achievement' : 'Current Focus'}
                                     </div> */}
                                     <h2 className="font-bold text-white mb-1 leading-tight">{current.title}</h2>
-                                    {current.meta && <h2 className="text-primary font-medium uppercase">{current.meta}</h2>}
+                                    {current.meta && <h3 className="text-primary font-medium uppercase">{current.meta}</h3>}
                                 </div>
 
                                 <div className="text-white/80 text-base leading-relaxed space-y-4 normal-case pr-2">

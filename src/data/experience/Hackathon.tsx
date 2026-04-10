@@ -24,14 +24,14 @@ const Hackathon: ExperienceType = {
     description: (
         <div className="space-y-3">
             <div>
-                <h2 className="text-white/90 mb-1">Placement</h2>
+                <h3 className="text-white/90 mb-1">Placement</h3>
                 <div className="flex gap-3">
                     <p className="font-light text-white/80">finalist among 15+ teams</p>
                 </div>
             </div>
 
             <div className="mt-6">
-                <h2 className="text-white/90 mt-4 mb-2">Team</h2>
+                <h3 className="text-white/90 mt-4 mb-2">Team</h3>
                 <div className="flex gap-3 overflow-x-auto pb-1 thin-scrollbar">
                     {teammates.map((t) => (
                         <div key={t.name} className="min-w-[200px] sm:min-w-[220px]">
@@ -42,7 +42,7 @@ const Hackathon: ExperienceType = {
             </div>
 
             <div className="mt-6">
-                <h2 className="text-white/90 mt-4 mb-2">Stack</h2>
+                <h3 className="text-white/90 mt-4 mb-2">Stack</h3>
                 <div className="flex gap-2 flex-wrap sm:flex-nowrap overflow-x-auto pb-1 thin-scrollbar">
                     {techStack.map((tech) => (
                         <div key={tech} className="shrink-0">

@@ -18,7 +18,7 @@ const whatIDoData: WhatIDoType = {
     description: (
         <div className="space-y-8">
             <div className="flex flex-col gap-2">
-                <h2 className="text-white">Overview</h2>
+                <h3 className="text-white">Overview</h3>
                 <p>I build systems on top of solid foundations by following proven <span className="text-primary font-bold italic">patterns</span> and <span className="text-primary font-bold italic">good practices</span>.</p>
             </div>
 

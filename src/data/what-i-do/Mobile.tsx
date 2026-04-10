@@ -10,7 +10,7 @@ const whatIDoData: WhatIDoType = {
     description: (
         <div className="space-y-6">
             <div className="flex flex-col gap-2">
-                <h2 className="text-white">Cross-platform mobile</h2>
+                <h3 className="text-white">Cross-platform mobile</h3>
                 <p>I deliver cross-platform mobile solutions while trying to implement good UX <i>(as I am not a specialized designer)</i>, using stacks like <span className="text-primary font-bold">Ionic</span>, <span className="text-primary font-bold">Flutter</span> and similar.</p>
             </div>
 

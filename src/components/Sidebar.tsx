@@ -44,7 +44,7 @@ export default function Sidebar({ isOpen, setIsOpen }: { isOpen: boolean; setIsO
           </button>
           <div className="flex flex-col items-start gap-3 mt-12 lg:mt-0">
             {/* Avatar wrapper */}
-            <div className="w-24 h-24 mb-4 relative self-center">
+            <div className="w-24 h-24 relative self-center">
               {/* Image mask */}
               <div className="w-full h-full rounded-full overflow-hidden border-2 border-primary/20 shadow-inner">
                 <Image
@@ -65,9 +65,9 @@ export default function Sidebar({ isOpen, setIsOpen }: { isOpen: boolean; setIsO
             <div className="w-full text-center">
               <div className="text-white  mb-1">
                 {/* Must be h1 for SEO */}
-                <h1 className="font-bold break-words tracking-tight leading-tight">
-                  <span className="block text-3xl">{d.firstName}</span>
-                  <span className="block text-3xl">{d.lastName}</span>
+                <h1 className="font-semibold text-2xl break-words tracking-tight leading-tight">
+                  <span className="block">{d.firstName}</span>
+                  <span className="block">{d.lastName}</span>
                 </h1>
               </div>
 
@@ -91,9 +91,9 @@ export default function Sidebar({ isOpen, setIsOpen }: { isOpen: boolean; setIsO
 
             
             <div className="mt-4">
-                <h5 className="font-normal text-left leading-relaxed border-l-2 border-primary pl-4 py-1">
+                <h6 className="font-normal text-left leading-relaxed border-l-2 border-primary pl-4 py-1">
                   {d.about}
-                </h5>
+                </h6>
             </div>
           </div>
 

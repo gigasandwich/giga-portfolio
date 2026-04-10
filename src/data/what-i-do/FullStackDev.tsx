@@ -10,12 +10,12 @@ const whatIDoData: WhatIDoType = {
     description: (
         <div className="space-y-6">
             <div className="p-6 rounded-2xl bg-white/3 bg-opacity-3 border border-white/6 hover:bg-white/5 transition ease-in-out duration-200">
-                <h2 className="font-semibold text-white mb-2">Backend</h2>
+                <h3 className="font-semibold text-white mb-2">Backend</h3>
                 <p className="text-white/80 leading-relaxed">Backend applies what I previously claimed with the other competences I have. I do not have a lot to say here.</p>
             </div>
             
             <div className="p-6 rounded-2xl bg-white/3 bg-opacity-3 border border-white/6 hover:bg-white/5 transition ease-in-out duration-200">
-                <h2 className="font-semibold text-white mb-2">Frontend</h2>
+                <h3 className="font-semibold text-white mb-2">Frontend</h3>
                 <p className="text-white/80 leading-relaxed">Frontend is not my best point, but you can judge me based on the portfolio you're viewing now.</p>
                 <div className="mt-4 flex items-center gap-2 text-sm text-white/40 relative group">
                     <i className="fas fa-info-circle text-primary/60"></i>
