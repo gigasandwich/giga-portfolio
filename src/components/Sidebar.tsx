@@ -98,7 +98,7 @@ export default function Sidebar({ isOpen, setIsOpen }: { isOpen: boolean; setIsO
           </div>
 
           <div className="mt-8 mb-8">
-            <a href={d.cvLink} target="_blank" rel="noopener noreferrer" className="block w-full text-center bg-primary text-neutral-bg font-bold py-2 px-4 rounded-lg shadow-md hover:bg-primary/90 transition-all">
+            <a href={d.cvLink} target="_blank" rel="noopener noreferrer" className="reset-link hover:no-underline block w-full text-center bg-primary text-neutral-bg font-bold py-2 px-4 rounded-lg shadow-md hover:bg-primary/90 transition-all">
               My CV
             </a>
 

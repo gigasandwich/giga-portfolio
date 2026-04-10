@@ -138,7 +138,11 @@ button {
   }
 
   a {
-    @apply text-blue-400 hover:text-blue-300 transition-colors;
+    @apply text-primary hover:text-shadow-primary transition-colors;
+  }
+
+  .reset-link {
+    @apply text-white hover:text-white/90 no-underline hover:underline;
   }
 
   strong {

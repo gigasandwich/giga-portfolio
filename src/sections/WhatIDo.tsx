@@ -118,9 +118,9 @@ const WhatIDoCard = ({
                     <i className={`fas ${whatIDo.icon} text-xl`}></i>
                 </div>
                 <div>
-                    <h3 className={`font-bold transition-colors ${active ? "text-white" : "text-white/40 group-hover:text-white/70"}`}>
+                    <h4 className={`font-bold transition-colors ${active ? "text-white" : "text-white/40 group-hover:text-white/70"}`}>
                         {whatIDo.title}
-                    </h3>
+                    </h4>
                 </div>
             </div>
         </button>
