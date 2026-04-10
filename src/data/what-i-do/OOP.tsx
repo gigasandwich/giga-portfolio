@@ -22,7 +22,7 @@ const whatIDoData: WhatIDoType = {
                 <p>I build systems on top of solid foundations by following proven <span className="text-primary font-bold italic">patterns</span> and <span className="text-primary font-bold italic">good practices</span>.</p>
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {
                     goodPractices.map((gp, i) => {
                         return (

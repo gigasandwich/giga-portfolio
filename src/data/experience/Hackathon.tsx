@@ -30,7 +30,7 @@ const Hackathon: ExperienceType = {
                 </div>
             </div>
 
-            <div className="mt-3">
+            <div className="mt-6">
                 <h2 className="text-white/90 mt-4 mb-2">Team</h2>
                 <div className="flex gap-3 overflow-x-auto pb-1 thin-scrollbar">
                     {teammates.map((t) => (
@@ -41,7 +41,7 @@ const Hackathon: ExperienceType = {
                 </div>
             </div>
 
-            <div className="mt-3">
+            <div className="mt-6">
                 <h2 className="text-white/90 mt-4 mb-2">Stack</h2>
                 <div className="flex gap-2 flex-wrap sm:flex-nowrap overflow-x-auto pb-1 thin-scrollbar">
                     {techStack.map((tech) => (

@@ -87,7 +87,7 @@ export default function Sidebar({ isOpen, setIsOpen }: { isOpen: boolean; setIsO
             </div>
 
             
-            <div className="mt-2">
+            <div className="mt-4">
                 <h5 className="font-normal text-left leading-relaxed border-l-2 border-primary pl-4 py-1">
                   {d.about}
                 </h5>
