@@ -57,8 +57,8 @@ export default function Experience() {
                                         {current.end != null ? 'Past Achievement' : 'Current Focus'}
                                     </div> */}
                                     <div className="px-2 md:px-8">
-                                        <h1 className="text-white mb-2 tracking-tight">{current.title}</h1>
-                                        {current.meta && <h2 className="text-primary font-medium">{current.meta}</h2>}
+                                        <h2 className="text-white mb-2 tracking-tight">{current.title}</h2>
+                                        {current.meta && <h3 className="text-primary font-medium">{current.meta}</h3>}
                                     </div>
                                     {current.icon && (
                                         <BorderedIcon icon={current.icon} />
@@ -94,7 +94,7 @@ export default function Experience() {
                                     {/* <div className="inline-block px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-[10px] font-bold tracking-widest text-primary uppercase mb-3">
                                         {current.end != null ? 'Past Achievement' : 'Current Focus'}
                                     </div> */}
-                                    <h1 className="font-bold text-white mb-1 leading-tight">{current.title}</h1>
+                                    <h2 className="font-bold text-white mb-1 leading-tight">{current.title}</h2>
                                     {current.meta && <h2 className="text-primary font-medium uppercase">{current.meta}</h2>}
                                 </div>
 

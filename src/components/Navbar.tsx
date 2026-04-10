@@ -30,7 +30,7 @@ export default function Navbar({ onMenuClick }: { onMenuClick?: () => void }) {
 
         {/* TODO: add bg maybe ? */}
         <nav className="flex-1 backdrop-blur-md border border-white/10 rounded-2xl p-1 shadow-2xl">
-          <ul className="flex items-center justify-between gap-1">
+          <ul className="reset-list flex items-center justify-between gap-1">
             {NAV_LINKS.map((link) => {
               const isActive = activeSection === link.href;
               return (

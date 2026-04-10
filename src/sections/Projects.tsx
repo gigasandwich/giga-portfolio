@@ -169,7 +169,7 @@ export default function Projects() {
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start p-4">
                 <aside className="col-span-1 flex flex-col gap-6">
                     <div>
-                        <h2 className="text-white mb-2">Languages</h2>
+                        <h3 className="text-white mb-2">Languages</h3>
                         {/* This layout will visually break later, God help me */}
                         <div className="flex flex-wrap gap-2 max-w-full py-2">
                             {languages.map((lang, i) => (
@@ -192,7 +192,7 @@ export default function Projects() {
                     </div>
 
                     <div>
-                        <h2 className="text-white mb-2">Themes</h2>
+                        <h3 className="text-white mb-2">Themes</h3>
                         <div className="flex flex-wrap gap-2 max-w-full py-2">
                             {themes.map((t, i) => (
                                 <div key={i} className="relative">

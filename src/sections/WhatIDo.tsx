@@ -66,7 +66,7 @@ export default function WhatIDo() {
                         >
                             <div className="flex items-center gap-4 mb-8 px-2 md:px-8">
                                 <BorderedIcon icon={current.icon} className="hidden md:block" />
-                                <h1 className="text-white">{current.title}</h1>
+                                <h2 className="text-white">{current.title}</h2>
                             </div>
 
                             <div className="text-white/80 leading-relaxed px-2 md:px-8">
