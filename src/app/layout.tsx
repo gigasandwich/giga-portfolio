@@ -16,7 +16,7 @@ const fullName = "Yvan Noah RABETOKOTANY";
 const job = "Software Developer";
 const url = "https://gigalab.tech";
 const ogImage = "/og.png";
-const icon = ogImage;
+const icon = "favicon.ico";
 
 const title = `${fullName} - ${job}`;
 const description = `${fullName}, a ${job} engaged in producing CLEAN and MAINTAINABLE code`;
