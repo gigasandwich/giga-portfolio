@@ -24,7 +24,7 @@ const sidebarData: SidebarData = {
   avatar: 'https://drive.google.com/uc?export=view&id=1g2JpxF-kclOrEvu4KLvlqV5pWKXt3TnJ',
   lastName: 'RABETOKOTANY',
   firstName: 'Yvan Noah',
-  role: 'Software Engineer',
+  role: 'Software Developer',
   status: 'Open for work',
   location: 'Madagascar/Antananarivo',
   about: 'A SWE student focused on gaining more experience with your proposed tech stack. Engaged in producing CLEAN and MAINTAINABLE code',
