@@ -22,6 +22,7 @@ const title = `${fullName} - ${job}`;
 const description = `${fullName}, a ${job} engaged in producing CLEAN and MAINTAINABLE code`;
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://gigalab.tech"),
   title: title,
   description: description,
   icons: {
