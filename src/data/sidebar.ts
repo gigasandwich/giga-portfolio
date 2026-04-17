@@ -36,7 +36,7 @@ const sidebarData: SidebarData = {
     ],
     socials: [
       { name: 'GitHub', url: 'https://github.com/gigasandwich', icon: 'fa-brands fa-github' },
-      { name: 'LinkedIn', url: 'https://linkedin.com/in/yvan-noah-rabetokotany-3450543aa', icon: 'fa-brands fa-linkedin' },
+      { name: 'LinkedIn', url: 'https://www.linkedin.com/in/yvan-noah-3450543aa/', icon: 'fa-brands fa-linkedin' },
       { name: 'Email', url: 'mailto:yvannandy@gmail.com', icon: 'fa-solid fa-envelope' },
       { name: 'Reddit', url: 'https://reddit.com/user/_giga_sss_', icon: 'fa-brands fa-reddit' },
     ],
