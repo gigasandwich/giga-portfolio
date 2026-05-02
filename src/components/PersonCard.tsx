@@ -5,6 +5,7 @@ export type Person = {
   role?: string;
   linkedin?: string;
   github?: string;
+  twitter?: string;
   image?: string;
 };
 
@@ -42,6 +43,12 @@ export default function PersonCard({ person }: { person: Person }) {
             <a href={person.github} target="_blank" rel="noreferrer" className="text-xs text-white/80 flex items-center gap-2 p-1 rounded-md hover:bg-white/5 transition-colors">
               <i className="fab fa-github text-base" aria-hidden></i>
               <span className="sr-only">GitHub</span>
+            </a>
+          )}
+          {person.twitter && (
+            <a href={`https://twitter.com/${person.twitter}`} target="_blank" rel="noreferrer" className="text-xs text-white/80 flex items-center gap-2 p-1 rounded-md hover:bg-white/5 transition-colors">
+              <i className="fab fa-twitter text-base" aria-hidden></i>
+              <span className="sr-only">Twitter</span>
             </a>
           )}
         </div>

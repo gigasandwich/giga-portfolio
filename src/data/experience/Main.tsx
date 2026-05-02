@@ -1,5 +1,6 @@
-import hackathon from "./Hackathon";
-import teamLead from "./TeamLead";
+import Hackathon from "./Hackathon";
+import Okizeme from "./Okizeme";
+import TeamLead from "./TeamLead";
 
 export type ExperienceType = {
     title: string;
@@ -25,8 +26,9 @@ experienceData.push({
     )
 });
 
-experienceData.push(hackathon);
-experienceData.push(teamLead);
+experienceData.push(Okizeme);
+experienceData.push(Hackathon);
+experienceData.push(TeamLead);
 
 // Newest first
 experienceData.sort((a, b) => b.start.getTime() - a.start.getTime());

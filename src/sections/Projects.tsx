@@ -118,7 +118,7 @@ export default function Projects() {
                 <div className="absolute inset-0 bg-black/60" onClick={onClose} />
                 <div className="relative z-10 w-[90%] max-w-3xl">
                     <CardContainer id={project.title + (project.date?.toISOString() ?? '')} onPrev={() => selectAdjacent('prev')} onNext={() => selectAdjacent('next')} className="!p-6">
-                        <div className="w-full bg-neutral-900 rounded-lg p-6 min-h-[320px] max-h-[320px] overflow-y-auto">
+                        <div className="w-full bg-neutral-900 rounded-lg p-6 min-h-[600px] max-h-[600px] overflow-y-auto">
                             <div className="flex items-start justify-between gap-4">
                                 <h1 className="font-semibold text-white">{project.title}</h1>
                             </div>
