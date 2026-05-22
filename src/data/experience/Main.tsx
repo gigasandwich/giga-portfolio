@@ -10,6 +10,7 @@ export type ExperienceType = {
     meta?: string | null; // Like location
     icon?: string;
     description: React.ReactNode;
+    default?: boolean;
 };
 
 const experienceData: ExperienceType[] = [];
@@ -34,5 +35,8 @@ experienceData.push(HIUStaff);
 
 // Newest first
 experienceData.sort((a, b) => b.start.getTime() - a.start.getTime());
+
+const defaultIdx = experienceData.findIndex((e) => e.default);
+export const defaultExperienceIndex = defaultIdx === -1 ? 1 : defaultIdx;
 
 export default experienceData;

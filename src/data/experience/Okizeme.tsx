@@ -9,8 +9,7 @@ const founders = [
 
 const Okizeme: ExperienceType = {
     title: "Contributor",
-    meta: "okizeme.gg",
-    start: new Date(2026, 4, 1),
+    meta: "okizeme.gg",    default: true,    start: new Date(2026, 3, 28),
     end: null,
     icon: "fa-users",
     description: (
@@ -22,11 +21,9 @@ const Okizeme: ExperienceType = {
 
             <div className="mt-6">
                 <h3 className="text-white/90 mb-1">Impact</h3>
-                <p>
-                    <ul>
-                        <li>Improvement of the site content accuracy and relevance</li>
-                    </ul>
-                </p>
+                <ul>
+                    <li>Improvement of the site content accuracy and relevance</li>
+                </ul>
             </div>
 
             <div className="mt-6">

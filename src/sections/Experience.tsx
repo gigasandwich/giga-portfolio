@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Title from "@/components/Title";
-import experienceData, { ExperienceType } from "@/data/experience/Main";
+import experienceData, { ExperienceType, defaultExperienceIndex } from "@/data/experience/Main";
 import VerticalTimeline from "@/components/VerticalTimeline";
 import CardContainer from "@/components/CardContainer";
 import CloseButton from "@/components/CloseButton";
@@ -8,7 +8,7 @@ import BorderedIcon from "@/components/BorderedIcon";
 import Parallax from "@/components/Parallax";
 
 export default function Experience() {
-    const [index, setIndex] = useState(1);
+    const [index, setIndex] = useState(defaultExperienceIndex);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const current: ExperienceType = experienceData[index];
 
