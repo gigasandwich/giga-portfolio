@@ -30,7 +30,7 @@ const Okizeme: ExperienceType = {
                 <h3 className="text-white/90 mt-4 mb-2">Meet the Founders</h3>
                 <div className="flex gap-3 overflow-x-auto pb-1 thin-scrollbar">
                     {founders.map((f, i) => (
-                        <div key={i} className="min-w-[200px] sm:min-w-[220px]">
+                        <div key={i} className="min-w-[260px]">
                             <PersonCard person={f} />
                         </div>
                     ))}
