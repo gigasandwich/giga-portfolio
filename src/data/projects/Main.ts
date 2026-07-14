@@ -10,6 +10,16 @@ export type ProjectType = {
 
 const projects: ProjectType[] = [
   {
+    title: "Study roadmap",
+    languages: ["Github API", "Google sheets API", "Google Auth", "Github Auth", "Reactflow", "TypeScript", "Next.js", "React", "Tailwind"],
+    themes: ["Frontend", "Portfolio"],
+    description:
+      "Webapp roadmap for students' orientation post high-school.",
+    repo: "https://github.com/gigasandwich/giga-roadmap",
+    demo: "https://roadmap.gigas.app",
+    date: new Date("2026-07-01"),
+  },
+  {
     title: "Portfolio (this one)",
     languages: ["TypeScript", "Next.js", "React", "Tailwind"],
     themes: ["Frontend", "Portfolio"],
