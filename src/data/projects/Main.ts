@@ -1,21 +1,26 @@
 export type ProjectType = {
   title: string;
   languages: string[];
-  themes: string[]; // business domain / short topic
+  themes: string[]; // Business domain / short topic
   description: string;
   demo?: string;
   repo?: string;
   date?: Date; // Initial release date
 };
 
+const githubUserLink = "https://github.com/gigasandwich";
+
 const projects: ProjectType[] = [
   {
     title: "Study roadmap",
-    languages: ["Github API", "Google sheets API", "Google Auth", "Github Auth", "Reactflow", "TypeScript", "Next.js", "React", "Tailwind"],
-    themes: ["Frontend", "Portfolio"],
+    languages: [
+        "Github API", "Google sheets API", "Google Auth", "Github Auth", 
+        "Reactflow", "TypeScript", "Next.js", "React", "Tailwind",
+      ],
+    themes: ["Study", "Job", "Roadmap", "Node", "Graph"],
     description:
       "Webapp roadmap for students' orientation post high-school.",
-    repo: "https://github.com/gigasandwich/giga-roadmap",
+    repo: `${githubUserLink}/giga-roadmap`,
     demo: "https://roadmap.gigas.app",
     date: new Date("2026-07-01"),
   },
@@ -25,7 +30,7 @@ const projects: ProjectType[] = [
     themes: ["Frontend", "Portfolio"],
     description:
       "Nothing to add much as you've already come this far here.",
-    repo: "https://github.com/gigasandwich/giga-portfolio",
+    repo: `${githubUserLink}/giga-portfolio`,
     demo: "https://gigalab.tech",
     date: new Date("2026-04-01"),
   },
@@ -35,7 +40,7 @@ const projects: ProjectType[] = [
     themes: ["OS"],
     description:
       "Program to easily modify Environment variables. GUI will be included in the future. Currently supports Windows only.",
-    repo: "https://github.com/gigasandwich/giga-env",
+    repo: `${githubUserLink}/giga-env`,
     date: new Date("2026-03-01"),
   },
   {
@@ -44,7 +49,7 @@ const projects: ProjectType[] = [
     themes: ["http", "Socket"],
     description:
       "Own http server from scratch. Using server socket and client socket (with multithreading) to handle http requests and responses.",
-    repo: "https://github.com/gigasandwich/giga-http-server",
+    repo: `${githubUserLink}/giga-http-server`,
     date: new Date("2024-12-01"),
   },
   {
@@ -53,18 +58,9 @@ const projects: ProjectType[] = [
     themes: ["Spring"],
     description:
       "A framework that aims to copy the same functionalities of Spring MVC.",
-    repo: "https://github.com/gigasandwich/gigaspring",
-    demo: "https://github.com/gigasandwich/gigaspring-lab",
+    repo: `${githubUserLink}/gigaspring`,
+    demo: `${githubUserLink}/gigaspring-lab`,
     date: new Date("2026-01-01"),
-  },
-  {
-    title: "GigaTekken",
-    languages: ["Ionic", "TypeScript", "Vue"],
-    themes: ["Mobile", "Community"],
-    description:
-      "A mobile app for the Tekken community providing character guides, move lists. Syncs with wavu wiki API + offline caching.",
-    // repo: "https://github.com/gigasandwich/giga-tekken",
-    // date: new Date("2025-07-01"),
   },
   {
     title: "LeetCode PDF Export",
@@ -72,8 +68,8 @@ const projects: ProjectType[] = [
     themes: ["Export", "GraphQL"],
     description:
       "A small service that queries LeetCode problems data via GraphQL and generates PDF from the fetched data.",
-    repo: "https://github.com/gigasandwich/giga-leetcode-questions",
-    demo: "https://github.com/gigasandwich/giga-leetcode-questions/blob/master/output/leetcode-questions.pdf",
+    repo: `${githubUserLink}/giga-leetcode-questions`,
+    demo: `${githubUserLink}/giga-leetcode-questions/blob/master/output/leetcode-questions.pdf`,
     date: new Date("2024-09-01"),
   },
   {
@@ -82,7 +78,7 @@ const projects: ProjectType[] = [
     themes: ["AI", "Prediction", "Research"],
     description:
       "A research project training a regression model on locally-sourced housing and terrain data (Madagascar).",
-    repo: "https://github.com/gigasandwich/giga-house-price-predictor",
+    repo: `${githubUserLink}/giga-house-price-predictor`,
     date: new Date("2025-07-01"),
   },
 ];
