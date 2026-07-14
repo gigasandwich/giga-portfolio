@@ -25,11 +25,11 @@ const projects: ProjectType[] = [
     date: new Date("2026-07-01"),
   },
   {
-    title: "Portfolio (this one)",
+    title: "Portfolio",
     languages: ["TypeScript", "Next.js", "React", "Tailwind"],
     themes: ["Frontend", "Portfolio"],
     description:
-      "Nothing to add much as you've already come this far here.",
+      "",
     repo: `${githubUserLink}/giga-portfolio`,
     demo: "https://gigalab.tech",
     date: new Date("2026-04-01"),
